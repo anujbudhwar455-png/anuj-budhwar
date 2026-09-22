@@ -1,15 +1,77 @@
+'use client';
+
+import { motion } from 'framer-motion';
 import { SectionHeading } from '@/components/SectionHeading';
+import { BackToLab } from '@/components/ui/BackToLab';
 import { siteConfig } from '@/data/siteConfig';
+
+const PILLARS = [
+  {
+    key: 'science',
+    label: 'Science',
+    detail: 'Pharm.D path · clinical training · evidence mindset',
+    color: 'from-cyan-400/25 to-cyan-400/5',
+    border: 'border-cyan-400/30',
+  },
+  {
+    key: 'technology',
+    label: 'Technology',
+    detail: 'AI products · Android utilities · systems thinking',
+    color: 'from-violet-400/25 to-violet-400/5',
+    border: 'border-violet-400/30',
+  },
+  {
+    key: 'creativity',
+    label: 'Creativity',
+    detail: 'Fiction on Amazon · original music on Spotify',
+    color: 'from-fuchsia-400/25 to-fuchsia-400/5',
+    border: 'border-fuchsia-400/30',
+  },
+];
 
 export function About() {
   return (
     <section id="about" className="section-pad scroll-mt-20">
       <div className="container-max">
+        <BackToLab className="mb-8" />
         <SectionHeading
           eyebrow="Identity"
           title="About Anuj"
           description="A Pharm.D student and builder working at the intersection of healthcare, AI, product software, writing, and music."
         />
+
+        {/* Converging pillars → ANUJ */}
+        <div className="mb-10 grid gap-4 md:grid-cols-3">
+          {PILLARS.map((p, i) => (
+            <motion.div
+              key={p.key}
+              className={`glass rounded-3xl bg-gradient-to-br ${p.color} border ${p.border} p-5`}
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.08 * i }}
+            >
+              <p className="text-[10px] font-semibold uppercase tracking-[0.28em] text-slate-300">
+                Pillar
+              </p>
+              <h3 className="mt-2 font-display text-2xl text-white">{p.label}</h3>
+              <p className="mt-2 text-sm text-slate-400">{p.detail}</p>
+            </motion.div>
+          ))}
+        </div>
+
+        <motion.div
+          className="mb-10 flex justify-center"
+          initial={{ opacity: 0, scale: 0.96 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+        >
+          <div className="glass rounded-full border border-cyan-300/30 px-8 py-3 text-center shadow-glow">
+            <p className="text-[10px] uppercase tracking-[0.35em] text-cyan-300/80">Converges into</p>
+            <p className="font-display text-xl tracking-[0.2em] text-white sm:text-2xl">ANUJ</p>
+          </div>
+        </motion.div>
+
         <div className="grid gap-6 lg:grid-cols-5">
           <div className="glass card-hover rounded-3xl p-6 lg:col-span-3 md:p-8">
             <p className="text-base leading-relaxed text-slate-300 md:text-lg">
@@ -19,9 +81,13 @@ export function About() {
               experience in pharmacy practice.
             </p>
             <p className="mt-4 text-base leading-relaxed text-slate-300 md:text-lg">
-              Alongside clinical training, I build AI-assisted products, Android utilities, publish
-              fiction and non-fiction on Amazon, and release original music on Spotify. This
-              portfolio is the public map of that work — honest status, no inflated claims.
+              The Rohtak story is simple: learn deeply in healthcare, build tools that respect that
+              craft, and keep a creative practice alive through books and music. Alongside clinical
+              training, I build AI-assisted products, Android utilities, publish fiction and
+              non-fiction on Amazon, and release original music on Spotify.
+            </p>
+            <p className="mt-4 text-sm leading-relaxed text-slate-400">
+              This portfolio is the public map of that work — honest status, no inflated claims.
             </p>
           </div>
           <ul className="grid gap-3 sm:grid-cols-2 lg:col-span-2 lg:grid-cols-1">

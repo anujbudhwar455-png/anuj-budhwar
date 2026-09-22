@@ -1,6 +1,6 @@
 export const siteConfig = {
   name: 'Anuj Budhwar',
-  title: 'Anuj Budhwar — Pharm.D Student, AI Builder & Creator',
+  title: 'Anuj Budhwar — Healthcare × AI × Creativity',
   description:
     'Pharm.D student at NIMS, B.Pharm from Baba Mastnath University (Rohtak). AI builder, product developer, writer, and music creator from Rohtak, Haryana, India.',
   url: 'https://anujbudhwar455-png.github.io/anuj-budhwar',

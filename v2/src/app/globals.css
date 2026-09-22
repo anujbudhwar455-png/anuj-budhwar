@@ -36,6 +36,11 @@ body {
   overflow-x: hidden;
 }
 
+body.lab-cursor-hide-native,
+body.lab-cursor-hide-native * {
+  cursor: none !important;
+}
+
 ::selection {
   background: rgba(34, 211, 238, 0.35);
   color: white;
@@ -71,6 +76,15 @@ body {
   }
   .card-hover {
     @apply transition duration-300 hover:-translate-y-1 hover:border-cyan-400/30 hover:shadow-glow;
+  }
+  .magnetic-cta {
+    @apply transition-transform duration-200 will-change-transform;
+  }
+  .magnetic-cta:hover {
+    transform: translateY(-1px) scale(1.02);
+  }
+  .page-shell {
+    @apply relative min-h-[70vh];
   }
 }
 

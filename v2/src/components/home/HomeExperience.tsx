@@ -1,9 +1,11 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { HomeWorldLazy } from '@/components/3d/HomeWorldLazy';
 import { HomeOverlay } from '@/components/home/HomeOverlay';
 import { HomeFallback } from '@/components/home/HomeFallback';
+import { LabCursor } from '@/components/ui/LabCursor';
+import { AmbientAudioToggle } from '@/components/ui/AmbientAudioToggle';
 
 type Mode = 'loading' | '3d' | '3d-lite' | 'fallback';
 
@@ -18,7 +20,6 @@ function detectMode(): Mode {
   const cores = navigator.hardwareConcurrency || 8;
   const lowEnd = (typeof mem === 'number' && mem < 4) || cores <= 2;
 
-  // WebGL probe (allow software GL; only bail if completely unavailable)
   try {
     const canvas = document.createElement('canvas');
     const gl = canvas.getContext('webgl2') || canvas.getContext('webgl');
@@ -29,7 +30,6 @@ function detectMode(): Mode {
 
   const coarse = window.matchMedia('(pointer: coarse)').matches;
   const narrow = window.innerWidth < 768;
-  // Low-end / mobile → lighter scene (still 3D), not a hard fallback
   if (lowEnd || coarse || narrow) return '3d-lite';
 
   return '3d';
@@ -38,24 +38,35 @@ function detectMode(): Mode {
 export function HomeExperience() {
   const [mode, setMode] = useState<Mode>('loading');
   const [reducedMotion, setReducedMotion] = useState(false);
+  const [labEntered, setLabEntered] = useState(false);
+  const [introReady, setIntroReady] = useState(false);
+  const [hoveredPortal, setHoveredPortal] = useState<string | null>(null);
 
   useEffect(() => {
     const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
     setReducedMotion(mq.matches);
     setMode(detectMode());
 
+    // Align with LoadingIntro fade (~1.6s) then reveal gate
+    const t = setTimeout(() => setIntroReady(true), mq.matches ? 250 : 1700);
+
     const onChange = () => setMode(detectMode());
     mq.addEventListener?.('change', onChange);
     window.addEventListener('resize', onChange, { passive: true });
     return () => {
+      clearTimeout(t);
       mq.removeEventListener?.('change', onChange);
       window.removeEventListener('resize', onChange);
     };
   }, []);
 
+  const onEnterLab = useCallback(() => setLabEntered(true), []);
+
   if (mode === 'fallback') {
     return <HomeFallback />;
   }
+
+  const showCursor = mode === '3d' && labEntered;
 
   return (
     <section
@@ -63,7 +74,12 @@ export function HomeExperience() {
       aria-label="Immersive 3D portfolio home"
     >
       {(mode === '3d' || mode === '3d-lite') && (
-        <HomeWorldLazy lite={mode === '3d-lite'} reducedMotion={reducedMotion} />
+        <HomeWorldLazy
+          lite={mode === '3d-lite'}
+          reducedMotion={reducedMotion}
+          labEntered={labEntered}
+          onHoverPortal={setHoveredPortal}
+        />
       )}
       {mode === 'loading' && (
         <div
@@ -75,10 +91,20 @@ export function HomeExperience() {
           }}
         />
       )}
-      <HomeOverlay />
+      <HomeOverlay
+        labEntered={labEntered}
+        onEnterLab={onEnterLab}
+        introReady={introReady || mode !== 'loading'}
+      />
+      {labEntered && (
+        <div className="pointer-events-auto absolute bottom-20 right-4 z-20 sm:bottom-24 sm:right-6">
+          <AmbientAudioToggle />
+        </div>
+      )}
+      {showCursor && <LabCursor active={Boolean(hoveredPortal)} />}
       <p className="sr-only">
-        Interactive 3D laboratory. Drag to orbit the camera. Click glowing portals or use the links
-        below to open About, Work, Lab, Writing, Music, or Connect.
+        Interactive 3D laboratory. Enter the lab, drag to orbit, then click glowing portals or use
+        the links to open About, Work, Lab, Writing, Music, or Connect.
       </p>
     </section>
   );

@@ -18,7 +18,7 @@ export function Footer() {
           <div>
             <p className="font-display text-lg text-white">Anuj Budhwar</p>
             <p className="mt-2 max-w-sm text-sm text-slate-400">
-              Pharm.D student · AI builder · writer · music creator — from Rohtak, Haryana, India.
+              Digital Lab 2.0 — Healthcare × AI × Creativity. From Rohtak, Haryana, India.
             </p>
           </div>
           <div className="flex flex-col gap-4">
@@ -69,7 +69,7 @@ export function Footer() {
           </div>
         </div>
         <p className="mt-10 text-xs text-slate-500">
-          © {year} Anuj Budhwar. Built with care in Rohtak.
+          © {year} Anuj Budhwar. Digital Lab · Built with care in Rohtak.
         </p>
       </div>
     </footer>

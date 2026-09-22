@@ -33,8 +33,15 @@ export function Navbar() {
       )}
     >
       <nav className="container-max flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8" aria-label="Primary">
-        <a href={withBase('/')} className="font-display text-sm font-semibold tracking-wide text-white">
+        <a
+          href={withBase('/')}
+          className="font-display text-sm font-semibold tracking-wide text-white"
+          title="Back to Digital Lab"
+        >
           Anuj<span className="text-cyan-300">.</span>
+          <span className="ml-2 hidden text-[10px] font-medium uppercase tracking-[0.2em] text-cyan-300/70 sm:inline">
+            Lab
+          </span>
         </a>
 
         <ul className="hidden items-center gap-1 md:flex">

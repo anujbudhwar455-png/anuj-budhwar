@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { bookSeries, getSeries } from '@/data/books';
 import { withBase } from '@/lib/paths';
+import { BackToLab } from '@/components/ui/BackToLab';
 
 export function generateStaticParams() {
   return bookSeries.map((s) => ({ seriesId: s.id }));
@@ -24,9 +25,12 @@ export default function BookSeriesPage({ params }: { params: { seriesId: string 
   return (
     <article className="section-pad pt-28">
       <div className="container-max">
-        <a href={withBase('/writing/')} className="text-sm text-cyan-300 hover:underline">
-          ← Back to writing
-        </a>
+        <div className="flex flex-wrap items-center gap-3">
+          <BackToLab />
+          <a href={withBase('/writing/')} className="text-sm text-cyan-300 hover:underline">
+            ← Writing archive
+          </a>
+        </div>
         <div className="mt-8 grid gap-8 lg:grid-cols-[240px_1fr]">
           <div className="overflow-hidden rounded-2xl border border-white/10 bg-ink-800">
             {hero ? (

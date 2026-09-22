@@ -5,20 +5,20 @@ import {
   useFrame,
   useLoader,
   useThree,
-  ThreeEvent,
 } from '@react-three/fiber';
 import {
   ContactShadows,
   Float,
-  Html,
   OrbitControls,
   RoundedBox,
   Text,
+  Stars,
 } from '@react-three/drei';
 import {
   Suspense,
   useCallback,
   useEffect,
+  useMemo,
   useRef,
   useState,
 } from 'react';
@@ -26,33 +26,10 @@ import type { ReactNode } from 'react';
 import * as THREE from 'three';
 import { useRouter } from 'next/navigation';
 import { withBase } from '@/lib/paths';
+import { BOOK_COVERS, PORTALS, VINYL_COVERS, type PortalDef } from './portalDefs';
+import { PortalStation } from './PortalObjects';
 
-export type PortalDef = {
-  id: string;
-  label: string;
-  href: string;
-  color: string;
-  position: [number, number, number];
-};
-
-const PORTALS: PortalDef[] = [
-  { id: 'about', label: 'About', href: '/about/', color: '#22d3ee', position: [-3.2, 0.55, 1.4] },
-  { id: 'work', label: 'Work', href: '/work/', color: '#2dd4bf', position: [-1.8, 0.7, 2.6] },
-  { id: 'lab', label: 'Lab', href: '/lab/', color: '#a78bfa', position: [0.15, 0.85, 3.1] },
-  { id: 'writing', label: 'Writing', href: '/writing/', color: '#e879f9', position: [2.0, 0.7, 2.4] },
-  { id: 'music', label: 'Music', href: '/music/', color: '#f472b6', position: [3.3, 0.55, 1.1] },
-  { id: 'connect', label: 'Connect', href: '/connect/', color: '#60a5fa', position: [-2.8, 0.5, -0.9] },
-];
-
-const BOOK_COVERS = [
-  { src: '/books/eternal-bloodline-1.jpg', position: [2.55, 0.35, 2.85] as [number, number, number], rot: 0.25 },
-  { src: '/books/ashen-mage-ascendant-1.jpg', position: [1.55, 0.32, 3.05] as [number, number, number], rot: -0.35 },
-];
-
-const VINYL_COVERS = [
-  { src: '/music/cocaine.jpg', position: [3.85, 0.08, 1.55] as [number, number, number] },
-  { src: '/music/eternal.jpg', position: [3.95, 0.08, 0.55] as [number, number, number] },
-];
+export type { PortalDef } from './portalDefs';
 
 function useAssetTexture(path: string) {
   const map = useLoader(THREE.TextureLoader, withBase(path));
@@ -66,15 +43,57 @@ function useAssetTexture(path: string) {
   return map;
 }
 
+function AtmosphereParticles({ count }: { count: number }) {
+  const ref = useRef<THREE.Points>(null);
+  const positions = useMemo(() => {
+    const arr = new Float32Array(count * 3);
+    for (let i = 0; i < count; i++) {
+      const r = 2.2 + Math.random() * 6.5;
+      const theta = Math.random() * Math.PI * 2;
+      const y = Math.random() * 4.5 - 0.2;
+      arr[i * 3] = Math.cos(theta) * r;
+      arr[i * 3 + 1] = y;
+      arr[i * 3 + 2] = Math.sin(theta) * r * 0.85;
+    }
+    return arr;
+  }, [count]);
+
+  useFrame((_, d) => {
+    if (!ref.current) return;
+    ref.current.rotation.y += d * 0.015;
+  });
+
+  return (
+    <points ref={ref}>
+      <bufferGeometry>
+        <bufferAttribute
+          attach="attributes-position"
+          count={positions.length / 3}
+          array={positions}
+          itemSize={3}
+        />
+      </bufferGeometry>
+      <pointsMaterial
+        size={0.035}
+        color="#8ec5ff"
+        transparent
+        opacity={0.45}
+        depthWrite={false}
+        sizeAttenuation
+      />
+    </points>
+  );
+}
+
 function StudioEnvironment({ lite }: { lite: boolean }) {
   return (
     <>
       <color attach="background" args={['#05070f']} />
-      <fog attach="fog" args={['#05070f', 8, lite ? 22 : 28]} />
-      <ambientLight intensity={0.35} color="#9fb4ff" />
+      <fog attach="fog" args={['#05070f', 7.5, lite ? 20 : 26]} />
+      <ambientLight intensity={0.28} color="#9fb4ff" />
       <directionalLight
-        position={[4.5, 7, 3]}
-        intensity={1.35}
+        position={[4.2, 7.5, 3.2]}
+        intensity={1.25}
         color="#e8f0ff"
         castShadow={!lite}
         shadow-mapSize-width={lite ? 512 : 1024}
@@ -85,61 +104,83 @@ function StudioEnvironment({ lite }: { lite: boolean }) {
         shadow-camera-top={8}
         shadow-camera-bottom={-8}
       />
+      {/* Fill */}
+      <directionalLight position={[-3.5, 3.5, 2]} intensity={0.35} color="#a5b4fc" />
+      {/* Rim / accent */}
       <spotLight
-        position={[-5, 6, -2]}
-        intensity={1.1}
-        angle={0.55}
-        penumbra={0.7}
+        position={[-5, 6.5, -2]}
+        intensity={1.05}
+        angle={0.5}
+        penumbra={0.75}
         color="#22d3ee"
       />
-      <pointLight position={[0, 2.5, -4]} intensity={0.85} color="#a78bfa" />
-      <pointLight position={[3, 1.2, 4]} intensity={0.45} color="#f472b6" />
+      <pointLight position={[0, 2.8, -3.8]} intensity={0.7} color="#a78bfa" />
+      <pointLight position={[3.2, 1.4, 3.8]} intensity={0.35} color="#c084fc" />
 
-      {/* Floor */}
+      {/* Reflective floor */}
       <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.01, 0]} receiveShadow>
-        <circleGeometry args={[9, 64]} />
+        <circleGeometry args={[9.5, 72]} />
         <meshStandardMaterial
-          color="#0a0f1c"
-          metalness={0.55}
-          roughness={0.35}
-          envMapIntensity={0.4}
+          color="#070b14"
+          metalness={0.72}
+          roughness={0.28}
+          envMapIntensity={0.5}
         />
       </mesh>
 
-      {/* Soft ring platform */}
-      <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, 0.01, 0.4]}>
-        <ringGeometry args={[3.6, 4.05, 64]} />
+      {/* Subtle grid ring */}
+      <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, 0.015, 0.35]}>
+        <ringGeometry args={[3.55, 4.15, 72]} />
         <meshStandardMaterial
           color="#22d3ee"
           emissive="#22d3ee"
-          emissiveIntensity={0.25}
+          emissiveIntensity={0.18}
           transparent
-          opacity={0.35}
+          opacity={0.28}
           side={THREE.DoubleSide}
         />
       </mesh>
 
+      {/* Concentric floor guides */}
+      {[1.6, 2.6, 5.2].map((r) => (
+        <mesh key={r} rotation={[-Math.PI / 2, 0, 0]} position={[0, 0.012, 0.2]}>
+          <ringGeometry args={[r, r + 0.015, 64]} />
+          <meshBasicMaterial color="#1e293b" transparent opacity={0.45} side={THREE.DoubleSide} />
+        </mesh>
+      ))}
+
       {!lite && (
         <ContactShadows
           position={[0, 0.02, 0]}
-          opacity={0.55}
+          opacity={0.58}
           scale={14}
-          blur={2.4}
+          blur={2.5}
           far={8}
           color="#000000"
         />
       )}
 
-      {/* Back wall glow panels */}
-      <mesh position={[0, 2.2, -4.2]}>
-        <planeGeometry args={[12, 5]} />
+      {/* Back wall atmospheric panels */}
+      <mesh position={[0, 2.3, -4.4]}>
+        <planeGeometry args={[14, 5.5]} />
         <meshStandardMaterial
-          color="#0b1220"
-          emissive="#1e1b4b"
-          emissiveIntensity={0.35}
-          roughness={0.9}
+          color="#080d18"
+          emissive="#15102e"
+          emissiveIntensity={0.4}
+          roughness={0.92}
         />
       </mesh>
+      <mesh position={[-5.5, 1.8, -2]} rotation={[0, Math.PI / 2.4, 0]}>
+        <planeGeometry args={[6, 4]} />
+        <meshStandardMaterial color="#060a14" emissive="#0c1a2e" emissiveIntensity={0.25} />
+      </mesh>
+      <mesh position={[5.5, 1.8, -2]} rotation={[0, -Math.PI / 2.4, 0]}>
+        <planeGeometry args={[6, 4]} />
+        <meshStandardMaterial color="#060a14" emissive="#1a1030" emissiveIntensity={0.22} />
+      </mesh>
+
+      {!lite && <Stars radius={40} depth={30} count={900} factor={2.2} saturation={0} fade speed={0.4} />}
+      <AtmosphereParticles count={lite ? 80 : 220} />
     </>
   );
 }
@@ -151,45 +192,80 @@ function PortraitPanel({ lite }: { lite: boolean }) {
   useFrame((state) => {
     if (!frameRef.current) return;
     const t = state.clock.elapsedTime;
-    frameRef.current.position.y = 1.35 + Math.sin(t * 0.7) * 0.04;
+    frameRef.current.position.y = 1.38 + Math.sin(t * 0.65) * 0.035;
   });
 
   return (
     <Float
-      speed={lite ? 0.6 : 1.1}
-      rotationIntensity={lite ? 0.05 : 0.12}
-      floatIntensity={lite ? 0.15 : 0.25}
+      speed={lite ? 0.5 : 0.95}
+      rotationIntensity={lite ? 0.04 : 0.08}
+      floatIntensity={lite ? 0.12 : 0.2}
     >
-      <group ref={frameRef} position={[0, 1.35, -0.2]}>
-        {/* Frame */}
-        <RoundedBox args={[1.55, 2.15, 0.08]} radius={0.04} smoothness={4} castShadow>
-          <meshStandardMaterial color="#111827" metalness={0.7} roughness={0.25} />
+      <group ref={frameRef} position={[0, 1.38, -0.15]}>
+        {/* Pedestal plinth */}
+        <mesh position={[0, -1.55, 0.05]} castShadow>
+          <cylinderGeometry args={[0.55, 0.7, 0.18, 40]} />
+          <meshStandardMaterial color="#0c1220" metalness={0.75} roughness={0.28} />
+        </mesh>
+        <mesh position={[0, -1.42, 0.05]} rotation={[-Math.PI / 2, 0, 0]}>
+          <ringGeometry args={[0.52, 0.62, 48]} />
+          <meshStandardMaterial
+            color="#22d3ee"
+            emissive="#22d3ee"
+            emissiveIntensity={0.25}
+            transparent
+            opacity={0.4}
+            side={THREE.DoubleSide}
+          />
+        </mesh>
+
+        {/* Metal frame */}
+        <RoundedBox args={[1.58, 2.18, 0.09]} radius={0.045} smoothness={4} castShadow>
+          <meshStandardMaterial color="#111827" metalness={0.78} roughness={0.22} />
         </RoundedBox>
-        {/* Inner bevel */}
-        <mesh position={[0, 0, 0.045]}>
-          <planeGeometry args={[1.38, 1.98]} />
+        {/* Holographic bezel glow */}
+        <mesh position={[0, 0, 0.05]}>
+          <planeGeometry args={[1.48, 2.08]} />
+          <meshBasicMaterial color="#22d3ee" transparent opacity={0.08} />
+        </mesh>
+        <mesh position={[0, 0, 0.048]}>
+          <planeGeometry args={[1.4, 2.0]} />
           <meshStandardMaterial color="#020617" />
         </mesh>
-        {/* Portrait — BasicMaterial keeps the photo sharp and bright */}
-        <mesh position={[0, 0, 0.055]}>
-          <planeGeometry args={[1.32, 1.92]} />
+        {/* Portrait — BasicMaterial keeps photo sharp */}
+        <mesh position={[0, 0, 0.058]}>
+          <planeGeometry args={[1.34, 1.94]} />
           <meshBasicMaterial map={map} toneMapped={false} />
         </mesh>
-        <pointLight position={[0, 0.4, 1.6]} intensity={0.55} color="#e2e8f0" distance={5} />
-        {/* Accent rim light strip */}
-        <mesh position={[0, -1.15, 0.06]}>
-          <planeGeometry args={[1.2, 0.04]} />
+
+        {/* Rim lights */}
+        <pointLight position={[0.9, 0.5, 1.2]} intensity={0.45} color="#67e8f9" distance={4} />
+        <pointLight position={[-0.9, 0.2, 1.0]} intensity={0.3} color="#c4b5fd" distance={4} />
+        <pointLight position={[0, 0.5, 1.7]} intensity={0.4} color="#e2e8f0" distance={5} />
+
+        <mesh position={[0, -1.18, 0.07]}>
+          <planeGeometry args={[1.15, 0.035]} />
           <meshBasicMaterial color="#22d3ee" transparent opacity={0.85} />
         </mesh>
         <Text
-          position={[0, -1.35, 0.08]}
-          fontSize={0.11}
+          position={[0, -1.38, 0.09]}
+          fontSize={0.105}
           color="#cbd5e1"
           anchorX="center"
           anchorY="middle"
           maxWidth={1.4}
         >
           Anuj Budhwar
+        </Text>
+        <Text
+          position={[0, -1.52, 0.09]}
+          fontSize={0.055}
+          color="#67e8f9"
+          anchorX="center"
+          anchorY="middle"
+          maxWidth={1.5}
+        >
+          Lab Owner · Rohtak
         </Text>
       </group>
     </Float>
@@ -230,7 +306,7 @@ function VinylDisc({
   const map = useAssetTexture(src);
   const ref = useRef<THREE.Group>(null);
   useFrame((_, d) => {
-    if (ref.current) ref.current.rotation.y += d * 0.35;
+    if (ref.current) ref.current.rotation.y += d * 0.32;
   });
   return (
     <group position={position}>
@@ -252,104 +328,13 @@ function VinylDisc({
   );
 }
 
-function PortalStation({
-  portal,
-  onNavigate,
-  hoveredId,
-  setHoveredId,
+function WorldParallax({
+  children,
+  enabled,
 }: {
-  portal: PortalDef;
-  onNavigate: (href: string) => void;
-  hoveredId: string | null;
-  setHoveredId: (id: string | null) => void;
+  children: ReactNode;
+  enabled: boolean;
 }) {
-  const group = useRef<THREE.Group>(null);
-  const pointer = useRef<{ x: number; y: number } | null>(null);
-  const active = hoveredId === portal.id;
-
-  useFrame((state) => {
-    if (!group.current) return;
-    const t = state.clock.elapsedTime;
-    group.current.position.y =
-      portal.position[1] + Math.sin(t * 1.2 + portal.position[0]) * 0.06;
-    const targetScale = active ? 1.12 : 1;
-    group.current.scale.lerp(
-      new THREE.Vector3(targetScale, targetScale, targetScale),
-      0.12
-    );
-  });
-
-  const onPointerDown = (e: ThreeEvent<PointerEvent>) => {
-    e.stopPropagation();
-    pointer.current = { x: e.clientX, y: e.clientY };
-  };
-
-  const onPointerUp = (e: ThreeEvent<PointerEvent>) => {
-    e.stopPropagation();
-    if (!pointer.current) return;
-    const dx = e.clientX - pointer.current.x;
-    const dy = e.clientY - pointer.current.y;
-    pointer.current = null;
-    if (Math.hypot(dx, dy) < 8) onNavigate(portal.href);
-  };
-
-  return (
-    <group
-      ref={group}
-      position={portal.position}
-      onPointerOver={(e) => {
-        e.stopPropagation();
-        setHoveredId(portal.id);
-        document.body.style.cursor = 'pointer';
-      }}
-      onPointerOut={() => {
-        setHoveredId(null);
-        document.body.style.cursor = 'auto';
-      }}
-      onPointerDown={onPointerDown}
-      onPointerUp={onPointerUp}
-    >
-      {/* Pedestal */}
-      <mesh position={[0, -0.35, 0]} castShadow>
-        <cylinderGeometry args={[0.28, 0.38, 0.5, 24]} />
-        <meshStandardMaterial color="#0f172a" metalness={0.6} roughness={0.35} />
-      </mesh>
-      {/* Core orb */}
-      <mesh position={[0, 0.2, 0]} castShadow>
-        <sphereGeometry args={[0.28, 32, 32]} />
-        <meshStandardMaterial
-          color={portal.color}
-          emissive={portal.color}
-          emissiveIntensity={active ? 1.4 : 0.7}
-          metalness={0.35}
-          roughness={0.2}
-          transparent
-          opacity={0.92}
-        />
-      </mesh>
-      {/* Glow ring */}
-      <mesh rotation={[Math.PI / 2, 0, 0]} position={[0, 0.2, 0]}>
-        <torusGeometry args={[0.42, 0.018, 12, 48]} />
-        <meshBasicMaterial color={portal.color} transparent opacity={active ? 0.95 : 0.55} />
-      </mesh>
-      <Html
-        position={[0, 0.72, 0]}
-        center
-        distanceFactor={8}
-        style={{ pointerEvents: 'none', userSelect: 'none' }}
-      >
-        <div
-          className="rounded-full border border-white/20 bg-ink-950/75 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-white shadow-glow backdrop-blur-md"
-          style={{ borderColor: `${portal.color}66`, color: portal.color }}
-        >
-          {portal.label}
-        </div>
-      </Html>
-    </group>
-  );
-}
-
-function WorldParallax({ children, enabled }: { children: ReactNode; enabled: boolean }) {
   const group = useRef<THREE.Group>(null);
   const { pointer } = useThree();
 
@@ -357,58 +342,149 @@ function WorldParallax({ children, enabled }: { children: ReactNode; enabled: bo
     if (!group.current || !enabled) return;
     group.current.rotation.y = THREE.MathUtils.lerp(
       group.current.rotation.y,
-      pointer.x * 0.06,
-      0.05
+      pointer.x * 0.055,
+      0.045
     );
     group.current.rotation.x = THREE.MathUtils.lerp(
       group.current.rotation.x,
-      -pointer.y * 0.04,
-      0.05
+      -pointer.y * 0.035,
+      0.045
     );
   });
 
   return <group ref={group}>{children}</group>;
 }
 
-function CameraIntro({ reduced }: { reduced: boolean }) {
+const IDLE_CAM = new THREE.Vector3(0, 2.15, 7.35);
+const IDLE_TARGET = new THREE.Vector3(0, 0.95, 0.35);
+
+function CameraDirector({
+  reduced,
+  labEntered,
+  focusPortal,
+  onFocusComplete,
+}: {
+  reduced: boolean;
+  labEntered: boolean;
+  focusPortal: PortalDef | null;
+  onFocusComplete: (href: string) => void;
+}) {
   const { camera } = useThree();
-  const started = useRef(false);
+  const phase = useRef<'boot' | 'idle' | 'focus' | 'done'>('boot');
+  const focusPos = useRef(new THREE.Vector3());
+  const lookAt = useRef(IDLE_TARGET.clone());
+  const hrefRef = useRef('');
 
   useEffect(() => {
     if (reduced) {
-      camera.position.set(0, 2.1, 7.2);
-      camera.lookAt(0, 0.9, 0);
+      camera.position.copy(IDLE_CAM);
+      camera.lookAt(IDLE_TARGET);
+      phase.current = 'idle';
       return;
     }
-    camera.position.set(0, 3.8, 12);
-    camera.lookAt(0, 0.9, 0);
-    started.current = true;
+    camera.position.set(0, 3.6, 11.5);
+    camera.lookAt(IDLE_TARGET);
+    phase.current = 'boot';
   }, [camera, reduced]);
 
+  useEffect(() => {
+    if (!focusPortal) return;
+    const [x, y, z] = focusPortal.position;
+    // Approach from outside the portal, slightly elevated
+    const dir = new THREE.Vector3(x, 0, z).normalize();
+    focusPos.current.set(x - dir.x * 2.4, y + 1.35, z - dir.z * 2.4 + 1.1);
+    lookAt.current.set(x, y + 0.35, z);
+    hrefRef.current = focusPortal.href;
+    phase.current = 'focus';
+  }, [focusPortal]);
+
   useFrame(() => {
-    if (!started.current || reduced) return;
-    camera.position.lerp(new THREE.Vector3(0, 2.1, 7.2), 0.035);
-    if (camera.position.distanceTo(new THREE.Vector3(0, 2.1, 7.2)) < 0.08) {
-      started.current = false;
+    if (reduced) return;
+
+    if (phase.current === 'boot') {
+      const target = labEntered ? IDLE_CAM : new THREE.Vector3(0, 2.6, 8.8);
+      camera.position.lerp(target, 0.03);
+      const la = lookAt.current;
+      camera.lookAt(la);
+      if (camera.position.distanceTo(target) < 0.12) {
+        phase.current = 'idle';
+      }
+      return;
+    }
+
+    if (phase.current === 'focus') {
+      camera.position.lerp(focusPos.current, 0.055);
+      lookAt.current.lerp(
+        new THREE.Vector3(
+          focusPortal?.position[0] ?? 0,
+          (focusPortal?.position[1] ?? 0) + 0.35,
+          focusPortal?.position[2] ?? 0
+        ),
+        0.08
+      );
+      camera.lookAt(lookAt.current);
+      if (camera.position.distanceTo(focusPos.current) < 0.18) {
+        phase.current = 'done';
+        onFocusComplete(hrefRef.current);
+      }
     }
   });
 
   return null;
 }
 
+function CursorBridge({
+  hoveredId,
+  enabled,
+}: {
+  hoveredId: string | null;
+  enabled: boolean;
+}) {
+  useEffect(() => {
+    if (!enabled) return;
+    document.body.dataset.labCursor = hoveredId ? 'view' : 'lab';
+    return () => {
+      delete document.body.dataset.labCursor;
+    };
+  }, [hoveredId, enabled]);
+  return null;
+}
+
 function SceneContent({
   lite,
   reduced,
+  labEntered,
+  onHoverPortal,
 }: {
   lite: boolean;
   reduced: boolean;
+  labEntered: boolean;
+  onHoverPortal?: (id: string | null) => void;
 }) {
   const router = useRouter();
   const [hoveredId, setHoveredId] = useState<string | null>(null);
+  const [focusPortal, setFocusPortal] = useState<PortalDef | null>(null);
+  const navigating = Boolean(focusPortal);
 
-  const onNavigate = useCallback(
+  const setHover = useCallback(
+    (id: string | null) => {
+      setHoveredId(id);
+      onHoverPortal?.(id);
+    },
+    [onHoverPortal]
+  );
+
+  const onSelect = useCallback(
+    (portal: PortalDef) => {
+      if (navigating || !labEntered) return;
+      setHover(null);
+      setFocusPortal(portal);
+    },
+    [navigating, labEntered, setHover]
+  );
+
+  const onFocusComplete = useCallback(
     (href: string) => {
-      document.body.style.cursor = 'auto';
       router.push(href);
     },
     [router]
@@ -416,22 +492,24 @@ function SceneContent({
 
   useEffect(() => {
     return () => {
-      document.body.style.cursor = 'auto';
+      delete document.body.dataset.labCursor;
     };
   }, []);
 
   return (
     <>
       <StudioEnvironment lite={lite} />
-      <WorldParallax enabled={!reduced}>
+      <WorldParallax enabled={!reduced && labEntered && !navigating}>
         <PortraitPanel lite={lite} />
         {PORTALS.map((p) => (
           <PortalStation
             key={p.id}
             portal={p}
-            onNavigate={onNavigate}
+            onSelect={onSelect}
             hoveredId={hoveredId}
-            setHoveredId={setHoveredId}
+            setHoveredId={setHover}
+            interactive={labEntered && !navigating}
+            largeHit={lite}
           />
         ))}
         {!lite &&
@@ -444,9 +522,16 @@ function SceneContent({
           ))}
       </WorldParallax>
 
-      <CameraIntro reduced={reduced} />
+      <CameraDirector
+        reduced={reduced}
+        labEntered={labEntered}
+        focusPortal={focusPortal}
+        onFocusComplete={onFocusComplete}
+      />
+      <CursorBridge hoveredId={hoveredId} enabled={!lite && labEntered} />
 
       <OrbitControls
+        enabled={labEntered && !navigating && !reduced}
         enablePan={false}
         enableDamping
         dampingFactor={0.08}
@@ -454,7 +539,7 @@ function SceneContent({
         maxDistance={11}
         maxPolarAngle={Math.PI / 2.05}
         minPolarAngle={0.35}
-        target={[0, 0.9, 0.4]}
+        target={[0, 0.95, 0.35]}
         makeDefault
       />
     </>
@@ -464,15 +549,22 @@ function SceneContent({
 export type HomeWorldProps = {
   lite?: boolean;
   reducedMotion?: boolean;
+  labEntered?: boolean;
+  onHoverPortal?: (id: string | null) => void;
 };
 
-export function HomeWorld({ lite = false, reducedMotion = false }: HomeWorldProps) {
+export function HomeWorld({
+  lite = false,
+  reducedMotion = false,
+  labEntered = true,
+  onHoverPortal,
+}: HomeWorldProps) {
   return (
     <div className="absolute inset-0" aria-hidden="true">
       <Canvas
         className="!absolute inset-0 h-full w-full touch-none"
-        dpr={[1, lite ? 1.25 : 1.5]}
-        camera={{ position: [0, 2.1, 7.2], fov: 42, near: 0.1, far: 60 }}
+        dpr={[1, lite ? 1.2 : 1.5]}
+        camera={{ position: [0, 2.15, 7.35], fov: 42, near: 0.1, far: 70 }}
         gl={{
           antialias: true,
           alpha: false,
@@ -483,12 +575,17 @@ export function HomeWorld({ lite = false, reducedMotion = false }: HomeWorldProp
         onCreated={({ gl }) => {
           gl.setClearColor('#05070f', 1);
           gl.toneMapping = THREE.ACESFilmicToneMapping;
-          gl.toneMappingExposure = 1.05;
+          gl.toneMappingExposure = 1.08;
           gl.shadowMap.type = THREE.PCFShadowMap;
         }}
       >
         <Suspense fallback={null}>
-          <SceneContent lite={lite} reduced={reducedMotion} />
+          <SceneContent
+            lite={lite}
+            reduced={reducedMotion}
+            labEntered={labEntered}
+            onHoverPortal={onHoverPortal}
+          />
         </Suspense>
       </Canvas>
     </div>

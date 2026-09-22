@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { getProject, projects } from '@/data/projects';
 import { StatusBadge } from '@/components/StatusBadge';
 import { withBase } from '@/lib/paths';
+import { BackToLab } from '@/components/ui/BackToLab';
 
 export function generateStaticParams() {
   return projects.map((p) => ({ id: p.id }));
@@ -24,9 +25,12 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
   return (
     <article className="section-pad pt-28">
       <div className="container-max max-w-3xl">
-        <a href={withBase('/work/')} className="text-sm text-cyan-300 hover:underline">
-          ← Back to work
-        </a>
+        <div className="flex flex-wrap items-center gap-3">
+          <BackToLab />
+          <a href={withBase('/work/')} className="text-sm text-cyan-300 hover:underline">
+            ← Work
+          </a>
+        </div>
         <div className="mt-6 flex flex-wrap gap-2">
           <StatusBadge status={p.status} label={p.statusLabel} />
           {p.domains.map((d) => (

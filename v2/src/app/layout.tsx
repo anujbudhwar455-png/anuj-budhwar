@@ -4,6 +4,7 @@ import './globals.css';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { LoadingIntro } from '@/components/LoadingIntro';
+import { EasterEggs } from '@/components/ui/EasterEggs';
 import { siteConfig } from '@/data/siteConfig';
 import { BASE_PATH } from '@/lib/paths';
 
@@ -107,6 +108,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Navbar />
         <main id="main">{children}</main>
         <Footer />
+        <EasterEggs />
       </body>
     </html>
   );

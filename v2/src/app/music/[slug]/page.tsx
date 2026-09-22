@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { songs } from '@/data/songs';
 import { withBase } from '@/lib/paths';
+import { BackToLab } from '@/components/ui/BackToLab';
 
 export function generateStaticParams() {
   return songs.map((s) => ({ slug: s.slug }));
@@ -23,9 +24,12 @@ export default function SongPage({ params }: { params: { slug: string } }) {
   return (
     <article className="section-pad pt-28">
       <div className="container-max max-w-4xl">
-        <a href={withBase('/music/')} className="text-sm text-cyan-300 hover:underline">
-          ← Back to music
-        </a>
+        <div className="flex flex-wrap items-center gap-3">
+          <BackToLab />
+          <a href={withBase('/music/')} className="text-sm text-cyan-300 hover:underline">
+            ← Listening room
+          </a>
+        </div>
         <div className="mt-8 grid gap-8 md:grid-cols-[280px_1fr]">
           <div className="overflow-hidden rounded-3xl border border-white/10 shadow-glow">
             {/* eslint-disable-next-line @next/next/no-img-element */}

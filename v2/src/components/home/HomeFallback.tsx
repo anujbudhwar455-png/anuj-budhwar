@@ -5,12 +5,22 @@ import { withBase } from '@/lib/paths';
 import { siteConfig } from '@/data/siteConfig';
 
 const LINKS = [
-  { label: 'About', href: '/about/', tone: 'from-cyan-400/30 to-cyan-400/5' },
-  { label: 'Work', href: '/work/', tone: 'from-teal-400/30 to-teal-400/5' },
-  { label: 'Lab', href: '/lab/', tone: 'from-violet-400/30 to-violet-400/5' },
-  { label: 'Writing', href: '/writing/', tone: 'from-fuchsia-400/30 to-fuchsia-400/5' },
-  { label: 'Music', href: '/music/', tone: 'from-pink-400/30 to-pink-400/5' },
-  { label: 'Connect', href: '/connect/', tone: 'from-blue-400/30 to-blue-400/5' },
+  { label: 'About', href: '/about/', tone: 'from-cyan-400/30 to-cyan-400/5', sub: 'Identity' },
+  { label: 'Work', href: '/work/', tone: 'from-teal-400/30 to-teal-400/5', sub: 'Products' },
+  { label: 'Lab', href: '/lab/', tone: 'from-violet-400/30 to-violet-400/5', sub: 'Experiments' },
+  {
+    label: 'Writing',
+    href: '/writing/',
+    tone: 'from-fuchsia-400/30 to-fuchsia-400/5',
+    sub: 'Archive',
+  },
+  { label: 'Music', href: '/music/', tone: 'from-pink-400/30 to-pink-400/5', sub: 'Listening' },
+  {
+    label: 'Connect',
+    href: '/connect/',
+    tone: 'from-blue-400/30 to-blue-400/5',
+    sub: 'Channels',
+  },
 ];
 
 export function HomeFallback() {
@@ -26,7 +36,7 @@ export function HomeFallback() {
       />
 
       <motion.div
-        className="pointer-events-none absolute inset-x-0 top-16 mx-auto h-[55vh] max-w-lg px-6 sm:top-20"
+        className="pointer-events-none absolute inset-x-0 top-16 mx-auto h-[50vh] max-w-lg px-6 sm:top-20"
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
@@ -48,12 +58,12 @@ export function HomeFallback() {
       <div className="relative z-10 px-4 pb-10 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-cyan-300">
-            From Rohtak · Healthcare × AI × Creativity
+            Digital Lab 2.0 · Healthcare × AI × Creativity
           </p>
           <h1 className="heading-display mt-3 text-4xl sm:text-5xl">Anuj Budhwar</h1>
           <p className="mx-auto mt-3 max-w-xl text-sm text-slate-300 sm:text-base">
-            Pharm.D student at NIMS · B.Pharm, Baba Mastnath University · AI builder, writer &amp;
-            music creator.
+            Building at the intersection of science, technology and imagination. From Rohtak,
+            Haryana — Pharm.D student, AI builder, writer &amp; music creator.
           </p>
         </div>
 
@@ -65,12 +75,15 @@ export function HomeFallback() {
             <motion.a
               key={item.href}
               href={withBase(item.href)}
-              className={`glass card-hover rounded-2xl bg-gradient-to-br ${item.tone} px-4 py-4 text-center text-sm font-semibold text-white`}
+              className={`glass card-hover rounded-2xl bg-gradient-to-br ${item.tone} px-4 py-4 text-center`}
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.05 * i }}
             >
-              {item.label}
+              <span className="block text-sm font-semibold text-white">{item.label}</span>
+              <span className="mt-1 block text-[10px] uppercase tracking-wider text-slate-300/80">
+                {item.sub}
+              </span>
             </motion.a>
           ))}
         </nav>
