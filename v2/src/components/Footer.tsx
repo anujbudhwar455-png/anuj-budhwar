@@ -1,7 +1,15 @@
+'use client';
+
+import { usePathname } from 'next/navigation';
 import { siteConfig } from '@/data/siteConfig';
 import { withBase } from '@/lib/paths';
 
 export function Footer() {
+  const pathname = usePathname();
+  const isHome = pathname === '/' || pathname === '';
+
+  if (isHome) return null;
+
   const year = new Date().getFullYear();
   return (
     <footer className="border-t border-white/10 bg-ink-950/80">
@@ -22,16 +30,36 @@ export function Footer() {
               ))}
             </div>
             <div className="flex flex-wrap gap-4 text-sm text-slate-300">
-              <a className="hover:text-cyan-300" href={siteConfig.links.linkedin} target="_blank" rel="noopener noreferrer">
+              <a
+                className="hover:text-cyan-300"
+                href={siteConfig.links.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 LinkedIn
               </a>
-              <a className="hover:text-cyan-300" href={siteConfig.links.github} target="_blank" rel="noopener noreferrer">
+              <a
+                className="hover:text-cyan-300"
+                href={siteConfig.links.github}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 GitHub
               </a>
-              <a className="hover:text-cyan-300" href={siteConfig.links.spotify} target="_blank" rel="noopener noreferrer">
+              <a
+                className="hover:text-cyan-300"
+                href={siteConfig.links.spotify}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Spotify
               </a>
-              <a className="hover:text-cyan-300" href={siteConfig.links.instagram} target="_blank" rel="noopener noreferrer">
+              <a
+                className="hover:text-cyan-300"
+                href={siteConfig.links.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Instagram
               </a>
               <a className="hover:text-cyan-300" href={siteConfig.links.email}>
@@ -40,16 +68,9 @@ export function Footer() {
             </div>
           </div>
         </div>
-        <div className="mt-10 flex flex-col gap-2 border-t border-white/5 pt-6 text-xs text-slate-500 sm:flex-row sm:justify-between">
-          <p>© {year} Anuj Budhwar. All rights reserved.</p>
-          <p>
-            <a href={withBase('/')} className="hover:text-slate-300">
-              Portfolio
-            </a>
-            {' · '}
-            Public content only — no private contact data published.
-          </p>
-        </div>
+        <p className="mt-10 text-xs text-slate-500">
+          © {year} Anuj Budhwar. Built with care in Rohtak.
+        </p>
       </div>
     </footer>
   );
