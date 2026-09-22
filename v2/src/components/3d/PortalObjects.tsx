@@ -260,6 +260,7 @@ export function PortalStation({
   setHoveredId,
   interactive,
   largeHit,
+  powerUp = 1,
 }: {
   portal: PortalDef;
   onSelect: (portal: PortalDef) => void;
@@ -267,18 +268,25 @@ export function PortalStation({
   setHoveredId: (id: string | null) => void;
   interactive: boolean;
   largeHit?: boolean;
+  /** 0–1 enter sequence ramp for emissive / ring intensity. */
+  powerUp?: number;
 }) {
   const group = useRef<THREE.Group>(null);
+  const glow = useRef<THREE.PointLight>(null);
   const pointer = useRef<{ x: number; y: number } | null>(null);
   const active = hoveredId === portal.id;
+  const powered = active || powerUp > 0.55;
 
   useFrame((state) => {
     if (!group.current) return;
     const t = state.clock.elapsedTime;
     group.current.position.y =
       portal.position[1] + Math.sin(t * 1.15 + portal.position[0]) * 0.05;
-    const targetScale = active ? 1.1 : 1;
+    const targetScale = active ? 1.1 : 0.92 + 0.08 * powerUp;
     group.current.scale.lerp(new THREE.Vector3(targetScale, targetScale, targetScale), 0.12);
+    if (glow.current) {
+      glow.current.intensity = (active ? 0.85 : 0.25) * powerUp;
+    }
   });
 
   const onPointerDown = (e: ThreeEvent<PointerEvent>) => {
@@ -294,8 +302,10 @@ export function PortalStation({
     const dx = e.clientX - pointer.current.x;
     const dy = e.clientY - pointer.current.y;
     pointer.current = null;
-    if (Math.hypot(dx, dy) < 10) onSelect(portal);
+    if (Math.hypot(dx, dy) < 14) onSelect(portal);
   };
+
+  const hitRadius = largeHit ? 1.25 : 0.65;
 
   return (
     <group
@@ -312,26 +322,48 @@ export function PortalStation({
       onPointerDown={onPointerDown}
       onPointerUp={onPointerUp}
     >
-      <Pedestal color={portal.color} active={active} />
-      <PortalMesh portal={portal} active={active} />
-      {/* Invisible hit area */}
-      <mesh visible={false} position={[0, 0.35, 0]}>
-        <sphereGeometry args={[largeHit ? 0.85 : 0.65, 16, 16]} />
+      <Pedestal color={portal.color} active={powered} />
+      <PortalMesh portal={portal} active={powered} />
+      <pointLight
+        ref={glow}
+        position={[0, 0.55, 0.4]}
+        color={portal.color}
+        intensity={0.25}
+        distance={3.2}
+        decay={2}
+      />
+      {/* Invisible hit area — enlarged on touch / lite */}
+      <mesh visible={false} position={[0, 0.4, 0]}>
+        <sphereGeometry args={[hitRadius, 16, 16]} />
       </mesh>
       <Html
-        position={[0, 1.18, 0]}
+        position={[0, largeHit ? 1.35 : 1.18, 0]}
         center
-        distanceFactor={8}
-        style={{ pointerEvents: 'none', userSelect: 'none' }}
+        distanceFactor={largeHit ? 7 : 8}
+        style={{
+          pointerEvents: largeHit && interactive ? 'auto' : 'none',
+          userSelect: 'none',
+        }}
       >
-        <div
-          className="flex min-w-[132px] flex-col items-center gap-0.5 rounded-2xl border px-3.5 py-2 shadow-glow backdrop-blur-md transition-transform"
+        <button
+          type="button"
+          disabled={!interactive}
+          onClick={(e) => {
+            if (!interactive || !largeHit) return;
+            e.stopPropagation();
+            onSelect(portal);
+          }}
+          className={`flex flex-col items-center gap-0.5 rounded-2xl border px-3.5 py-2 shadow-glow backdrop-blur-md transition-transform ${
+            largeHit ? 'min-h-[52px] min-w-[148px]' : 'min-w-[132px]'
+          }`}
           style={{
-            borderColor: active ? `${portal.color}99` : `${portal.color}44`,
-            background: active ? 'rgba(5,7,15,0.92)' : 'rgba(5,7,15,0.72)',
+            borderColor: active ? `${portal.color}99` : `${portal.color}${Math.round(40 + powerUp * 40).toString(16).padStart(2, '0')}`,
+            background: active ? 'rgba(5,7,15,0.92)' : `rgba(5,7,15,${0.55 + powerUp * 0.2})`,
             color: portal.color,
+            opacity: 0.45 + powerUp * 0.55,
             transform: active ? 'scale(1.06)' : 'scale(1)',
             boxShadow: active ? `0 0 24px ${portal.color}33` : 'none',
+            cursor: interactive ? 'pointer' : 'default',
           }}
         >
           <span className="text-[11px] font-semibold uppercase tracking-[0.22em]">{portal.label}</span>
@@ -343,10 +375,10 @@ export function PortalStation({
           </span>
           {active && (
             <span className="mt-0.5 text-[8px] uppercase tracking-[0.28em] text-slate-400">
-              Click to enter
+              {largeHit ? 'Tap to enter' : 'Click to enter'}
             </span>
           )}
-        </div>
+        </button>
       </Html>
     </group>
   );

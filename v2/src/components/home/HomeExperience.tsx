@@ -40,6 +40,8 @@ export function HomeExperience() {
   const [mode, setMode] = useState<Mode>('loading');
   const [reducedMotion, setReducedMotion] = useState(false);
   const [labEntered, setLabEntered] = useState(false);
+  const [enterComplete, setEnterComplete] = useState(false);
+  const [systemOnline, setSystemOnline] = useState(false);
   const [introReady, setIntroReady] = useState(false);
   const [worldReady, setWorldReady] = useState(false);
   const [hoveredPortal, setHoveredPortal] = useState<string | null>(null);
@@ -73,13 +75,29 @@ export function HomeExperience() {
     };
   }, []);
 
-  const onEnterLab = useCallback(() => setLabEntered(true), []);
+  const onEnterLab = useCallback(() => {
+    setLabEntered(true);
+    setSystemOnline(true);
+  }, []);
+
+  const onEnterComplete = useCallback(() => {
+    setEnterComplete(true);
+  }, []);
+
+  // Fade "system online" after enter settles (or sooner if reduced)
+  useEffect(() => {
+    if (!systemOnline) return;
+    const ms = reducedMotion ? 900 : 4200;
+    const t = setTimeout(() => setSystemOnline(false), ms);
+    return () => clearTimeout(t);
+  }, [systemOnline, reducedMotion]);
 
   if (mode === 'fallback') {
     return <HomeFallback />;
   }
 
-  const showCursor = mode === '3d' && labEntered;
+  const mobileUi = mode === '3d-lite';
+  const showCursor = mode === '3d' && labEntered && enterComplete;
   const canMountWorld = worldReady && (mode === '3d' || mode === '3d-lite');
 
   return (
@@ -92,6 +110,8 @@ export function HomeExperience() {
           lite={mode === '3d-lite'}
           reducedMotion={reducedMotion}
           labEntered={labEntered}
+          enterComplete={enterComplete}
+          onEnterComplete={onEnterComplete}
           onHoverPortal={setHoveredPortal}
         />
       )}
@@ -109,9 +129,16 @@ export function HomeExperience() {
         labEntered={labEntered}
         onEnterLab={onEnterLab}
         introReady={introReady || mode !== 'loading'}
+        mobileUi={mobileUi}
+        enterComplete={enterComplete}
+        systemOnline={systemOnline}
       />
       {labEntered && (
-        <div className="pointer-events-auto absolute bottom-20 right-4 z-20 sm:bottom-24 sm:right-6">
+        <div
+          className={`pointer-events-auto absolute right-4 z-20 sm:right-6 ${
+            mobileUi ? 'bottom-28' : 'bottom-20 sm:bottom-24'
+          }`}
+        >
           <AmbientAudioToggle />
         </div>
       )}

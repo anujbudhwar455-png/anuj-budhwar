@@ -2,27 +2,30 @@
 
 import { motion, AnimatePresence } from 'framer-motion';
 import { withBase } from '@/lib/paths';
-
-const LINKS = [
-  { label: 'About', href: '/about/', subtitle: 'Identity' },
-  { label: 'Work', href: '/work/', subtitle: 'Products' },
-  { label: 'Lab', href: '/lab/', subtitle: 'Experiments' },
-  { label: 'Writing', href: '/writing/', subtitle: 'Archive' },
-  { label: 'Music', href: '/music/', subtitle: 'Listening' },
-  { label: 'Connect', href: '/connect/', subtitle: 'Channels' },
-];
+import { LAB_DESTINATIONS, LabDock } from '@/components/home/LabDock';
 
 export function HomeOverlay({
   labEntered,
   onEnterLab,
   introReady,
+  mobileUi = false,
+  enterComplete = true,
+  systemOnline = false,
 }: {
   labEntered: boolean;
   onEnterLab: () => void;
   introReady: boolean;
+  /** Touch / narrow / 3d-lite — use bottom dock instead of pill nav. */
+  mobileUi?: boolean;
+  enterComplete?: boolean;
+  systemOnline?: boolean;
 }) {
   return (
-    <div className="pointer-events-none absolute inset-0 z-10 flex flex-col justify-between px-4 pb-6 pt-20 sm:px-6 lg:px-8">
+    <div
+      className={`pointer-events-none absolute inset-0 z-10 flex flex-col justify-between px-4 pt-20 sm:px-6 lg:px-8 ${
+        labEntered && mobileUi ? 'pb-24' : 'pb-6'
+      }`}
+    >
       <AnimatePresence mode="wait">
         {!labEntered ? (
           <motion.div
@@ -114,32 +117,57 @@ export function HomeOverlay({
               <h1 className="heading-display mt-2 text-2xl drop-shadow-lg sm:text-4xl">
                 Anuj Budhwar
               </h1>
+              <AnimatePresence>
+                {systemOnline && (
+                  <motion.p
+                    key="sys"
+                    className="mt-3 font-mono text-[11px] tracking-[0.28em] text-cyan-300/90 sm:text-xs"
+                    initial={{ opacity: 0, y: 4 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.45 }}
+                  >
+                    ▸ SYSTEM ONLINE · PORTALS ARMED
+                  </motion.p>
+                )}
+              </AnimatePresence>
             </div>
 
             <div className="mx-auto flex w-full max-w-4xl flex-col items-center gap-3">
               <p className="rounded-full border border-white/10 bg-ink-950/55 px-4 py-1.5 text-[11px] tracking-wide text-slate-300 backdrop-blur-md sm:text-xs">
-                Drag to orbit · Hover a portal · Click to enter
+                {mobileUi
+                  ? enterComplete
+                    ? 'Tap a portal or use the dock below'
+                    : 'Systems powering up…'
+                  : enterComplete
+                    ? 'Drag to orbit · Hover a portal · Click to enter'
+                    : 'Systems powering up…'}
               </p>
 
-              <nav
-                aria-label="Jump to sections"
-                className="pointer-events-auto flex flex-wrap justify-center gap-2"
-              >
-                {LINKS.map((l) => (
-                  <a
-                    key={l.href}
-                    href={withBase(l.href)}
-                    className="rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-[11px] font-medium text-slate-300 backdrop-blur transition hover:border-cyan-300/40 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-300"
-                    title={l.subtitle}
-                  >
-                    {l.label}
-                  </a>
-                ))}
-              </nav>
+              {/* Desktop pill nav — hidden on mobile (dock replaces it) */}
+              {!mobileUi && (
+                <nav
+                  aria-label="Jump to sections"
+                  className="pointer-events-auto hidden flex-wrap justify-center gap-2 md:flex"
+                >
+                  {LAB_DESTINATIONS.map((l) => (
+                    <a
+                      key={l.href}
+                      href={withBase(l.href)}
+                      className="rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-[11px] font-medium text-slate-300 backdrop-blur transition hover:border-cyan-300/40 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-300"
+                      title={l.subtitle}
+                    >
+                      {l.label}
+                    </a>
+                  ))}
+                </nav>
+              )}
             </div>
           </motion.div>
         )}
       </AnimatePresence>
+
+      {labEntered && mobileUi && <LabDock />}
     </div>
   );
 }

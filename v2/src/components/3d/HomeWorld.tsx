@@ -22,7 +22,7 @@ import {
   useRef,
   useState,
 } from 'react';
-import type { ReactNode } from 'react';
+import type { MutableRefObject, ReactNode } from 'react';
 import * as THREE from 'three';
 import { useRouter } from 'next/navigation';
 import { withBase } from '@/lib/paths';
@@ -85,13 +85,39 @@ function AtmosphereParticles({ count }: { count: number }) {
   );
 }
 
-function StudioEnvironment({ lite }: { lite: boolean }) {
+function StudioEnvironment({
+  lite,
+  powerRef,
+}: {
+  lite: boolean;
+  powerRef: MutableRefObject<number>;
+}) {
+  const amb = useRef<THREE.AmbientLight>(null);
+  const key = useRef<THREE.DirectionalLight>(null);
+  const fill = useRef<THREE.DirectionalLight>(null);
+  const rim = useRef<THREE.SpotLight>(null);
+  const p1 = useRef<THREE.PointLight>(null);
+  const p2 = useRef<THREE.PointLight>(null);
+  const ringMat = useRef<THREE.MeshStandardMaterial>(null);
+
+  useFrame(() => {
+    const p = powerRef.current;
+    if (amb.current) amb.current.intensity = 0.12 + 0.2 * p;
+    if (key.current) key.current.intensity = 0.35 + 0.8 * p;
+    if (fill.current) fill.current.intensity = 0.1 + 0.22 * p;
+    if (rim.current) rim.current.intensity = 0.18 + 0.54 * p;
+    if (p1.current) p1.current.intensity = 0.12 + 0.3 * p;
+    if (p2.current) p2.current.intensity = 0.06 + 0.16 * p;
+    if (ringMat.current) ringMat.current.emissiveIntensity = 0.06 + 0.12 * p;
+  });
+
   return (
     <>
       <color attach="background" args={['#05070f']} />
       <fog attach="fog" args={['#05070f', 7.5, lite ? 20 : 26]} />
-      <ambientLight intensity={0.32} color="#b8c4e0" />
+      <ambientLight ref={amb} intensity={0.32} color="#b8c4e0" />
       <directionalLight
+        ref={key}
         position={[4.2, 7.5, 3.2]}
         intensity={1.15}
         color="#f0f4ff"
@@ -105,17 +131,18 @@ function StudioEnvironment({ lite }: { lite: boolean }) {
         shadow-camera-bottom={-8}
       />
       {/* Soft fill — cool pewter, not neon */}
-      <directionalLight position={[-3.5, 3.5, 2]} intensity={0.32} color="#c7d2fe" />
+      <directionalLight ref={fill} position={[-3.5, 3.5, 2]} intensity={0.32} color="#c7d2fe" />
       {/* Rim — restrained cyan */}
       <spotLight
+        ref={rim}
         position={[-5, 6.5, -2]}
         intensity={0.72}
         angle={0.48}
         penumbra={0.82}
         color="#7dd3fc"
       />
-      <pointLight position={[0, 2.8, -3.8]} intensity={0.42} color="#a5b4fc" />
-      <pointLight position={[3.2, 1.4, 3.8]} intensity={0.22} color="#c4b5fd" />
+      <pointLight ref={p1} position={[0, 2.8, -3.8]} intensity={0.42} color="#a5b4fc" />
+      <pointLight ref={p2} position={[3.2, 1.4, 3.8]} intensity={0.22} color="#c4b5fd" />
 
       {/* Reflective floor */}
       <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.01, 0]} receiveShadow>
@@ -132,6 +159,7 @@ function StudioEnvironment({ lite }: { lite: boolean }) {
       <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, 0.015, 0.35]}>
         <ringGeometry args={[3.55, 4.15, 72]} />
         <meshStandardMaterial
+          ref={ringMat}
           color="#22d3ee"
           emissive="#22d3ee"
           emissiveIntensity={0.18}
@@ -357,43 +385,77 @@ function WorldParallax({
 
 const IDLE_CAM = new THREE.Vector3(0, 2.15, 7.35);
 const IDLE_TARGET = new THREE.Vector3(0, 0.95, 0.35);
+/** Pre-enter: slightly back + elevated (darker framing). */
+const ENTER_START = new THREE.Vector3(0, 3.35, 11.2);
+const ENTER_DURATION = 4.0; // seconds — cinematic dolly + lights ramp
+
+function easeInOutCubic(t: number) {
+  return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+}
 
 function CameraDirector({
   reduced,
   labEntered,
   focusPortal,
   onFocusComplete,
+  onEnterComplete,
+  powerRef,
 }: {
   reduced: boolean;
   labEntered: boolean;
   focusPortal: PortalDef | null;
   onFocusComplete: (href: string) => void;
+  onEnterComplete: () => void;
+  powerRef: MutableRefObject<number>;
 }) {
   const { camera } = useThree();
-  const phase = useRef<'boot' | 'idle' | 'focus' | 'done'>('boot');
+  const phase = useRef<'boot' | 'enter' | 'idle' | 'focus' | 'done'>('boot');
   const focusPos = useRef(new THREE.Vector3());
   const lookAt = useRef(IDLE_TARGET.clone());
   const hrefRef = useRef('');
+  const enterStart = useRef(0);
+  const enterDone = useRef(false);
+  const fromPos = useRef(ENTER_START.clone());
 
   useEffect(() => {
     if (reduced) {
       camera.position.copy(IDLE_CAM);
       camera.lookAt(IDLE_TARGET);
+      powerRef.current = 1;
       phase.current = 'idle';
+      if (labEntered && !enterDone.current) {
+        enterDone.current = true;
+        onEnterComplete();
+      }
       return;
     }
-    if (phase.current === 'focus' || phase.current === 'done') return;
+    if (phase.current === 'focus' || phase.current === 'done' || phase.current === 'enter') return;
     if (!labEntered && phase.current === 'boot') {
-      camera.position.set(0, 3.6, 11.5);
+      camera.position.copy(ENTER_START);
       camera.lookAt(IDLE_TARGET);
+      powerRef.current = 0.22;
     }
-    phase.current = 'boot';
-  }, [camera, reduced, labEntered]);
+  }, [camera, reduced, labEntered, onEnterComplete, powerRef]);
+
+  useEffect(() => {
+    if (!labEntered || enterDone.current) return;
+    if (reduced) {
+      powerRef.current = 1;
+      camera.position.copy(IDLE_CAM);
+      camera.lookAt(IDLE_TARGET);
+      phase.current = 'idle';
+      enterDone.current = true;
+      onEnterComplete();
+      return;
+    }
+    fromPos.current.copy(camera.position);
+    enterStart.current = -1; // latch on next frame with clock
+    phase.current = 'enter';
+  }, [labEntered, reduced, camera, onEnterComplete, powerRef]);
 
   useEffect(() => {
     if (!focusPortal) return;
     const [x, y, z] = focusPortal.position;
-    // Approach from outside the portal, slightly elevated
     const dir = new THREE.Vector3(x, 0, z).normalize();
     focusPos.current.set(x - dir.x * 2.4, y + 1.35, z - dir.z * 2.4 + 1.1);
     lookAt.current.set(x, y + 0.35, z);
@@ -401,24 +463,38 @@ function CameraDirector({
     phase.current = 'focus';
   }, [focusPortal]);
 
-  useFrame(() => {
+  useFrame((state) => {
     if (reduced) return;
 
     if (phase.current === 'boot') {
-      // Ease toward idle after enter; gentle hold before enter
-      const target = labEntered ? IDLE_CAM : new THREE.Vector3(0, 2.55, 8.6);
-      const speed = labEntered ? 0.038 : 0.022;
-      camera.position.lerp(target, speed);
-      const la = lookAt.current;
-      camera.lookAt(la);
-      if (labEntered && camera.position.distanceTo(IDLE_CAM) < 0.1) {
-        phase.current = 'idle';
-      }
+      // Subtle pre-enter drift (still dark)
+      const target = new THREE.Vector3(0, 3.05, 10.4);
+      camera.position.lerp(target, 0.018);
+      camera.lookAt(lookAt.current);
+      powerRef.current = THREE.MathUtils.lerp(powerRef.current, 0.28, 0.02);
       return;
     }
 
-    if (phase.current === 'idle' && labEntered) {
-      // Micro drift toward idle after orbit release
+    if (phase.current === 'enter') {
+      if (enterStart.current < 0) enterStart.current = state.clock.elapsedTime;
+      const raw = (state.clock.elapsedTime - enterStart.current) / ENTER_DURATION;
+      const t = Math.min(1, Math.max(0, raw));
+      const e = easeInOutCubic(t);
+      camera.position.lerpVectors(fromPos.current, IDLE_CAM, e);
+      lookAt.current.lerp(IDLE_TARGET, 0.08);
+      camera.lookAt(lookAt.current);
+      // Lights / portals: ramp harder in the middle third
+      const powerCurve = easeInOutCubic(Math.min(1, t * 1.15));
+      powerRef.current = 0.22 + 0.78 * powerCurve;
+      if (t >= 1) {
+        camera.position.copy(IDLE_CAM);
+        powerRef.current = 1;
+        phase.current = 'idle';
+        if (!enterDone.current) {
+          enterDone.current = true;
+          onEnterComplete();
+        }
+      }
       return;
     }
 
@@ -464,17 +540,29 @@ function SceneContent({
   lite,
   reduced,
   labEntered,
+  enterComplete,
+  onEnterComplete,
   onHoverPortal,
 }: {
   lite: boolean;
   reduced: boolean;
   labEntered: boolean;
+  enterComplete: boolean;
+  onEnterComplete: () => void;
   onHoverPortal?: (id: string | null) => void;
 }) {
   const router = useRouter();
   const [hoveredId, setHoveredId] = useState<string | null>(null);
   const [focusPortal, setFocusPortal] = useState<PortalDef | null>(null);
   const navigating = Boolean(focusPortal);
+  const powerRef = useRef(labEntered && (reduced || enterComplete) ? 1 : 0.22);
+  const [powerTick, setPowerTick] = useState(powerRef.current);
+
+  // Sync powerRef → React for portal emissive without per-frame setState spam
+  useFrame(() => {
+    const p = powerRef.current;
+    if (Math.abs(p - powerTick) > 0.04) setPowerTick(p);
+  });
 
   const setHover = useCallback(
     (id: string | null) => {
@@ -486,11 +574,11 @@ function SceneContent({
 
   const onSelect = useCallback(
     (portal: PortalDef) => {
-      if (navigating || !labEntered) return;
+      if (navigating || !labEntered || !enterComplete) return;
       setHover(null);
       setFocusPortal(portal);
     },
-    [navigating, labEntered, setHover]
+    [navigating, labEntered, enterComplete, setHover]
   );
 
   const onFocusComplete = useCallback(
@@ -506,10 +594,12 @@ function SceneContent({
     };
   }, []);
 
+  const orbitReady = labEntered && enterComplete && !navigating && !reduced;
+
   return (
     <>
-      <StudioEnvironment lite={lite} />
-      <WorldParallax enabled={!reduced && labEntered && !navigating}>
+      <StudioEnvironment lite={lite} powerRef={powerRef} />
+      <WorldParallax enabled={!reduced && enterComplete && !navigating}>
         <PortraitPanel lite={lite} />
         {PORTALS.map((p) => (
           <PortalStation
@@ -518,8 +608,9 @@ function SceneContent({
             onSelect={onSelect}
             hoveredId={hoveredId}
             setHoveredId={setHover}
-            interactive={labEntered && !navigating}
+            interactive={labEntered && enterComplete && !navigating}
             largeHit={lite}
+            powerUp={powerTick}
           />
         ))}
         {/* Deferred décor textures — only after ENTER (keeps first paint light) */}
@@ -540,11 +631,13 @@ function SceneContent({
         labEntered={labEntered}
         focusPortal={focusPortal}
         onFocusComplete={onFocusComplete}
+        onEnterComplete={onEnterComplete}
+        powerRef={powerRef}
       />
-      <CursorBridge hoveredId={hoveredId} enabled={!lite && labEntered} />
+      <CursorBridge hoveredId={hoveredId} enabled={!lite && enterComplete} />
 
       <OrbitControls
-        enabled={labEntered && !navigating && !reduced}
+        enabled={orbitReady}
         enablePan={false}
         enableDamping
         dampingFactor={0.08}
@@ -563,6 +656,8 @@ export type HomeWorldProps = {
   lite?: boolean;
   reducedMotion?: boolean;
   labEntered?: boolean;
+  enterComplete?: boolean;
+  onEnterComplete?: () => void;
   onHoverPortal?: (id: string | null) => void;
 };
 
@@ -570,14 +665,25 @@ export function HomeWorld({
   lite = false,
   reducedMotion = false,
   labEntered = true,
+  enterComplete = true,
+  onEnterComplete,
   onHoverPortal,
 }: HomeWorldProps) {
+  const handleEnterComplete = useCallback(() => {
+    onEnterComplete?.();
+  }, [onEnterComplete]);
+
   return (
     <div className="absolute inset-0" aria-hidden="true">
       <Canvas
         className="!absolute inset-0 h-full w-full touch-none"
         dpr={[1, lite ? 1 : 1.25]}
-        camera={{ position: [0, 2.15, 7.35], fov: 42, near: 0.1, far: 70 }}
+        camera={{
+          position: labEntered && enterComplete ? [0, 2.15, 7.35] : [0, 3.35, 11.2],
+          fov: 42,
+          near: 0.1,
+          far: 70,
+        }}
         gl={{
           antialias: true,
           alpha: false,
@@ -597,6 +703,8 @@ export function HomeWorld({
             lite={lite}
             reduced={reducedMotion}
             labEntered={labEntered}
+            enterComplete={enterComplete}
+            onEnterComplete={handleEnterComplete}
             onHoverPortal={onHoverPortal}
           />
         </Suspense>

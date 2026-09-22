@@ -57,8 +57,11 @@ export function Writing() {
                     <img
                       src={withBase(cover)}
                       alt={`${s.name} cover`}
+                      width={400}
+                      height={533}
                       className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
                       loading="lazy"
+                      decoding="async"
                     />
                   ) : (
                     <div className="flex h-full items-center justify-center text-slate-500">
@@ -93,8 +96,11 @@ export function Writing() {
                     <img
                       src={withBase(s.volumes[0].cover)}
                       alt=""
+                      width={40}
+                      height={56}
                       className="h-14 w-10 rounded object-cover"
                       loading="lazy"
+                      decoding="async"
                     />
                   )}
                   <div>
