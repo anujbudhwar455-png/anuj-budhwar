@@ -1,0 +1,1 @@
+self.__SSG_MANIFEST=new Set(["\u002Fbooks\u002F[seriesId]","\u002Fmusic\u002F[slug]","\u002Fprojects\u002F[id]"]);self.__SSG_MANIFEST_CB&&self.__SSG_MANIFEST_CB()

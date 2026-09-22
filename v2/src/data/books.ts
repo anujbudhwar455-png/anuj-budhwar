@@ -1,0 +1,938 @@
+/** Auto-generated from research/catalog.json */
+export type BookVolume = {
+  num: number;
+  title: string;
+  asin?: string;
+  url?: string;
+  cover?: string | null;
+};
+
+export type BookSeries = {
+  id: string;
+  name: string;
+  blurb: string;
+  volumeCount: number;
+  volumes: BookVolume[];
+};
+
+export const bookSeries: BookSeries[] = [
+  {
+    "id": "eternal-bloodline",
+    "name": "The Eternal Bloodline",
+    "blurb": "He lived. He died. And then\u2026 he returned. Ren Hao possesses an eternal inheritance that lets him be reborn within his own bloodline. With the Eternal Ledger, he seeks to build a cultivation bloodline and achieve immortality.",
+    "volumeCount": 52,
+    "volumes": [
+      {
+        "num": 1,
+        "title": "The Eternal Bloodline : Volume One",
+        "asin": "B0DKGCWRYW",
+        "url": "https://www.amazon.com/dp/B0DKGCWRYW",
+        "cover": "/books/eternal-bloodline-1.jpg"
+      },
+      {
+        "num": 2,
+        "title": "The Eternal Bloodline : Volume Two",
+        "asin": "B0DLB4T4VP",
+        "url": "https://www.amazon.com/dp/B0DLB4T4VP",
+        "cover": "/books/eternal-bloodline-2.jpg"
+      },
+      {
+        "num": 3,
+        "title": "The Eternal Bloodline : Volume Three",
+        "asin": "B0DPF1KV2J",
+        "url": "https://www.amazon.com/dp/B0DPF1KV2J",
+        "cover": "/books/eternal-bloodline-3.jpg"
+      },
+      {
+        "num": 4,
+        "title": "The Eternal Bloodline : Volume Four",
+        "asin": "B0FT1QCZ8T",
+        "url": "https://www.amazon.com/dp/B0FT1QCZ8T",
+        "cover": "/books/eternal-bloodline-4.jpg"
+      },
+      {
+        "num": 5,
+        "title": "The Eternal Bloodline: Volume V : The Dynasty\u2019s Shadow",
+        "asin": "B0DC6N6G2R",
+        "url": "https://www.amazon.com/dp/B0DC6N6G2R",
+        "cover": "/books/eternal-bloodline-5.jpg"
+      },
+      {
+        "num": 6,
+        "title": "The Eternal Bloodline: Volume VI \u2014 The Soul Seed War",
+        "asin": "B0GX38ZZK5",
+        "url": "https://www.amazon.com/dp/B0GX38ZZK5",
+        "cover": "/books/eternal-bloodline-6.jpg"
+      },
+      {
+        "num": 7,
+        "title": "The Eternal Bloodline: Volume VII \u2014 Transcendent Horizons",
+        "asin": "B0GYP7WJWH",
+        "url": "https://www.amazon.com/dp/B0GYP7WJWH",
+        "cover": "/books/eternal-bloodline-7.jpg"
+      },
+      {
+        "num": 8,
+        "title": "The Eternal Bloodline : Volume Eight",
+        "asin": "B0GZ9ZWT73",
+        "url": "https://www.amazon.com/dp/B0GZ9ZWT73",
+        "cover": "/books/eternal-bloodline-8.jpg"
+      },
+      {
+        "num": 9,
+        "title": "The Eternal Bloodline: Volume Nine: The Aether Clan\u2019s Trial",
+        "asin": "B0GYD66K91",
+        "url": "https://www.amazon.com/dp/B0GYD66K91",
+        "cover": "/books/eternal-bloodline-9.jpg"
+      },
+      {
+        "num": 10,
+        "title": "The Eternal Bloodline: Volume Ten: The Void Water Realm",
+        "asin": "B0GX34JL7B",
+        "url": "https://www.amazon.com/dp/B0GX34JL7B",
+        "cover": "/books/eternal-bloodline-10.jpg"
+      },
+      {
+        "num": 11,
+        "title": "The Eternal Bloodline: Volume Eleven: Dao Vanguard Rising",
+        "asin": "B0GZZCJWR3",
+        "url": "https://www.amazon.com/dp/B0GZZCJWR3",
+        "cover": "/books/eternal-bloodline-11.jpg"
+      },
+      {
+        "num": 12,
+        "title": "The Eternal Bloodline: Volume Twelve: Eclipse of the Heavenly Dao",
+        "asin": "B0GZZ42FDK",
+        "url": "https://www.amazon.com/dp/B0GZZ42FDK",
+        "cover": "/books/eternal-bloodline-12.jpg"
+      },
+      {
+        "num": 13,
+        "title": "The Eternal Bloodline: Volume Thirteen: The Array Master's War",
+        "asin": "B0H143H339",
+        "url": "https://www.amazon.com/dp/B0H143H339",
+        "cover": "/books/eternal-bloodline-13.jpg"
+      },
+      {
+        "num": 14,
+        "title": "The Eternal Bloodline: Volume Fourteen",
+        "asin": "B0H14VNLR9",
+        "url": "https://www.amazon.com/dp/B0H14VNLR9",
+        "cover": "/books/eternal-bloodline-14.jpg"
+      },
+      {
+        "num": 15,
+        "title": "The Eternal Bloodline: Volume Fifteen",
+        "asin": "B0H14FL71D",
+        "url": "https://www.amazon.com/dp/B0H14FL71D",
+        "cover": "/books/eternal-bloodline-15.jpg"
+      },
+      {
+        "num": 16,
+        "title": "The Eternal Bloodline: Volume Sixteen: The Five Gods Return",
+        "asin": "B0H1465JTR",
+        "url": "https://www.amazon.com/dp/B0H1465JTR",
+        "cover": "/books/eternal-bloodline-16.jpg"
+      },
+      {
+        "num": 17,
+        "title": "The Eternal Bloodline: Volume Seventeen: Heaven's Trial",
+        "asin": "B0H2FL73L8",
+        "url": "https://www.amazon.com/dp/B0H2FL73L8",
+        "cover": "/books/eternal-bloodline-17.jpg"
+      },
+      {
+        "num": 18,
+        "title": "THE ETERNAL BLOODLINE: Volume Eighteen: The Meridian Core Offering",
+        "asin": "B0H2QSN18T",
+        "url": "https://www.amazon.com/dp/B0H2QSN18T",
+        "cover": "/books/eternal-bloodline-18.jpg"
+      },
+      {
+        "num": 19,
+        "title": "THE ETERNAL BLOODLINE: Volume Nineteenth: Crossing Realms",
+        "asin": "B0H2QRL26V",
+        "url": "https://www.amazon.com/dp/B0H2QRL26V",
+        "cover": "/books/eternal-bloodline-19.jpg"
+      },
+      {
+        "num": 20,
+        "title": "THE ETERNAL BLOODLINE: Volume Twenty: The Forsaken Disciple",
+        "asin": "B0H2QQ4G4F",
+        "url": "https://www.amazon.com/dp/B0H2QQ4G4F",
+        "cover": "/books/eternal-bloodline-20.jpg"
+      },
+      {
+        "num": 21,
+        "title": "THE ETERNAL BLOODLINE: Volume Twenty one: Befriending Lord Yama",
+        "asin": "B0H3C35YW2",
+        "url": "https://www.amazon.com/dp/B0H3C35YW2",
+        "cover": "/books/eternal-bloodline-21.jpg"
+      },
+      {
+        "num": 22,
+        "title": "THE ETERNAL BLOODLINE: Volume Twenty Two: The Soul Seed Ascension",
+        "asin": "B0H3CJP9WR",
+        "url": "https://www.amazon.com/dp/B0H3CJP9WR",
+        "cover": "/books/eternal-bloodline-22.jpg"
+      },
+      {
+        "num": 23,
+        "title": "THE ETERNAL BLOODLINE: Volume Twenty Three: Plague Across the Land",
+        "asin": "B0H3C58WL5",
+        "url": "https://www.amazon.com/dp/B0H3C58WL5",
+        "cover": "/books/eternal-bloodline-23.jpg"
+      },
+      {
+        "num": 24,
+        "title": "THE ETERNAL BLOODLINE: Volume Twenty Four: The Pill Sage's Legacy",
+        "asin": "B0H3C88ZSJ",
+        "url": "https://www.amazon.com/dp/B0H3C88ZSJ",
+        "cover": "/books/eternal-bloodline-24.jpg"
+      },
+      {
+        "num": 25,
+        "title": "THE ETERNAL BLOODLINE: Volume Twenty Five: The Seven Vein Spirit World",
+        "asin": "B0H3M755DW",
+        "url": "https://www.amazon.com/dp/B0H3M755DW",
+        "cover": "/books/eternal-bloodline-25.jpg"
+      },
+      {
+        "num": 26,
+        "title": "THE ETERNAL BLOODLINE: Volume Twenty Six: Cross-Realm Ascension",
+        "asin": "B0H3M517S6",
+        "url": "https://www.amazon.com/dp/B0H3M517S6",
+        "cover": "/books/eternal-bloodline-26.jpg"
+      },
+      {
+        "num": 27,
+        "title": "THE ETERNAL BLOODLINE: Volume Twenty Seven: The Winning Move",
+        "asin": "B0H3QWQQHH",
+        "url": "https://www.amazon.com/dp/B0H3QWQQHH",
+        "cover": "/books/eternal-bloodline-27.jpg"
+      },
+      {
+        "num": 28,
+        "title": "THE ETERNAL BLOODLINE: Volume Twenty Eight: Soul Seed Breakthrough",
+        "asin": "B0H3MCQGSB",
+        "url": "https://www.amazon.com/dp/B0H3MCQGSB",
+        "cover": "/books/eternal-bloodline-28.jpg"
+      },
+      {
+        "num": 29,
+        "title": "THE ETERNAL BLOODLINE: Volume Twenty Nine: Dead Eggs and Dormant Seeds",
+        "asin": "B0H6KSHF3V",
+        "url": "https://www.amazon.com/dp/B0H6KSHF3V",
+        "cover": "/books/eternal-bloodline-29.jpg"
+      },
+      {
+        "num": 30,
+        "title": "THE ETERNAL BLOODLINE: Volume Thirty: Equality of All Souls",
+        "asin": "B0H6KL363T",
+        "url": "https://www.amazon.com/dp/B0H6KL363T",
+        "cover": "/books/eternal-bloodline-30.jpg"
+      },
+      {
+        "num": 31,
+        "title": "THE ETERNAL BLOODLINE: Volume Thirty One: Carrying Dao Treasures",
+        "asin": "B0H6LTKYHH",
+        "url": "https://www.amazon.com/dp/B0H6LTKYHH",
+        "cover": "/books/eternal-bloodline-31.jpg"
+      },
+      {
+        "num": 32,
+        "title": "THE ETERNAL BLOODLINE: Volume Thirty Two: Carrying the Dao Forward",
+        "asin": "B0H6QZ8LZK",
+        "url": "https://www.amazon.com/dp/B0H6QZ8LZK",
+        "cover": "/books/eternal-bloodline-32.jpg"
+      },
+      {
+        "num": 33,
+        "title": "THE ETERNAL BLOODLINE: Volume Thirty Three: The Sovereign's Realm",
+        "asin": "B0H3D3R6RB",
+        "url": "https://www.amazon.com/dp/B0H3D3R6RB",
+        "cover": "/books/eternal-bloodline-33.jpg"
+      },
+      {
+        "num": 34,
+        "title": "THE ETERNAL BLOODLINE: Volume Thirty Four: The Illusion Sect",
+        "asin": "B0H6ZTTLG1",
+        "url": "https://www.amazon.com/dp/B0H6ZTTLG1",
+        "cover": "/books/eternal-bloodline-34.jpg"
+      },
+      {
+        "num": 35,
+        "title": "THE ETERNAL BLOODLINE: Volume Thirty Five: Entering the Secret Realm",
+        "asin": "B0H7NVNSC6",
+        "url": "https://www.amazon.com/dp/B0H7NVNSC6",
+        "cover": "/books/eternal-bloodline-35.jpg"
+      },
+      {
+        "num": 36,
+        "title": "THE ETERNAL BLOODLINE: Volume Thirty Six: The Heaven Decree Falls",
+        "asin": "B0H7NTBYCQ",
+        "url": "https://www.amazon.com/dp/B0H7NTBYCQ",
+        "cover": "/books/eternal-bloodline-36.jpg"
+      },
+      {
+        "num": 37,
+        "title": "THE ETERNAL BLOODLINE: Volume Thirty Seven: Every Drink Is Predestined",
+        "asin": "B0H8GWWSMF",
+        "url": "https://www.amazon.com/dp/B0H8GWWSMF",
+        "cover": "/books/eternal-bloodline-37.jpg"
+      },
+      {
+        "num": 38,
+        "title": "THE ETERNAL BLOODLINE: Volume Thirty Eight: Breaking Star and Chun Jun",
+        "asin": "B0H8GZG9P4",
+        "url": "https://www.amazon.com/dp/B0H8GZG9P4",
+        "cover": "/books/eternal-bloodline-38.jpg"
+      },
+      {
+        "num": 39,
+        "title": "THE ETERNAL BLOODLINE: Volume Thirty Nine: The Empty Fortress",
+        "asin": "B0H8MS742T",
+        "url": "https://www.amazon.com/dp/B0H8MS742T",
+        "cover": "/books/eternal-bloodline-39.jpg"
+      },
+      {
+        "num": 40,
+        "title": "THE ETERNAL BLOODLINE: Volume Fourty: Heaven Decree Falls",
+        "asin": "B0H8MVVNBW",
+        "url": "https://www.amazon.com/dp/B0H8MVVNBW",
+        "cover": "/books/eternal-bloodline-40.jpg"
+      },
+      {
+        "num": 41,
+        "title": "THE ETERNAL BLOODLINE: Volume Fourty One: Heaven Decree Falls",
+        "asin": "B0H8N114K6",
+        "url": "https://www.amazon.com/dp/B0H8N114K6",
+        "cover": "/books/eternal-bloodline-41.jpg"
+      },
+      {
+        "num": 42,
+        "title": "THE ETERNAL BLOODLINE: Volume Fourty Two: Desperate Survival",
+        "asin": "B0H2V4VFB2",
+        "url": "https://www.amazon.com/dp/B0H2V4VFB2",
+        "cover": "/books/eternal-bloodline-42.jpg"
+      },
+      {
+        "num": 43,
+        "title": "THE ETERNAL BLOODLINE: Volume Fourty Three: The Heaven Rift Opens",
+        "asin": "B0H8WV36JJ",
+        "url": "https://www.amazon.com/dp/B0H8WV36JJ",
+        "cover": "/books/eternal-bloodline-43.jpg"
+      },
+      {
+        "num": 44,
+        "title": "THE ETERNAL BLOODLINE: Volume Fourty Four: Refusing to Refine the Wind",
+        "asin": "B0H8WSTLL8",
+        "url": "https://www.amazon.com/dp/B0H8WSTLL8",
+        "cover": "/books/eternal-bloodline-44.jpg"
+      },
+      {
+        "num": 45,
+        "title": "THE ETERNAL BLOODLINE: Volume Fourty Five: Mortal Clan Rising",
+        "asin": "B0HBP63L4H",
+        "url": "https://www.amazon.com/dp/B0HBP63L4H",
+        "cover": "/books/eternal-bloodline-45.jpg"
+      },
+      {
+        "num": 46,
+        "title": "THE ETERNAL BLOODLINE: Volume Fourty Six: The Test Subject",
+        "asin": "B0HCDRV2GW",
+        "url": "https://www.amazon.com/dp/B0HCDRV2GW",
+        "cover": "/books/eternal-bloodline-46.jpg"
+      },
+      {
+        "num": 47,
+        "title": "THE ETERNAL BLOODLINE: Volume Fourty Seven: Birth of the Ironstone Star",
+        "asin": "B0HDQJM45Q",
+        "url": "https://www.amazon.com/dp/B0HDQJM45Q",
+        "cover": "/books/eternal-bloodline-47.jpg"
+      },
+      {
+        "num": 48,
+        "title": "THE ETERNAL BLOODLINE: Volume Fourty Eight: The Grotto Heaven Is Formed",
+        "asin": "B0HDRDX7JT",
+        "url": "https://www.amazon.com/dp/B0HDRDX7JT",
+        "cover": "/books/eternal-bloodline-48.jpg"
+      },
+      {
+        "num": 49,
+        "title": "THE ETERNAL BLOODLINE: Volume Fourty Nine: Grotto Realm Achieved",
+        "asin": "B0HDR8XKHR",
+        "url": "https://www.amazon.com/dp/B0HDR8XKHR",
+        "cover": "/books/eternal-bloodline-49.jpg"
+      },
+      {
+        "num": 50,
+        "title": "THE ETERNAL BLOODLINE: Volume Fifty: The Blood Path",
+        "asin": "B0HDQXC9H4",
+        "url": "https://www.amazon.com/dp/B0HDQXC9H4",
+        "cover": "/books/eternal-bloodline-50.jpg"
+      },
+      {
+        "num": 51,
+        "title": "THE ETERNAL BLOODLINE: Volume Fifty One: Avatar Returns",
+        "asin": "B0HDRNG3BH",
+        "url": "https://www.amazon.com/dp/B0HDRNG3BH",
+        "cover": "/books/eternal-bloodline-51.jpg"
+      },
+      {
+        "num": 52,
+        "title": "THE ETERNAL BLOODLINE: Volume Fifty Two: Daytime Ascension",
+        "asin": "B0HDRBHWKK",
+        "url": "https://www.amazon.com/dp/B0HDRBHWKK",
+        "cover": "/books/eternal-bloodline-52.jpg"
+      }
+    ]
+  },
+  {
+    "id": "void-sovereign-saga",
+    "name": "Void Sovereign Saga",
+    "blurb": "They betrayed him. They killed him. They erased his name from history. But they made one mistake\u2026 He came back. Kael was once the Void Emperor \u2014 a ruler feared by kings and worshipped by nations. Betrayed by his own disciples, he died with nothing but hatred in his heart. Now, he awakens in the body of a broken boy \u2014 the forgotten son of a cruel clan, weak, beaten, and left to rot. No power. No allies. No future. But deep within him\u2026 something still remains. A dark force. A forbidden power. A beast that whispers from the void. As Kael begins his journey from nothing, he must rebuild his strength, uncover the truth behind his fall, and face enemies far stronger than before. But the greatest threat\u2026 Is the monster growing inside him.",
+    "volumeCount": 4,
+    "volumes": [
+      {
+        "num": 1,
+        "title": "The Void Sovereign\u2019s Forgotten Son: Rebirth of the Void Emperor (A Dark Cultivation Fantasy Novel)",
+        "asin": "B0GHK4N5X9",
+        "url": "https://www.amazon.com/dp/B0GHK4N5X9",
+        "cover": "/books/void-sovereign-saga-1.jpg"
+      },
+      {
+        "num": 2,
+        "title": "The Void Sovereign\u2019s Forgotten Son: Volume Two: Rise of the Void Emperor and the Azure Phoenix",
+        "asin": "B0GHSXWSYG",
+        "url": "https://www.amazon.com/dp/B0GHSXWSYG",
+        "cover": "/books/void-sovereign-saga-2.jpg"
+      },
+      {
+        "num": 3,
+        "title": "The Void Sovereign\u2019s Forgotten Son: Volume Three: The Tournament of Blood and the Rise of the Void Emperor",
+        "asin": "B0GHJ3MK3D",
+        "url": "https://www.amazon.com/dp/B0GHJ3MK3D",
+        "cover": "/books/void-sovereign-saga-3.jpg"
+      },
+      {
+        "num": 4,
+        "title": "The Void Sovereign\u2019s Forgotten Son: Volume Four: Rise of the Ashen Court",
+        "asin": "B0CYTMFR7M",
+        "url": "https://www.amazon.com/dp/B0CYTMFR7M",
+        "cover": "/books/void-sovereign-saga-4.jpg"
+      }
+    ]
+  },
+  {
+    "id": "return-ash-bound-sovereign",
+    "name": "The Return of the Ash-Bound Sovereign",
+    "blurb": "He died as House Valdris's most expendable blade. He returned as its youngest nightmare. Lucian Van Valdris spent forty years serving as the hidden fang of House Valdris\u2014slaughtering rivals, destroying fortresses, and burying secrets for the bloodline that never considered him family. When his usefulness ends, they repay his loyalty with an execution in the Frost-Cauldron. But death is not the end. Lucian awakens four decades in the past, reborn as a helpless infant within the very house that betrayed him. This time, he remembers everything. Armed with the ruthless experience of his former life and a cultivation path forged through pain, Lucian refuses to become another disposable hound. He will temper his body in primordial frost, tear through the clan's carefully protected hierarchy, uncover the secrets buried beneath its foundations, and seize the power that was denied to him. In a world where bloodline determines worth and weakness invites murder, mercy is a luxury. Lucian has already died once. This time, he intends to become the sovereign.",
+    "volumeCount": 3,
+    "volumes": [
+      {
+        "num": 1,
+        "title": "The Return of the Ash-Bound Sovereign: The Cradle of Thorns",
+        "asin": "B0HJDLD7G4",
+        "url": "https://www.amazon.com/dp/B0HJDLD7G4",
+        "cover": "/books/return-ash-bound-sovereign-1.jpg"
+      },
+      {
+        "num": 2,
+        "title": "The Return of the Ash-Bound Sovereign: The Sovereign of Rust-Haven",
+        "asin": "B0HJFLXW8G",
+        "url": "https://www.amazon.com/dp/B0HJFLXW8G",
+        "cover": "/books/return-ash-bound-sovereign-2.jpg"
+      },
+      {
+        "num": 3,
+        "title": "The Return of the Ash-Bound Sovereign: The Imperial Colosseo Academy",
+        "asin": "B0HJF8ZRPM",
+        "url": "https://www.amazon.com/dp/B0HJF8ZRPM",
+        "cover": "/books/return-ash-bound-sovereign-3.jpg"
+      }
+    ]
+  },
+  {
+    "id": "ashen-mage-ascendant",
+    "name": "The Ashen Mage Ascendant",
+    "blurb": "For three years, Rael Varn was mocked as the weakest mage in the Verdant Magic Academy. Despite possessing a fire affinity, he could barely cast a simple Fireball Spell. His classmates saw him as a failure, and Rael himself began to wonder if his path as a mage had reached its end. Then, on the third anniversary of his arrival in this world, everything changes. A mysterious Supreme Skill System awakens within him\u2014with a seemingly limitless supply of skill points. What once required years of painstaking cultivation can now be mastered in moments. But his newfound strength is far more terrifying than anyone could have imagined. When his mastery of fire reaches an extraordinary level, he awakens the mysterious Black Flame. The boy everyone once called a failure is disappearing. In his place stands a mage destined to ascend. The Ashen Flame has awakened.",
+    "volumeCount": 1,
+    "volumes": [
+      {
+        "num": 1,
+        "title": "The Ashen Mage Ascendant: The Ashen Flame Awakens",
+        "asin": "B0HJFQLHY7",
+        "url": "https://www.amazon.com/dp/B0HJFQLHY7",
+        "cover": "/books/ashen-mage-ascendant-1.jpg"
+      }
+    ]
+  },
+  {
+    "id": "eternal-simulation",
+    "name": "The Eternal Simulation",
+    "blurb": "One life is never enough. Kael Soran awakens with an impossible gift\u2014the power to return to the beginning of his life while retaining every memory of the future. Each death becomes another chance to rewrite destiny. From a powerless scholar to the most influential man in an empire, Kael learns that wealth, power, and glory mean nothing when immortals descend from the heavens and erase everything he has built. Determined to seize eternal life, Kael begins a dangerous game across countless lifetimes. He manipulates kingdoms, advances technology, builds armies, and prepares for a single moment fifty years in the future\u2014the arrival of two immortal cultivators. But the path to immortality is filled with impossible choices, ancient mysteries, and enemies beyond mortal comprehension.",
+    "volumeCount": 3,
+    "volumes": [
+      {
+        "num": 1,
+        "title": "The Eternal Simulation: Volume 1: The First Life",
+        "asin": "B0H9WXKFBY",
+        "url": "https://www.amazon.com/dp/B0H9WXKFBY",
+        "cover": "/books/eternal-simulation-1.jpg"
+      },
+      {
+        "num": 2,
+        "title": "The Eternal Simulation: Volume 2: The Wandering Immortal",
+        "asin": "B0HB287N59",
+        "url": "https://www.amazon.com/dp/B0HB287N59",
+        "cover": "/books/eternal-simulation-2.jpg"
+      },
+      {
+        "num": 3,
+        "title": "The Eternal Simulation: Volume 3: Ascension and Schemes",
+        "asin": "B0HB1TH6BG",
+        "url": "https://www.amazon.com/dp/B0HB1TH6BG",
+        "cover": "/books/eternal-simulation-3.jpg"
+      }
+    ]
+  },
+  {
+    "id": "blade-eternal-sky",
+    "name": "Blade of the Eternal Sky",
+    "blurb": "He was once the greatest genius of his generation. At just fourteen, Kai Ren stood at the peak of power, admired by all and feared by many. But everything changed overnight. His strength vanished. His cultivation collapsed. And the world that once praised him now laughed at his fall. Cast aside by his clan and abandoned by fate, Kai Ren refused to give up. Because something was wrong. His power wasn\u2019t gone\u2026 It was being taken. When a mysterious ancient ring awakens, revealing a forbidden cultivation path\u2014the Supreme Path of the Celestial Void\u2014Kai Ren discovers the truth behind his downfall. What was once a curse\u2026 becomes his greatest weapon. Now, the fallen genius begins his rise again. Stronger. Faster. Unstoppable.",
+    "volumeCount": 8,
+    "volumes": [
+      {
+        "num": 1,
+        "title": "Blade of the Eternal Sky: Volume 1: The Awakening Blade",
+        "asin": "B0G2LFK7Z4",
+        "url": "https://www.amazon.com/dp/B0G2LFK7Z4",
+        "cover": "/books/blade-eternal-sky-1.jpg"
+      },
+      {
+        "num": 2,
+        "title": "Blade of the Eternal Sky: Volume 2: Fire and Glory",
+        "asin": "B0HB5B2867",
+        "url": "https://www.amazon.com/dp/B0HB5B2867",
+        "cover": "/books/blade-eternal-sky-2.jpg"
+      },
+      {
+        "num": 3,
+        "title": "Blade of the Eternal Sky: Volume 3: The Rising Clan",
+        "asin": "B0HB5DWSJ3",
+        "url": "https://www.amazon.com/dp/B0HB5DWSJ3",
+        "cover": "/books/blade-eternal-sky-3.jpg"
+      },
+      {
+        "num": 4,
+        "title": "Blade of the Eternal Sky: Volume 4: Shadows of Ambition",
+        "asin": "B0HBFXK821",
+        "url": "https://www.amazon.com/dp/B0HBFXK821",
+        "cover": "/books/blade-eternal-sky-4.jpg"
+      },
+      {
+        "num": 5,
+        "title": "Blade of the Eternal Sky: Volume 5: Blood on the Path",
+        "asin": "B0HB9ZZNDV",
+        "url": "https://www.amazon.com/dp/B0HB9ZZNDV",
+        "cover": "/books/blade-eternal-sky-5.jpg"
+      },
+      {
+        "num": 6,
+        "title": "Blade of the Eternal Sky: Volume 6: The Blade Unsheathed",
+        "asin": "B0HB9V2CY4",
+        "url": "https://www.amazon.com/dp/B0HB9V2CY4",
+        "cover": "/books/blade-eternal-sky-6.jpg"
+      },
+      {
+        "num": 7,
+        "title": "Blade of the Eternal Sky: Volume 7: Unyielding Spirit",
+        "asin": "B0HCK5PHQD",
+        "url": "https://www.amazon.com/dp/B0HCK5PHQD",
+        "cover": "/books/blade-eternal-sky-7.jpg"
+      },
+      {
+        "num": 8,
+        "title": "Blade of the Eternal Sky: Volume 8: Dawn of the Eternal Sky",
+        "asin": "B0HCM8K4RM",
+        "url": "https://www.amazon.com/dp/B0HCM8K4RM",
+        "cover": "/books/blade-eternal-sky-8.jpg"
+      }
+    ]
+  },
+  {
+    "id": "revenant-knight",
+    "name": "The Revenant Knight",
+    "blurb": "He had a talent. A talent for ruining everything. Zael Vornath \u2014 the disgrace of a noble family \u2014 wasted his life in arrogance, bringing ruin upon those who loved him. Cast out, he discovered a terrifying truth\u2026 His talent was real. Forged in blood and battle, he rose as a mercenary unmatched by any blade. But fate had something far crueler in store. Captured by an Archlich and turned into a Death Knight, Zael became a weapon of destruction \u2014 slaughtering kingdoms\u2026 and his own family. Until the day he broke free. Until the day he killed the monster who made him. And then\u2026 He died. But death was not the end. He awakens in the past \u2014 before everything fell apart. This time, he remembers everything. This time, he will not fail.",
+    "volumeCount": 18,
+    "volumes": [
+      {
+        "num": 1,
+        "title": "The Revenant Knight : Volume One",
+        "asin": "B0GZ9VNCDR",
+        "url": "https://www.amazon.com/dp/B0GZ9VNCDR",
+        "cover": "/books/revenant-knight-1.jpg"
+      },
+      {
+        "num": 2,
+        "title": "The Revenant Knight: Volume 2: The Dark Mage\u2019s Shadow",
+        "asin": "B0GX33FYTT",
+        "url": "https://www.amazon.com/dp/B0GX33FYTT",
+        "cover": "/books/revenant-knight-2.jpg"
+      },
+      {
+        "num": 3,
+        "title": "The Revenant Knight: Volume 3: Trials of the Reborn Knight",
+        "asin": "B0GY49PV3Q",
+        "url": "https://www.amazon.com/dp/B0GY49PV3Q",
+        "cover": "/books/revenant-knight-3.jpg"
+      },
+      {
+        "num": 4,
+        "title": "The Revenant Knight: Volume 4: Blades of the Underworld",
+        "asin": "B0GX3B28LN",
+        "url": "https://www.amazon.com/dp/B0GX3B28LN",
+        "cover": "/books/revenant-knight-4.jpg"
+      },
+      {
+        "num": 5,
+        "title": "THE REVENANT KNIGHT: Volume 5: The Crown's Gambit",
+        "asin": "B0H2QWH9FY",
+        "url": "https://www.amazon.com/dp/B0H2QWH9FY",
+        "cover": "/books/revenant-knight-5.jpg"
+      },
+      {
+        "num": 6,
+        "title": "THE REVENANT KNIGHT: Volume 6: Secrets of the Cursed",
+        "asin": "B0GX2YKGYB",
+        "url": "https://www.amazon.com/dp/B0GX2YKGYB",
+        "cover": "/books/revenant-knight-6.jpg"
+      },
+      {
+        "num": 7,
+        "title": "THE REVENANT KNIGHT: Volume 7: Dusk Falls on the Empire",
+        "asin": "B0H1MQJXQV",
+        "url": "https://www.amazon.com/dp/B0H1MQJXQV",
+        "cover": "/books/revenant-knight-7.jpg"
+      },
+      {
+        "num": 8,
+        "title": "THE REVENANT KNIGHT: Volume 8: The Demon's Pact",
+        "asin": "B0H278Y6ZX",
+        "url": "https://www.amazon.com/dp/B0H278Y6ZX",
+        "cover": "/books/revenant-knight-8.jpg"
+      },
+      {
+        "num": 9,
+        "title": "THE REVENANT KNIGHT: Volume 9: Blood of the Vornath",
+        "asin": "B0GYCQYK1J",
+        "url": "https://www.amazon.com/dp/B0GYCQYK1J",
+        "cover": "/books/revenant-knight-9.jpg"
+      },
+      {
+        "num": 10,
+        "title": "THE REVENANT KNIGHT: Volume 10: Lords of Ruin",
+        "asin": "B0H4DLX91N",
+        "url": "https://www.amazon.com/dp/B0H4DLX91N",
+        "cover": "/books/revenant-knight-10.jpg"
+      },
+      {
+        "num": 11,
+        "title": "THE REVENANT KNIGHT: Volume 11: The Sovereign's War",
+        "asin": "B0H4LPVT7C",
+        "url": "https://www.amazon.com/dp/B0H4LPVT7C",
+        "cover": "/books/revenant-knight-11.jpg"
+      },
+      {
+        "num": 12,
+        "title": "THE REVENANT KNIGHT: Volume 12: Chains of the Void",
+        "asin": "B0H4PDPKS1",
+        "url": "https://www.amazon.com/dp/B0H4PDPKS1",
+        "cover": "/books/revenant-knight-12.jpg"
+      },
+      {
+        "num": 13,
+        "title": "THE REVENANT KNIGHT: Volume 13: Into the Abyss",
+        "asin": "B0H4PLC2C7",
+        "url": "https://www.amazon.com/dp/B0H4PLC2C7",
+        "cover": "/books/revenant-knight-13.jpg"
+      },
+      {
+        "num": 14,
+        "title": "THE REVENANT KNIGHT: Volume 14: The Undying Compact",
+        "asin": "B0H4PDKN22",
+        "url": "https://www.amazon.com/dp/B0H4PDKN22",
+        "cover": "/books/revenant-knight-14.jpg"
+      },
+      {
+        "num": 15,
+        "title": "THE REVENANT KNIGHT: Volume 15: Shattered Kingdoms",
+        "asin": "B0H4VN4R2Z",
+        "url": "https://www.amazon.com/dp/B0H4VN4R2Z",
+        "cover": "/books/revenant-knight-15.jpg"
+      },
+      {
+        "num": 16,
+        "title": "THE REVENANT KNIGHT: Volume 16: The Grandmaster's Gambit",
+        "asin": "B0H4SQ6VK4",
+        "url": "https://www.amazon.com/dp/B0H4SQ6VK4",
+        "cover": "/books/revenant-knight-16.jpg"
+      },
+      {
+        "num": 17,
+        "title": "THE REVENANT KNIGHT: Volume 17: Edge of Awakening",
+        "asin": "B0H4SRL3PH",
+        "url": "https://www.amazon.com/dp/B0H4SRL3PH",
+        "cover": "/books/revenant-knight-17.jpg"
+      },
+      {
+        "num": 18,
+        "title": "THE REVENANT KNIGHT: Side Stories: Beyond the Ashen Blade",
+        "asin": "B0H4VSCZNY",
+        "url": "https://www.amazon.com/dp/B0H4VSCZNY",
+        "cover": "/books/revenant-knight-18.jpg"
+      }
+    ]
+  },
+  {
+    "id": "archmages-youngest-son",
+    "name": "Archmage's Youngest Son",
+    "blurb": "Lucien Valenstar has crossed a line that cannot be undone. No longer bound by the expectations of his family or the authority of the Elder Council, he now sits at the center of a shifting world\u2014one where power alone is no longer enough. From the shadows of forgotten tombs to the halls of noble influence, Lucien begins to shape the future with calculated precision. Every move is deliberate. Every decision carries weight. And every enemy believes they understand him\u2014until they realize they never did. But as his influence grows, so does the truth hidden behind it. Fragments of the past begin to surface. Broken records. Lost legacies. And a presence that watches from beyond the veil\u2014silent, patient, and waiting. Lucien is not just rising. He is becoming something the world was never prepared for.",
+    "volumeCount": 24,
+    "volumes": [
+      {
+        "num": 15,
+        "title": "Archmage\u2019s Youngest Son: Volume Fifteen",
+        "asin": "B0DF524HHJ",
+        "url": "https://www.amazon.com/dp/B0DF524HHJ",
+        "cover": "/books/archmages-youngest-son-15.jpg"
+      },
+      {
+        "num": 16,
+        "title": "Archmage\u2019s Youngest Son: Volume Sixteen",
+        "asin": "B0DYDXTYX6",
+        "url": "https://www.amazon.com/dp/B0DYDXTYX6",
+        "cover": "/books/archmages-youngest-son-16.jpg"
+      },
+      {
+        "num": 17,
+        "title": "Archmage\u2019s Youngest Son: Volume Seventeen",
+        "asin": "B0GHTDG1MJ",
+        "url": "https://www.amazon.com/dp/B0GHTDG1MJ",
+        "cover": "/books/archmages-youngest-son-17.jpg"
+      },
+      {
+        "num": 18,
+        "title": "Archmage\u2019s Youngest Son: Volume Eighteen",
+        "asin": "B0GR5YCXX5",
+        "url": "https://www.amazon.com/dp/B0GR5YCXX5",
+        "cover": "/books/archmages-youngest-son-18.jpg"
+      },
+      {
+        "num": 19,
+        "title": "Archmage\u2019s Youngest Son: Volume Nineteen",
+        "asin": "B0G6ZX42TJ",
+        "url": "https://www.amazon.com/dp/B0G6ZX42TJ",
+        "cover": "/books/archmages-youngest-son-19.jpg"
+      },
+      {
+        "num": 20,
+        "title": "Archmage\u2019s Youngest Son: Volume Twenty",
+        "asin": "B0GWX4HJFH",
+        "url": "https://www.amazon.com/dp/B0GWX4HJFH",
+        "cover": "/books/archmages-youngest-son-20.jpg"
+      },
+      {
+        "num": 21,
+        "title": "Archmage\u2019s Youngest Son: Volume 21",
+        "asin": "B0GWWNRS76",
+        "url": "https://www.amazon.com/dp/B0GWWNRS76",
+        "cover": "/books/archmages-youngest-son-21.jpg"
+      },
+      {
+        "num": 22,
+        "title": "Archmage\u2019s Youngest Son: Volume 22",
+        "asin": "B0GWZY82M8",
+        "url": "https://www.amazon.com/dp/B0GWZY82M8",
+        "cover": "/books/archmages-youngest-son-22.jpg"
+      },
+      {
+        "num": 23,
+        "title": "Archmage\u2019s Youngest Son: Volume 23",
+        "asin": "B0GWZZMDJH",
+        "url": "https://www.amazon.com/dp/B0GWZZMDJH",
+        "cover": "/books/archmages-youngest-son-23.jpg"
+      },
+      {
+        "num": 24,
+        "title": "Archmage\u2019s Youngest Son: Volume 24",
+        "asin": "B0GX2SL72N",
+        "url": "https://www.amazon.com/dp/B0GX2SL72N",
+        "cover": "/books/archmages-youngest-son-24.jpg"
+      },
+      {
+        "num": 25,
+        "title": "Archmage\u2019s Youngest Son: Volume 25",
+        "asin": "B0GX2X7KZ5",
+        "url": "https://www.amazon.com/dp/B0GX2X7KZ5",
+        "cover": "/books/archmages-youngest-son-25.jpg"
+      },
+      {
+        "num": 26,
+        "title": "Archmage\u2019s Youngest Son: Volume 26",
+        "asin": "B0GX33NFXQ",
+        "url": "https://www.amazon.com/dp/B0GX33NFXQ",
+        "cover": "/books/archmages-youngest-son-26.jpg"
+      },
+      {
+        "num": 27,
+        "title": "Archmage\u2019s Youngest Son: Volume 27",
+        "asin": "B0GXBFVK91",
+        "url": "https://www.amazon.com/dp/B0GXBFVK91",
+        "cover": "/books/archmages-youngest-son-27.jpg"
+      },
+      {
+        "num": 28,
+        "title": "Archmage\u2019s Youngest Son: Volume 28",
+        "asin": "B0GX32Y8XM",
+        "url": "https://www.amazon.com/dp/B0GX32Y8XM",
+        "cover": "/books/archmages-youngest-son-28.jpg"
+      },
+      {
+        "num": 29,
+        "title": "Archmage\u2019s Youngest Son: Volume 29",
+        "asin": "B0GX2Y8W1D",
+        "url": "https://www.amazon.com/dp/B0GX2Y8W1D",
+        "cover": "/books/archmages-youngest-son-29.jpg"
+      },
+      {
+        "num": 30,
+        "title": "Archmage\u2019s Youngest Son: Volume 30",
+        "asin": "B0GX36YN82",
+        "url": "https://www.amazon.com/dp/B0GX36YN82",
+        "cover": "/books/archmages-youngest-son-30.jpg"
+      },
+      {
+        "num": 31,
+        "title": "Archmage\u2019s Youngest Son: Volume 31",
+        "asin": "B0GX9LDCMD",
+        "url": "https://www.amazon.com/dp/B0GX9LDCMD",
+        "cover": "/books/archmages-youngest-son-31.jpg"
+      },
+      {
+        "num": 32,
+        "title": "Archmage\u2019s Youngest Son: Volume 32",
+        "asin": "B0GXWBNR1F",
+        "url": "https://www.amazon.com/dp/B0GXWBNR1F",
+        "cover": "/books/archmages-youngest-son-32.jpg"
+      },
+      {
+        "num": 33,
+        "title": "Archmage\u2019s Youngest Son: Volume 33",
+        "asin": "B0GX2XCYYH",
+        "url": "https://www.amazon.com/dp/B0GX2XCYYH",
+        "cover": "/books/archmages-youngest-son-33.jpg"
+      },
+      {
+        "num": 34,
+        "title": "Archmage\u2019s Youngest Son: Volume 34",
+        "asin": "B0GY5514NH",
+        "url": "https://www.amazon.com/dp/B0GY5514NH",
+        "cover": "/books/archmages-youngest-son-34.jpg"
+      },
+      {
+        "num": 35,
+        "title": "Archmage\u2019s Youngest Son: Volume 35",
+        "asin": "B0GX32NHTL",
+        "url": "https://www.amazon.com/dp/B0GX32NHTL",
+        "cover": "/books/archmages-youngest-son-35.jpg"
+      },
+      {
+        "num": 36,
+        "title": "Archmage\u2019s Youngest Son: Volume 36",
+        "asin": "B0GYFX8TFF",
+        "url": "https://www.amazon.com/dp/B0GYFX8TFF",
+        "cover": "/books/archmages-youngest-son-36.jpg"
+      },
+      {
+        "num": 37,
+        "title": "Archmage\u2019s Youngest Son: Volume 37",
+        "asin": "B0GYG1QY1M",
+        "url": "https://www.amazon.com/dp/B0GYG1QY1M",
+        "cover": "/books/archmages-youngest-son-37.jpg"
+      },
+      {
+        "num": 38,
+        "title": "Archmage\u2019s Youngest Son: Volume 38",
+        "asin": "B0GYGFFSTP",
+        "url": "https://www.amazon.com/dp/B0GYGFFSTP",
+        "cover": "/books/archmages-youngest-son-38.jpg"
+      }
+    ]
+  },
+  {
+    "id": "starless-grimoire",
+    "name": "The Starless Grimoire",
+    "blurb": "The sky broke the day Zane Mirvel died. Purple and black tore across the heavens. The Veil shattered. And from beyond it came Malachar the Demon Sovereign who ended the world. Zane was nothing. A null-born. A failure. A forgotten son of a powerful bloodline. He died the same way he lived\u2014powerless. But something answered him. A voice. A grimoire. A second heartbeat. He awakens in his past. Eight years old. Alive again. This time, he remembers everything. Now he holds a forbidden power no mage possesses\u2014Soul Magic. Every spell he casts costs him something: a memory\u2026 a feeling\u2026 a piece of himself. To gain power, he must lose who he is. To stop the end of everything\u2014Zane must decide: How much of his soul is he willing to burn?",
+    "volumeCount": 1,
+    "volumes": [
+      {
+        "num": 1,
+        "title": "The Starless Grimoire: A Dark Fantasy Progression Novel of Soul Magic, Lost Memories, and Rebirth",
+        "asin": "B0F2N12B9B",
+        "url": "https://www.amazon.com/dp/B0F2N12B9B",
+        "cover": "/books/starless-grimoire-1.jpg"
+      }
+    ]
+  },
+  {
+    "id": "boy-who-could-consume-fate",
+    "name": "The Boy Who Could Consume Fate",
+    "blurb": "What if fate simply... forgot you? Every child born in Veyr Hollow is bound by the Great Fate Loom. Every life is measured. Every future is written. Every soul is given a thread. Except one. When twelve-year-old Vaelith Nocthar stands before the sacred Thread Appraisal, the impossible happens. The Loom finds... Nothing. No destiny. No future. No place in the order of heaven. The priests are terrified. The executioners are summoned. And somewhere beyond the woven sky, something ancient opens its eyes. Now hunted by those who govern fate itself, Vaelith must survive a world that believes he should never have existed. Because if fate cannot control him... It may have to destroy him.",
+    "volumeCount": 1,
+    "volumes": [
+      {
+        "num": 1,
+        "title": "The Boy Who Could Consume Fate: The Hollow Fate Chronicle: Volume One",
+        "asin": "B0HDHN93G7",
+        "url": "https://www.amazon.com/dp/B0HDHN93G7",
+        "cover": "/books/boy-who-could-consume-fate-1.jpg"
+      }
+    ]
+  },
+  {
+    "id": "blade-emperor-forgotten-heir",
+    "name": "Blade Emperor\u2019s Forgotten Heir: The Second Chance",
+    "blurb": "He died betrayed. After spending thirty-one years building power, alliances, and a future\u2026 Kael Ardenthorn was murdered by his own brothers. But death wasn\u2019t the end. He wakes up in his five-year-old body \u2014 with all his memories intact. This time, he won\u2019t make the same mistakes. In a world of hidden power, deadly family politics, and ancient secrets, Kael begins again \u2014 silently, patiently, dangerously. A sealed power lies within him. A shadowy organization watches his every move. And the very family that raised him\u2026 is destined to destroy him. But now, Kael knows the truth. He will grow stronger. He will uncover every secret. And when the time comes\u2026 He will take everything back.",
+    "volumeCount": 1,
+    "volumes": [
+      {
+        "num": 1,
+        "title": "Blade Emperor\u2019s Forgotten Heir: The Second Chance",
+        "asin": "B0GTTT9YYM",
+        "url": "https://www.amazon.com/dp/B0GTTT9YYM",
+        "cover": "/books/blade-emperor-forgotten-heir-1.jpg"
+      }
+    ]
+  },
+  {
+    "id": "science-of-clear-thinking",
+    "name": "The Science of Clear Thinking",
+    "blurb": "Why do intelligent people make terrible decisions? Every day we make choices about money, relationships, careers, and health. We believe we are thinking logically. But in reality, hidden psychological biases constantly shape our judgments without us noticing. In The Science of Clear Thinking, Anuj Budhwar explores 101 cognitive biases, emotional traps, and mental models that influence how we think and act. Through engaging stories, real-world examples, and powerful insights from psychology and philosophy, this book reveals the invisible mental shortcuts that often lead us astray. This is not just a book about psychology. It is a toolkit for clearer thinking in a complex world.",
+    "volumeCount": 1,
+    "volumes": [
+      {
+        "num": 1,
+        "title": "The Science of Clear Thinking: 101 Cognitive Biases and Mental Models for Better Decisions",
+        "asin": "B0GR88LCGS",
+        "url": "https://www.amazon.com/dp/B0GR88LCGS",
+        "cover": "/books/science-of-clear-thinking-1.jpg"
+      }
+    ]
+  }
+];
+
+export function getSeries(id: string): BookSeries | undefined {
+  return bookSeries.find((s) => s.id === id);
+}

@@ -1,0 +1,7 @@
+.archive-old-static/
+v2/node_modules/
+v2/.next/
+v2/out/
+*.log
+.DS_Store
+.env*
