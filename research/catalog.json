@@ -9,7 +9,7 @@
         "type": "single",
         "year": 2026,
         "duration": "2:48",
-        "coverUrl": "https://i.scdn.co/image/ab67616d00001e02e43e04bad6899ac7e6c60b0a",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273e43e04bad6899ac7e6c60b0a",
         "coverFile": "assets/music/cocaine.jpg"
       },
       {
@@ -18,7 +18,7 @@
         "type": "single",
         "year": 2026,
         "duration": "3:47",
-        "coverUrl": "https://i.scdn.co/image/ab67616d00001e0232941ee2cb57ff4e4d29ba1a",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b27332941ee2cb57ff4e4d29ba1a",
         "coverFile": "assets/music/agar-main-baat-karun.jpg"
       },
       {
@@ -27,7 +27,7 @@
         "type": "single",
         "year": 2026,
         "duration": "4:44",
-        "coverUrl": "https://i.scdn.co/image/ab67616d00001e02e237d37f5011f9618862b1a7",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273e237d37f5011f9618862b1a7",
         "coverFile": "assets/music/falling-again.jpg"
       },
       {
@@ -36,7 +36,7 @@
         "type": "single",
         "year": 2026,
         "duration": "3:10",
-        "coverUrl": "https://i.scdn.co/image/ab67616d00001e025aa8a885af32c052fe0e4633",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b2735aa8a885af32c052fe0e4633",
         "coverFile": "assets/music/after-midnight.jpg"
       },
       {
@@ -45,7 +45,7 @@
         "type": "single",
         "year": 2026,
         "duration": "4:38",
-        "coverUrl": "https://i.scdn.co/image/ab67616d00001e02a17d18594d50ca06fc8dc43f",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273a17d18594d50ca06fc8dc43f",
         "coverFile": "assets/music/the-villian.jpg"
       },
       {
@@ -54,7 +54,7 @@
         "type": "single",
         "year": 2026,
         "duration": "3:48",
-        "coverUrl": "https://i.scdn.co/image/ab67616d00001e0268b966243230bb09900489c4",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b27368b966243230bb09900489c4",
         "coverFile": "assets/music/forbidden.jpg"
       },
       {
@@ -63,7 +63,7 @@
         "type": "single",
         "year": 2026,
         "duration": "2:51",
-        "coverUrl": "https://i.scdn.co/image/ab67616d00001e02898bee4eb71786b3a2b83ec5",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273898bee4eb71786b3a2b83ec5",
         "coverFile": "assets/music/nakhre.jpg"
       },
       {
@@ -72,7 +72,7 @@
         "type": "single",
         "year": 2026,
         "duration": "3:22",
-        "coverUrl": "https://i.scdn.co/image/ab67616d00001e02bb754dc7088506774c7a38b3",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273bb754dc7088506774c7a38b3",
         "coverFile": "assets/music/eternal.jpg"
       },
       {
@@ -81,7 +81,7 @@
         "type": "single",
         "year": 2026,
         "duration": "3:28",
-        "coverUrl": "https://i.scdn.co/image/ab67616d00001e02f9d2a4179db9d1bd2c62c405",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273f9d2a4179db9d1bd2c62c405",
         "coverFile": "assets/music/velvet-venom.jpg"
       },
       {
@@ -90,7 +90,7 @@
         "type": "single",
         "year": 2026,
         "duration": "2:55",
-        "coverUrl": "https://i.scdn.co/image/ab67616d0000e1a3b224e611d787def166972839",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273b224e611d787def166972839",
         "coverFile": "assets/music/no-escape.jpg"
       },
       {
@@ -99,7 +99,7 @@
         "type": "single",
         "year": 2026,
         "duration": "3:20",
-        "coverUrl": "https://i.scdn.co/image/ab67616d00001e022a5da56e36861769c3047a61",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b2732a5da56e36861769c3047a61",
         "coverFile": "assets/music/poison.jpg"
       },
       {
@@ -108,7 +108,7 @@
         "type": "single",
         "year": 2026,
         "duration": "3:31",
-        "coverUrl": "https://i.scdn.co/image/ab67616d0000e1a325b73c032940a50f56e5b261",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b27325b73c032940a50f56e5b261",
         "coverFile": "assets/music/don-t-disappear.jpg"
       }
     ]
@@ -126,7 +126,7 @@
             "title": "The Eternal Bloodline : Volume One",
             "asin": "B0DKGCWRYW",
             "url": "https://www.amazon.com/dp/B0DKGCWRYW",
-            "coverUrl": "https://m.media-amazon.com/images/I/81UswTwtudL._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/81UswTwtudL.jpg",
             "coverFile": "assets/covers/eternal-bloodline-1.jpg"
           },
           {
@@ -134,7 +134,7 @@
             "title": "The Eternal Bloodline : Volume Two",
             "asin": "B0DLB4T4VP",
             "url": "https://www.amazon.com/dp/B0DLB4T4VP",
-            "coverUrl": "https://m.media-amazon.com/images/I/71xcsLgzQlL._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/71xcsLgzQlL.jpg",
             "coverFile": "assets/covers/eternal-bloodline-2.jpg"
           },
           {
@@ -142,7 +142,7 @@
             "title": "The Eternal Bloodline : Volume Three",
             "asin": "B0DPF1KV2J",
             "url": "https://www.amazon.com/dp/B0DPF1KV2J",
-            "coverUrl": "https://m.media-amazon.com/images/I/71Q+nUHRYoL._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/71Q+nUHRYoL.jpg",
             "coverFile": "assets/covers/eternal-bloodline-3.jpg"
           },
           {
@@ -150,7 +150,7 @@
             "title": "The Eternal Bloodline : Volume Four",
             "asin": "B0FT1QCZ8T",
             "url": "https://www.amazon.com/dp/B0FT1QCZ8T",
-            "coverUrl": "https://m.media-amazon.com/images/I/71lbHjlQhnL._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/71lbHjlQhnL.jpg",
             "coverFile": "assets/covers/eternal-bloodline-4.jpg"
           },
           {
@@ -158,7 +158,7 @@
             "title": "The Eternal Bloodline: Volume V : The Dynasty’s Shadow",
             "asin": "B0DC6N6G2R",
             "url": "https://www.amazon.com/dp/B0DC6N6G2R",
-            "coverUrl": "https://m.media-amazon.com/images/I/81GJk9i4tOL._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/81GJk9i4tOL.jpg",
             "coverFile": "assets/covers/eternal-bloodline-5.jpg"
           },
           {
@@ -166,7 +166,7 @@
             "title": "The Eternal Bloodline: Volume VI — The Soul Seed War",
             "asin": "B0GX38ZZK5",
             "url": "https://www.amazon.com/dp/B0GX38ZZK5",
-            "coverUrl": "https://m.media-amazon.com/images/I/81voPArptlL._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/81voPArptlL.jpg",
             "coverFile": "assets/covers/eternal-bloodline-6.jpg"
           },
           {
@@ -174,7 +174,7 @@
             "title": "The Eternal Bloodline: Volume VII — Transcendent Horizons",
             "asin": "B0GYP7WJWH",
             "url": "https://www.amazon.com/dp/B0GYP7WJWH",
-            "coverUrl": "https://m.media-amazon.com/images/I/819P1UULuQL._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/819P1UULuQL.jpg",
             "coverFile": "assets/covers/eternal-bloodline-7.jpg"
           },
           {
@@ -182,7 +182,7 @@
             "title": "The Eternal Bloodline : Volume Eight",
             "asin": "B0GZ9ZWT73",
             "url": "https://www.amazon.com/dp/B0GZ9ZWT73",
-            "coverUrl": "https://m.media-amazon.com/images/I/81DVc3Yb1GL._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/81DVc3Yb1GL.jpg",
             "coverFile": "assets/covers/eternal-bloodline-8.jpg"
           },
           {
@@ -190,7 +190,7 @@
             "title": "The Eternal Bloodline: Volume Nine: The Aether Clan’s Trial",
             "asin": "B0GYD66K91",
             "url": "https://www.amazon.com/dp/B0GYD66K91",
-            "coverUrl": "https://m.media-amazon.com/images/I/81CqWzAJw5L._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/81CqWzAJw5L.jpg",
             "coverFile": "assets/covers/eternal-bloodline-9.jpg"
           },
           {
@@ -198,7 +198,7 @@
             "title": "The Eternal Bloodline: Volume Ten: The Void Water Realm",
             "asin": "B0GX34JL7B",
             "url": "https://www.amazon.com/dp/B0GX34JL7B",
-            "coverUrl": "https://m.media-amazon.com/images/I/81+TqDopjoL._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/81+TqDopjoL.jpg",
             "coverFile": "assets/covers/eternal-bloodline-10.jpg"
           },
           {
@@ -206,7 +206,7 @@
             "title": "The Eternal Bloodline: Volume Eleven: Dao Vanguard Rising",
             "asin": "B0GZZCJWR3",
             "url": "https://www.amazon.com/dp/B0GZZCJWR3",
-            "coverUrl": "https://m.media-amazon.com/images/I/814GvUXshkL._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/814GvUXshkL.jpg",
             "coverFile": "assets/covers/eternal-bloodline-11.jpg"
           },
           {
@@ -214,7 +214,7 @@
             "title": "The Eternal Bloodline: Volume Twelve: Eclipse of the Heavenly Dao",
             "asin": "B0GZZ42FDK",
             "url": "https://www.amazon.com/dp/B0GZZ42FDK",
-            "coverUrl": "https://m.media-amazon.com/images/I/812-LnCP1sL._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/812-LnCP1sL.jpg",
             "coverFile": "assets/covers/eternal-bloodline-12.jpg"
           },
           {
@@ -222,7 +222,7 @@
             "title": "The Eternal Bloodline: Volume Thirteen: The Array Master's War",
             "asin": "B0H143H339",
             "url": "https://www.amazon.com/dp/B0H143H339",
-            "coverUrl": "https://m.media-amazon.com/images/I/81dKr96jtWL._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/81dKr96jtWL.jpg",
             "coverFile": "assets/covers/eternal-bloodline-13.jpg"
           },
           {
@@ -230,7 +230,7 @@
             "title": "The Eternal Bloodline: Volume Fourteen",
             "asin": "B0H14VNLR9",
             "url": "https://www.amazon.com/dp/B0H14VNLR9",
-            "coverUrl": "https://m.media-amazon.com/images/I/81WIki093nL._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/81WIki093nL.jpg",
             "coverFile": "assets/covers/eternal-bloodline-14.jpg"
           },
           {
@@ -238,7 +238,7 @@
             "title": "The Eternal Bloodline: Volume Fifteen",
             "asin": "B0H14FL71D",
             "url": "https://www.amazon.com/dp/B0H14FL71D",
-            "coverUrl": "https://m.media-amazon.com/images/I/81omk3ixaFL._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/81omk3ixaFL.jpg",
             "coverFile": "assets/covers/eternal-bloodline-15.jpg"
           },
           {
@@ -246,7 +246,7 @@
             "title": "The Eternal Bloodline: Volume Sixteen: The Five Gods Return",
             "asin": "B0H1465JTR",
             "url": "https://www.amazon.com/dp/B0H1465JTR",
-            "coverUrl": "https://m.media-amazon.com/images/I/81obGdAw40L._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/81obGdAw40L.jpg",
             "coverFile": "assets/covers/eternal-bloodline-16.jpg"
           },
           {
@@ -254,7 +254,7 @@
             "title": "The Eternal Bloodline: Volume Seventeen: Heaven's Trial",
             "asin": "B0H2FL73L8",
             "url": "https://www.amazon.com/dp/B0H2FL73L8",
-            "coverUrl": "https://m.media-amazon.com/images/I/81k7pnXAivL._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/81k7pnXAivL.jpg",
             "coverFile": "assets/covers/eternal-bloodline-17.jpg"
           },
           {
@@ -262,7 +262,7 @@
             "title": "THE ETERNAL BLOODLINE: Volume Eighteen: The Meridian Core Offering",
             "asin": "B0H2QSN18T",
             "url": "https://www.amazon.com/dp/B0H2QSN18T",
-            "coverUrl": "https://m.media-amazon.com/images/I/81kLnDPg24L._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/81kLnDPg24L.jpg",
             "coverFile": "assets/covers/eternal-bloodline-18.jpg"
           },
           {
@@ -270,7 +270,7 @@
             "title": "THE ETERNAL BLOODLINE: Volume Nineteenth: Crossing Realms",
             "asin": "B0H2QRL26V",
             "url": "https://www.amazon.com/dp/B0H2QRL26V",
-            "coverUrl": "https://m.media-amazon.com/images/I/81QdP8V23ZL._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/81QdP8V23ZL.jpg",
             "coverFile": "assets/covers/eternal-bloodline-19.jpg"
           },
           {
@@ -278,7 +278,7 @@
             "title": "THE ETERNAL BLOODLINE: Volume Twenty: The Forsaken Disciple",
             "asin": "B0H2QQ4G4F",
             "url": "https://www.amazon.com/dp/B0H2QQ4G4F",
-            "coverUrl": "https://m.media-amazon.com/images/I/81AcNB2Bk9L._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/81AcNB2Bk9L.jpg",
             "coverFile": "assets/covers/eternal-bloodline-20.jpg"
           },
           {
@@ -286,7 +286,7 @@
             "title": "THE ETERNAL BLOODLINE: Volume Twenty one: Befriending Lord Yama",
             "asin": "B0H3C35YW2",
             "url": "https://www.amazon.com/dp/B0H3C35YW2",
-            "coverUrl": "https://m.media-amazon.com/images/I/810yZeSUrOL._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/810yZeSUrOL.jpg",
             "coverFile": "assets/covers/eternal-bloodline-21.jpg"
           },
           {
@@ -294,7 +294,7 @@
             "title": "THE ETERNAL BLOODLINE: Volume Twenty Two: The Soul Seed Ascension",
             "asin": "B0H3CJP9WR",
             "url": "https://www.amazon.com/dp/B0H3CJP9WR",
-            "coverUrl": "https://m.media-amazon.com/images/I/81jJnTTlR5L._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/81jJnTTlR5L.jpg",
             "coverFile": "assets/covers/eternal-bloodline-22.jpg"
           },
           {
@@ -302,7 +302,7 @@
             "title": "THE ETERNAL BLOODLINE: Volume Twenty Three: Plague Across the Land",
             "asin": "B0H3C58WL5",
             "url": "https://www.amazon.com/dp/B0H3C58WL5",
-            "coverUrl": "https://m.media-amazon.com/images/I/81O7A2aVkxL._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/81O7A2aVkxL.jpg",
             "coverFile": "assets/covers/eternal-bloodline-23.jpg"
           },
           {
@@ -310,7 +310,7 @@
             "title": "THE ETERNAL BLOODLINE: Volume Twenty Four: The Pill Sage's Legacy",
             "asin": "B0H3C88ZSJ",
             "url": "https://www.amazon.com/dp/B0H3C88ZSJ",
-            "coverUrl": "https://m.media-amazon.com/images/I/81M6+BOz4DL._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/81M6+BOz4DL.jpg",
             "coverFile": "assets/covers/eternal-bloodline-24.jpg"
           },
           {
@@ -318,7 +318,7 @@
             "title": "THE ETERNAL BLOODLINE: Volume Twenty Five: The Seven Vein Spirit World",
             "asin": "B0H3M755DW",
             "url": "https://www.amazon.com/dp/B0H3M755DW",
-            "coverUrl": "https://m.media-amazon.com/images/I/81d0dtUf-pL._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/81d0dtUf-pL.jpg",
             "coverFile": "assets/covers/eternal-bloodline-25.jpg"
           },
           {
@@ -326,7 +326,7 @@
             "title": "THE ETERNAL BLOODLINE: Volume Twenty Six: Cross-Realm Ascension",
             "asin": "B0H3M517S6",
             "url": "https://www.amazon.com/dp/B0H3M517S6",
-            "coverUrl": "https://m.media-amazon.com/images/I/810NwQImmPL._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/810NwQImmPL.jpg",
             "coverFile": "assets/covers/eternal-bloodline-26.jpg"
           },
           {
@@ -334,7 +334,7 @@
             "title": "THE ETERNAL BLOODLINE: Volume Twenty Seven: The Winning Move",
             "asin": "B0H3QWQQHH",
             "url": "https://www.amazon.com/dp/B0H3QWQQHH",
-            "coverUrl": "https://m.media-amazon.com/images/I/817TxeHxiXL._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/817TxeHxiXL.jpg",
             "coverFile": "assets/covers/eternal-bloodline-27.jpg"
           },
           {
@@ -342,7 +342,7 @@
             "title": "THE ETERNAL BLOODLINE: Volume Twenty Eight: Soul Seed Breakthrough",
             "asin": "B0H3MCQGSB",
             "url": "https://www.amazon.com/dp/B0H3MCQGSB",
-            "coverUrl": "https://m.media-amazon.com/images/I/811Dfzy0PYL._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/811Dfzy0PYL.jpg",
             "coverFile": "assets/covers/eternal-bloodline-28.jpg"
           },
           {
@@ -350,7 +350,7 @@
             "title": "THE ETERNAL BLOODLINE: Volume Twenty Nine: Dead Eggs and Dormant Seeds",
             "asin": "B0H6KSHF3V",
             "url": "https://www.amazon.com/dp/B0H6KSHF3V",
-            "coverUrl": "https://m.media-amazon.com/images/I/81YKMZZRKNL._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/81YKMZZRKNL.jpg",
             "coverFile": "assets/covers/eternal-bloodline-29.jpg"
           },
           {
@@ -358,7 +358,7 @@
             "title": "THE ETERNAL BLOODLINE: Volume Thirty: Equality of All Souls",
             "asin": "B0H6KL363T",
             "url": "https://www.amazon.com/dp/B0H6KL363T",
-            "coverUrl": "https://m.media-amazon.com/images/I/81gDqSMuBtL._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/81gDqSMuBtL.jpg",
             "coverFile": "assets/covers/eternal-bloodline-30.jpg"
           },
           {
@@ -366,7 +366,7 @@
             "title": "THE ETERNAL BLOODLINE: Volume Thirty One: Carrying Dao Treasures",
             "asin": "B0H6LTKYHH",
             "url": "https://www.amazon.com/dp/B0H6LTKYHH",
-            "coverUrl": "https://m.media-amazon.com/images/I/814cRtk-8gL._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/814cRtk-8gL.jpg",
             "coverFile": "assets/covers/eternal-bloodline-31.jpg"
           },
           {
@@ -374,7 +374,7 @@
             "title": "THE ETERNAL BLOODLINE: Volume Thirty Two: Carrying the Dao Forward",
             "asin": "B0H6QZ8LZK",
             "url": "https://www.amazon.com/dp/B0H6QZ8LZK",
-            "coverUrl": "https://m.media-amazon.com/images/I/814cRtk-8gL._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/814cRtk-8gL.jpg",
             "coverFile": "assets/covers/eternal-bloodline-32.jpg"
           },
           {
@@ -382,7 +382,7 @@
             "title": "THE ETERNAL BLOODLINE: Volume Thirty Three: The Sovereign's Realm",
             "asin": "B0H3D3R6RB",
             "url": "https://www.amazon.com/dp/B0H3D3R6RB",
-            "coverUrl": "https://m.media-amazon.com/images/I/81ctzVlXCPL._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/81ctzVlXCPL.jpg",
             "coverFile": "assets/covers/eternal-bloodline-33.jpg"
           },
           {
@@ -390,7 +390,7 @@
             "title": "THE ETERNAL BLOODLINE: Volume Thirty Four: The Illusion Sect",
             "asin": "B0H6ZTTLG1",
             "url": "https://www.amazon.com/dp/B0H6ZTTLG1",
-            "coverUrl": "https://m.media-amazon.com/images/I/81vffWAoOaL._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/81vffWAoOaL.jpg",
             "coverFile": "assets/covers/eternal-bloodline-34.jpg"
           },
           {
@@ -398,7 +398,7 @@
             "title": "THE ETERNAL BLOODLINE: Volume Thirty Five: Entering the Secret Realm",
             "asin": "B0H7NVNSC6",
             "url": "https://www.amazon.com/dp/B0H7NVNSC6",
-            "coverUrl": "https://m.media-amazon.com/images/I/81D6yYoMNpL._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/81D6yYoMNpL.jpg",
             "coverFile": "assets/covers/eternal-bloodline-35.jpg"
           },
           {
@@ -406,7 +406,7 @@
             "title": "THE ETERNAL BLOODLINE: Volume Thirty Six: The Heaven Decree Falls",
             "asin": "B0H7NTBYCQ",
             "url": "https://www.amazon.com/dp/B0H7NTBYCQ",
-            "coverUrl": "https://m.media-amazon.com/images/I/81Ph2JkHDvL._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/81Ph2JkHDvL.jpg",
             "coverFile": "assets/covers/eternal-bloodline-36.jpg"
           },
           {
@@ -414,7 +414,7 @@
             "title": "THE ETERNAL BLOODLINE: Volume Thirty Seven: Every Drink Is Predestined",
             "asin": "B0H8GWWSMF",
             "url": "https://www.amazon.com/dp/B0H8GWWSMF",
-            "coverUrl": "https://m.media-amazon.com/images/I/81xYUJF3CbL._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/81xYUJF3CbL.jpg",
             "coverFile": "assets/covers/eternal-bloodline-37.jpg"
           },
           {
@@ -422,7 +422,7 @@
             "title": "THE ETERNAL BLOODLINE: Volume Thirty Eight: Breaking Star and Chun Jun",
             "asin": "B0H8GZG9P4",
             "url": "https://www.amazon.com/dp/B0H8GZG9P4",
-            "coverUrl": "https://m.media-amazon.com/images/I/81siJJmX9mL._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/81siJJmX9mL.jpg",
             "coverFile": "assets/covers/eternal-bloodline-38.jpg"
           },
           {
@@ -430,7 +430,7 @@
             "title": "THE ETERNAL BLOODLINE: Volume Thirty Nine: The Empty Fortress",
             "asin": "B0H8MS742T",
             "url": "https://www.amazon.com/dp/B0H8MS742T",
-            "coverUrl": "https://m.media-amazon.com/images/I/81foS9Ms2iL._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/81foS9Ms2iL.jpg",
             "coverFile": "assets/covers/eternal-bloodline-39.jpg"
           },
           {
@@ -438,7 +438,7 @@
             "title": "THE ETERNAL BLOODLINE: Volume Fourty: Heaven Decree Falls",
             "asin": "B0H8MVVNBW",
             "url": "https://www.amazon.com/dp/B0H8MVVNBW",
-            "coverUrl": "https://m.media-amazon.com/images/I/81CSOArDTfL._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/81CSOArDTfL.jpg",
             "coverFile": "assets/covers/eternal-bloodline-40.jpg"
           },
           {
@@ -446,7 +446,7 @@
             "title": "THE ETERNAL BLOODLINE: Volume Fourty One: Heaven Decree Falls",
             "asin": "B0H8N114K6",
             "url": "https://www.amazon.com/dp/B0H8N114K6",
-            "coverUrl": "https://m.media-amazon.com/images/I/81PQUXpKQVL._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/81PQUXpKQVL.jpg",
             "coverFile": "assets/covers/eternal-bloodline-41.jpg"
           },
           {
@@ -454,7 +454,7 @@
             "title": "THE ETERNAL BLOODLINE: Volume Fourty Two: Desperate Survival",
             "asin": "B0H2V4VFB2",
             "url": "https://www.amazon.com/dp/B0H2V4VFB2",
-            "coverUrl": "https://m.media-amazon.com/images/I/81tqp0vk0JL._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/81tqp0vk0JL.jpg",
             "coverFile": "assets/covers/eternal-bloodline-42.jpg"
           },
           {
@@ -462,7 +462,7 @@
             "title": "THE ETERNAL BLOODLINE: Volume Fourty Three: The Heaven Rift Opens",
             "asin": "B0H8WV36JJ",
             "url": "https://www.amazon.com/dp/B0H8WV36JJ",
-            "coverUrl": "https://m.media-amazon.com/images/I/81Ir6iqB8FL._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/81Ir6iqB8FL.jpg",
             "coverFile": "assets/covers/eternal-bloodline-43.jpg"
           },
           {
@@ -470,7 +470,7 @@
             "title": "THE ETERNAL BLOODLINE: Volume Fourty Four: Refusing to Refine the Wind",
             "asin": "B0H8WSTLL8",
             "url": "https://www.amazon.com/dp/B0H8WSTLL8",
-            "coverUrl": "https://m.media-amazon.com/images/I/81uHBJtD37L._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/81uHBJtD37L.jpg",
             "coverFile": "assets/covers/eternal-bloodline-44.jpg"
           },
           {
@@ -478,7 +478,7 @@
             "title": "THE ETERNAL BLOODLINE: Volume Fourty Five: Mortal Clan Rising",
             "asin": "B0HBP63L4H",
             "url": "https://www.amazon.com/dp/B0HBP63L4H",
-            "coverUrl": "https://m.media-amazon.com/images/I/81ZTzs-DoVL._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/81ZTzs-DoVL.jpg",
             "coverFile": "assets/covers/eternal-bloodline-45.jpg"
           },
           {
@@ -486,7 +486,7 @@
             "title": "THE ETERNAL BLOODLINE: Volume Fourty Six: The Test Subject",
             "asin": "B0HCDRV2GW",
             "url": "https://www.amazon.com/dp/B0HCDRV2GW",
-            "coverUrl": "https://m.media-amazon.com/images/I/81Lq1sekgtL._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/81Lq1sekgtL.jpg",
             "coverFile": "assets/covers/eternal-bloodline-46.jpg"
           },
           {
@@ -494,7 +494,7 @@
             "title": "THE ETERNAL BLOODLINE: Volume Fourty Seven: Birth of the Ironstone Star",
             "asin": "B0HDQJM45Q",
             "url": "https://www.amazon.com/dp/B0HDQJM45Q",
-            "coverUrl": "https://m.media-amazon.com/images/I/815+SS1bx7L._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/815+SS1bx7L.jpg",
             "coverFile": "assets/covers/eternal-bloodline-47.jpg"
           },
           {
@@ -502,7 +502,7 @@
             "title": "THE ETERNAL BLOODLINE: Volume Fourty Eight: The Grotto Heaven Is Formed",
             "asin": "B0HDRDX7JT",
             "url": "https://www.amazon.com/dp/B0HDRDX7JT",
-            "coverUrl": "https://m.media-amazon.com/images/I/81a6wdORk4L._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/81a6wdORk4L.jpg",
             "coverFile": "assets/covers/eternal-bloodline-48.jpg"
           },
           {
@@ -510,7 +510,7 @@
             "title": "THE ETERNAL BLOODLINE: Volume Fourty Nine: Grotto Realm Achieved",
             "asin": "B0HDR8XKHR",
             "url": "https://www.amazon.com/dp/B0HDR8XKHR",
-            "coverUrl": "https://m.media-amazon.com/images/I/81h+QAHL7BL._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/81h+QAHL7BL.jpg",
             "coverFile": "assets/covers/eternal-bloodline-49.jpg"
           },
           {
@@ -518,7 +518,7 @@
             "title": "THE ETERNAL BLOODLINE: Volume Fifty: The Blood Path",
             "asin": "B0HDQXC9H4",
             "url": "https://www.amazon.com/dp/B0HDQXC9H4",
-            "coverUrl": "https://m.media-amazon.com/images/I/81Ma1zOWYuL._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/81Ma1zOWYuL.jpg",
             "coverFile": "assets/covers/eternal-bloodline-50.jpg"
           },
           {
@@ -526,7 +526,7 @@
             "title": "THE ETERNAL BLOODLINE: Volume Fifty One: Avatar Returns",
             "asin": "B0HDRNG3BH",
             "url": "https://www.amazon.com/dp/B0HDRNG3BH",
-            "coverUrl": "https://m.media-amazon.com/images/I/81rDAuFsDaL._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/81rDAuFsDaL.jpg",
             "coverFile": "assets/covers/eternal-bloodline-51.jpg"
           },
           {
@@ -534,7 +534,7 @@
             "title": "THE ETERNAL BLOODLINE: Volume Fifty Two: Daytime Ascension",
             "asin": "B0HDRBHWKK",
             "url": "https://www.amazon.com/dp/B0HDRBHWKK",
-            "coverUrl": "https://m.media-amazon.com/images/I/81Dx95yFE-L._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/81Dx95yFE-L.jpg",
             "coverFile": "assets/covers/eternal-bloodline-52.jpg"
           }
         ],
@@ -552,7 +552,7 @@
             "title": "The Void Sovereign’s Forgotten Son: Rebirth of the Void Emperor (A Dark Cultivation Fantasy Novel)",
             "asin": "B0GHK4N5X9",
             "url": "https://www.amazon.com/dp/B0GHK4N5X9",
-            "coverUrl": "https://m.media-amazon.com/images/I/71B80lZwWzL._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/71B80lZwWzL.jpg",
             "coverFile": "assets/covers/void-sovereign-saga-1.jpg"
           },
           {
@@ -560,7 +560,7 @@
             "title": "The Void Sovereign’s Forgotten Son: Volume Two: Rise of the Void Emperor and the Azure Phoenix",
             "asin": "B0GHSXWSYG",
             "url": "https://www.amazon.com/dp/B0GHSXWSYG",
-            "coverUrl": "https://m.media-amazon.com/images/I/71jez1wri6L._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/71jez1wri6L.jpg",
             "coverFile": "assets/covers/void-sovereign-saga-2.jpg"
           },
           {
@@ -568,7 +568,7 @@
             "title": "The Void Sovereign’s Forgotten Son: Volume Three: The Tournament of Blood and the Rise of the Void Emperor",
             "asin": "B0GHJ3MK3D",
             "url": "https://www.amazon.com/dp/B0GHJ3MK3D",
-            "coverUrl": "https://m.media-amazon.com/images/I/71x7vhSUIEL._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/71x7vhSUIEL.jpg",
             "coverFile": "assets/covers/void-sovereign-saga-3.jpg"
           },
           {
@@ -576,7 +576,7 @@
             "title": "The Void Sovereign’s Forgotten Son: Volume Four: Rise of the Ashen Court",
             "asin": "B0CYTMFR7M",
             "url": "https://www.amazon.com/dp/B0CYTMFR7M",
-            "coverUrl": "https://m.media-amazon.com/images/I/81NYIps6rPL._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/81NYIps6rPL.jpg",
             "coverFile": "assets/covers/void-sovereign-saga-4.jpg"
           }
         ],
@@ -594,7 +594,7 @@
             "title": "The Return of the Ash-Bound Sovereign: The Cradle of Thorns",
             "asin": "B0HJDLD7G4",
             "url": "https://www.amazon.com/dp/B0HJDLD7G4",
-            "coverUrl": "https://m.media-amazon.com/images/I/71Aj9QOrV2L._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/71Aj9QOrV2L.jpg",
             "coverFile": "assets/covers/return-ash-bound-sovereign-1.jpg"
           },
           {
@@ -602,7 +602,7 @@
             "title": "The Return of the Ash-Bound Sovereign: The Sovereign of Rust-Haven",
             "asin": "B0HJFLXW8G",
             "url": "https://www.amazon.com/dp/B0HJFLXW8G",
-            "coverUrl": "https://m.media-amazon.com/images/I/71PJbECFt5L._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/71PJbECFt5L.jpg",
             "coverFile": "assets/covers/return-ash-bound-sovereign-2.jpg"
           },
           {
@@ -610,7 +610,7 @@
             "title": "The Return of the Ash-Bound Sovereign: The Imperial Colosseo Academy",
             "asin": "B0HJF8ZRPM",
             "url": "https://www.amazon.com/dp/B0HJF8ZRPM",
-            "coverUrl": "https://m.media-amazon.com/images/I/81w4tYAYm8L._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/81w4tYAYm8L.jpg",
             "coverFile": "assets/covers/return-ash-bound-sovereign-3.jpg"
           }
         ],
@@ -628,7 +628,7 @@
             "title": "The Ashen Mage Ascendant: The Ashen Flame Awakens",
             "asin": "B0HJFQLHY7",
             "url": "https://www.amazon.com/dp/B0HJFQLHY7",
-            "coverUrl": "https://m.media-amazon.com/images/I/81Wr-N08CzL._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/81Wr-N08CzL.jpg",
             "coverFile": "assets/covers/ashen-mage-ascendant-1.jpg"
           }
         ],
@@ -646,7 +646,7 @@
             "title": "The Eternal Simulation: Volume 1: The First Life",
             "asin": "B0H9WXKFBY",
             "url": "https://www.amazon.com/dp/B0H9WXKFBY",
-            "coverUrl": "https://m.media-amazon.com/images/I/817su6qt7mL._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/817su6qt7mL.jpg",
             "coverFile": "assets/covers/eternal-simulation-1.jpg"
           },
           {
@@ -654,7 +654,7 @@
             "title": "The Eternal Simulation: Volume 2: The Wandering Immortal",
             "asin": "B0HB287N59",
             "url": "https://www.amazon.com/dp/B0HB287N59",
-            "coverUrl": "https://m.media-amazon.com/images/I/815NMarDIYL._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/815NMarDIYL.jpg",
             "coverFile": "assets/covers/eternal-simulation-2.jpg"
           },
           {
@@ -662,7 +662,7 @@
             "title": "The Eternal Simulation: Volume 3: Ascension and Schemes",
             "asin": "B0HB1TH6BG",
             "url": "https://www.amazon.com/dp/B0HB1TH6BG",
-            "coverUrl": "https://m.media-amazon.com/images/I/812qPc-6qxL._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/812qPc-6qxL.jpg",
             "coverFile": "assets/covers/eternal-simulation-3.jpg"
           }
         ],
@@ -680,7 +680,7 @@
             "title": "Blade of the Eternal Sky: Volume 1: The Awakening Blade",
             "asin": "B0G2LFK7Z4",
             "url": "https://www.amazon.com/dp/B0G2LFK7Z4",
-            "coverUrl": "https://m.media-amazon.com/images/I/714KOSbBHPL._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/714KOSbBHPL.jpg",
             "coverFile": "assets/covers/blade-eternal-sky-1.jpg"
           },
           {
@@ -688,7 +688,7 @@
             "title": "Blade of the Eternal Sky: Volume 2: Fire and Glory",
             "asin": "B0HB5B2867",
             "url": "https://www.amazon.com/dp/B0HB5B2867",
-            "coverUrl": "https://m.media-amazon.com/images/I/81lv8SY5sOL._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/81lv8SY5sOL.jpg",
             "coverFile": "assets/covers/blade-eternal-sky-2.jpg"
           },
           {
@@ -696,7 +696,7 @@
             "title": "Blade of the Eternal Sky: Volume 3: The Rising Clan",
             "asin": "B0HB5DWSJ3",
             "url": "https://www.amazon.com/dp/B0HB5DWSJ3",
-            "coverUrl": "https://m.media-amazon.com/images/I/81NzjhZ4sML._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/81NzjhZ4sML.jpg",
             "coverFile": "assets/covers/blade-eternal-sky-3.jpg"
           },
           {
@@ -704,7 +704,7 @@
             "title": "Blade of the Eternal Sky: Volume 4: Shadows of Ambition",
             "asin": "B0HBFXK821",
             "url": "https://www.amazon.com/dp/B0HBFXK821",
-            "coverUrl": "https://m.media-amazon.com/images/I/81xgZcBPo-L._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/81xgZcBPo-L.jpg",
             "coverFile": "assets/covers/blade-eternal-sky-4.jpg"
           },
           {
@@ -712,7 +712,7 @@
             "title": "Blade of the Eternal Sky: Volume 5: Blood on the Path",
             "asin": "B0HB9ZZNDV",
             "url": "https://www.amazon.com/dp/B0HB9ZZNDV",
-            "coverUrl": "https://m.media-amazon.com/images/I/81QGtpGKPLL._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/81QGtpGKPLL.jpg",
             "coverFile": "assets/covers/blade-eternal-sky-5.jpg"
           },
           {
@@ -720,7 +720,7 @@
             "title": "Blade of the Eternal Sky: Volume 6: The Blade Unsheathed",
             "asin": "B0HB9V2CY4",
             "url": "https://www.amazon.com/dp/B0HB9V2CY4",
-            "coverUrl": "https://m.media-amazon.com/images/I/81ubmVRQeIL._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/81ubmVRQeIL.jpg",
             "coverFile": "assets/covers/blade-eternal-sky-6.jpg"
           },
           {
@@ -728,7 +728,7 @@
             "title": "Blade of the Eternal Sky: Volume 7: Unyielding Spirit",
             "asin": "B0HCK5PHQD",
             "url": "https://www.amazon.com/dp/B0HCK5PHQD",
-            "coverUrl": "https://m.media-amazon.com/images/I/818DGkPcytL._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/818DGkPcytL.jpg",
             "coverFile": "assets/covers/blade-eternal-sky-7.jpg"
           },
           {
@@ -736,7 +736,7 @@
             "title": "Blade of the Eternal Sky: Volume 8: Dawn of the Eternal Sky",
             "asin": "B0HCM8K4RM",
             "url": "https://www.amazon.com/dp/B0HCM8K4RM",
-            "coverUrl": "https://m.media-amazon.com/images/I/81H4fm4WwoL._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/81H4fm4WwoL.jpg",
             "coverFile": "assets/covers/blade-eternal-sky-8.jpg"
           }
         ],
@@ -754,7 +754,7 @@
             "title": "The Revenant Knight : Volume One",
             "asin": "B0GZ9VNCDR",
             "url": "https://www.amazon.com/dp/B0GZ9VNCDR",
-            "coverUrl": "https://m.media-amazon.com/images/I/7169CwNlYxL._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/7169CwNlYxL.jpg",
             "coverFile": "assets/covers/revenant-knight-1.jpg"
           },
           {
@@ -762,7 +762,7 @@
             "title": "The Revenant Knight: Volume 2: The Dark Mage’s Shadow",
             "asin": "B0GX33FYTT",
             "url": "https://www.amazon.com/dp/B0GX33FYTT",
-            "coverUrl": "https://m.media-amazon.com/images/I/71N8g+AsHUL._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/71N8g+AsHUL.jpg",
             "coverFile": "assets/covers/revenant-knight-2.jpg"
           },
           {
@@ -770,7 +770,7 @@
             "title": "The Revenant Knight: Volume 3: Trials of the Reborn Knight",
             "asin": "B0GY49PV3Q",
             "url": "https://www.amazon.com/dp/B0GY49PV3Q",
-            "coverUrl": "https://m.media-amazon.com/images/I/71xkNGPICmL._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/71xkNGPICmL.jpg",
             "coverFile": "assets/covers/revenant-knight-3.jpg"
           },
           {
@@ -778,7 +778,7 @@
             "title": "The Revenant Knight: Volume 4: Blades of the Underworld",
             "asin": "B0GX3B28LN",
             "url": "https://www.amazon.com/dp/B0GX3B28LN",
-            "coverUrl": "https://m.media-amazon.com/images/I/71mjORPOU5L._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/71mjORPOU5L.jpg",
             "coverFile": "assets/covers/revenant-knight-4.jpg"
           },
           {
@@ -786,7 +786,7 @@
             "title": "THE REVENANT KNIGHT: Volume 5: The Crown's Gambit",
             "asin": "B0H2QWH9FY",
             "url": "https://www.amazon.com/dp/B0H2QWH9FY",
-            "coverUrl": "https://m.media-amazon.com/images/I/71lr0AEXm+L._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/71lr0AEXm+L.jpg",
             "coverFile": "assets/covers/revenant-knight-5.jpg"
           },
           {
@@ -794,7 +794,7 @@
             "title": "THE REVENANT KNIGHT: Volume 6: Secrets of the Cursed",
             "asin": "B0GX2YKGYB",
             "url": "https://www.amazon.com/dp/B0GX2YKGYB",
-            "coverUrl": "https://m.media-amazon.com/images/I/81LC9JqV7EL._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/81LC9JqV7EL.jpg",
             "coverFile": "assets/covers/revenant-knight-6.jpg"
           },
           {
@@ -802,7 +802,7 @@
             "title": "THE REVENANT KNIGHT: Volume 7: Dusk Falls on the Empire",
             "asin": "B0H1MQJXQV",
             "url": "https://www.amazon.com/dp/B0H1MQJXQV",
-            "coverUrl": "https://m.media-amazon.com/images/I/812dMtA9E2L._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/812dMtA9E2L.jpg",
             "coverFile": "assets/covers/revenant-knight-7.jpg"
           },
           {
@@ -810,7 +810,7 @@
             "title": "THE REVENANT KNIGHT: Volume 8: The Demon's Pact",
             "asin": "B0H278Y6ZX",
             "url": "https://www.amazon.com/dp/B0H278Y6ZX",
-            "coverUrl": "https://m.media-amazon.com/images/I/81oeJxbSNNL._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/81oeJxbSNNL.jpg",
             "coverFile": "assets/covers/revenant-knight-8.jpg"
           },
           {
@@ -818,7 +818,7 @@
             "title": "THE REVENANT KNIGHT: Volume 9: Blood of the Vornath",
             "asin": "B0GYCQYK1J",
             "url": "https://www.amazon.com/dp/B0GYCQYK1J",
-            "coverUrl": "https://m.media-amazon.com/images/I/81nzX4tEd+L._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/81nzX4tEd+L.jpg",
             "coverFile": "assets/covers/revenant-knight-9.jpg"
           },
           {
@@ -826,7 +826,7 @@
             "title": "THE REVENANT KNIGHT: Volume 10: Lords of Ruin",
             "asin": "B0H4DLX91N",
             "url": "https://www.amazon.com/dp/B0H4DLX91N",
-            "coverUrl": "https://m.media-amazon.com/images/I/81Xk1i5tJZL._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/81Xk1i5tJZL.jpg",
             "coverFile": "assets/covers/revenant-knight-10.jpg"
           },
           {
@@ -834,7 +834,7 @@
             "title": "THE REVENANT KNIGHT: Volume 11: The Sovereign's War",
             "asin": "B0H4LPVT7C",
             "url": "https://www.amazon.com/dp/B0H4LPVT7C",
-            "coverUrl": "https://m.media-amazon.com/images/I/81NkiSz93tL._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/81NkiSz93tL.jpg",
             "coverFile": "assets/covers/revenant-knight-11.jpg"
           },
           {
@@ -842,7 +842,7 @@
             "title": "THE REVENANT KNIGHT: Volume 12: Chains of the Void",
             "asin": "B0H4PDPKS1",
             "url": "https://www.amazon.com/dp/B0H4PDPKS1",
-            "coverUrl": "https://m.media-amazon.com/images/I/81tiBUkULWL._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/81tiBUkULWL.jpg",
             "coverFile": "assets/covers/revenant-knight-12.jpg"
           },
           {
@@ -850,7 +850,7 @@
             "title": "THE REVENANT KNIGHT: Volume 13: Into the Abyss",
             "asin": "B0H4PLC2C7",
             "url": "https://www.amazon.com/dp/B0H4PLC2C7",
-            "coverUrl": "https://m.media-amazon.com/images/I/81DwAOOzk8L._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/81DwAOOzk8L.jpg",
             "coverFile": "assets/covers/revenant-knight-13.jpg"
           },
           {
@@ -858,7 +858,7 @@
             "title": "THE REVENANT KNIGHT: Volume 14: The Undying Compact",
             "asin": "B0H4PDKN22",
             "url": "https://www.amazon.com/dp/B0H4PDKN22",
-            "coverUrl": "https://m.media-amazon.com/images/I/81PEZ8jAkJL._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/81PEZ8jAkJL.jpg",
             "coverFile": "assets/covers/revenant-knight-14.jpg"
           },
           {
@@ -866,7 +866,7 @@
             "title": "THE REVENANT KNIGHT: Volume 15: Shattered Kingdoms",
             "asin": "B0H4VN4R2Z",
             "url": "https://www.amazon.com/dp/B0H4VN4R2Z",
-            "coverUrl": "https://m.media-amazon.com/images/I/81VJoD95daL._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/81VJoD95daL.jpg",
             "coverFile": "assets/covers/revenant-knight-15.jpg"
           },
           {
@@ -874,7 +874,7 @@
             "title": "THE REVENANT KNIGHT: Volume 16: The Grandmaster's Gambit",
             "asin": "B0H4SQ6VK4",
             "url": "https://www.amazon.com/dp/B0H4SQ6VK4",
-            "coverUrl": "https://m.media-amazon.com/images/I/81OM-5ZdOYL._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/81OM-5ZdOYL.jpg",
             "coverFile": "assets/covers/revenant-knight-16.jpg"
           },
           {
@@ -882,7 +882,7 @@
             "title": "THE REVENANT KNIGHT: Volume 17: Edge of Awakening",
             "asin": "B0H4SRL3PH",
             "url": "https://www.amazon.com/dp/B0H4SRL3PH",
-            "coverUrl": "https://m.media-amazon.com/images/I/81HuSrCfQ7L._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/81HuSrCfQ7L.jpg",
             "coverFile": "assets/covers/revenant-knight-17.jpg"
           },
           {
@@ -890,7 +890,7 @@
             "title": "THE REVENANT KNIGHT: Side Stories: Beyond the Ashen Blade",
             "asin": "B0H4VSCZNY",
             "url": "https://www.amazon.com/dp/B0H4VSCZNY",
-            "coverUrl": "https://m.media-amazon.com/images/I/81s2Tn+4AXL._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/81s2Tn+4AXL.jpg",
             "coverFile": "assets/covers/revenant-knight-18.jpg"
           }
         ],
@@ -908,7 +908,7 @@
             "title": "Archmage’s Youngest Son: Volume Fifteen",
             "asin": "B0DF524HHJ",
             "url": "https://www.amazon.com/dp/B0DF524HHJ",
-            "coverUrl": "https://m.media-amazon.com/images/I/814OtrGVW8L._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/814OtrGVW8L.jpg",
             "coverFile": "assets/covers/archmages-youngest-son-15.jpg"
           },
           {
@@ -916,7 +916,7 @@
             "title": "Archmage’s Youngest Son: Volume Sixteen",
             "asin": "B0DYDXTYX6",
             "url": "https://www.amazon.com/dp/B0DYDXTYX6",
-            "coverUrl": "https://m.media-amazon.com/images/I/81kox8ZMDbL._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/81kox8ZMDbL.jpg",
             "coverFile": "assets/covers/archmages-youngest-son-16.jpg"
           },
           {
@@ -924,7 +924,7 @@
             "title": "Archmage’s Youngest Son: Volume Seventeen",
             "asin": "B0GHTDG1MJ",
             "url": "https://www.amazon.com/dp/B0GHTDG1MJ",
-            "coverUrl": "https://m.media-amazon.com/images/I/71gDCeSrZDL._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/71gDCeSrZDL.jpg",
             "coverFile": "assets/covers/archmages-youngest-son-17.jpg"
           },
           {
@@ -932,7 +932,7 @@
             "title": "Archmage’s Youngest Son: Volume Eighteen",
             "asin": "B0GR5YCXX5",
             "url": "https://www.amazon.com/dp/B0GR5YCXX5",
-            "coverUrl": "https://m.media-amazon.com/images/I/71wxoyB9IHL._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/71wxoyB9IHL.jpg",
             "coverFile": "assets/covers/archmages-youngest-son-18.jpg"
           },
           {
@@ -940,7 +940,7 @@
             "title": "Archmage’s Youngest Son: Volume Nineteen",
             "asin": "B0G6ZX42TJ",
             "url": "https://www.amazon.com/dp/B0G6ZX42TJ",
-            "coverUrl": "https://m.media-amazon.com/images/I/71rtLbRrM3L._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/71rtLbRrM3L.jpg",
             "coverFile": "assets/covers/archmages-youngest-son-19.jpg"
           },
           {
@@ -948,7 +948,7 @@
             "title": "Archmage’s Youngest Son: Volume Twenty",
             "asin": "B0GWX4HJFH",
             "url": "https://www.amazon.com/dp/B0GWX4HJFH",
-            "coverUrl": "https://m.media-amazon.com/images/I/71KKQUXLlpL._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/71KKQUXLlpL.jpg",
             "coverFile": "assets/covers/archmages-youngest-son-20.jpg"
           },
           {
@@ -956,7 +956,7 @@
             "title": "Archmage’s Youngest Son: Volume 21",
             "asin": "B0GWWNRS76",
             "url": "https://www.amazon.com/dp/B0GWWNRS76",
-            "coverUrl": "https://m.media-amazon.com/images/I/816behXwiZL._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/816behXwiZL.jpg",
             "coverFile": "assets/covers/archmages-youngest-son-21.jpg"
           },
           {
@@ -964,7 +964,7 @@
             "title": "Archmage’s Youngest Son: Volume 22",
             "asin": "B0GWZY82M8",
             "url": "https://www.amazon.com/dp/B0GWZY82M8",
-            "coverUrl": "https://m.media-amazon.com/images/I/81k4KxZwyUL._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/81k4KxZwyUL.jpg",
             "coverFile": "assets/covers/archmages-youngest-son-22.jpg"
           },
           {
@@ -972,7 +972,7 @@
             "title": "Archmage’s Youngest Son: Volume 23",
             "asin": "B0GWZZMDJH",
             "url": "https://www.amazon.com/dp/B0GWZZMDJH",
-            "coverUrl": "https://m.media-amazon.com/images/I/71R2vi1zGZL._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/71R2vi1zGZL.jpg",
             "coverFile": "assets/covers/archmages-youngest-son-23.jpg"
           },
           {
@@ -980,7 +980,7 @@
             "title": "Archmage’s Youngest Son: Volume 24",
             "asin": "B0GX2SL72N",
             "url": "https://www.amazon.com/dp/B0GX2SL72N",
-            "coverUrl": "https://m.media-amazon.com/images/I/81t5SA8CNcL._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/81t5SA8CNcL.jpg",
             "coverFile": "assets/covers/archmages-youngest-son-24.jpg"
           },
           {
@@ -988,7 +988,7 @@
             "title": "Archmage’s Youngest Son: Volume 25",
             "asin": "B0GX2X7KZ5",
             "url": "https://www.amazon.com/dp/B0GX2X7KZ5",
-            "coverUrl": "https://m.media-amazon.com/images/I/71J1k1YvsxL._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/71J1k1YvsxL.jpg",
             "coverFile": "assets/covers/archmages-youngest-son-25.jpg"
           },
           {
@@ -996,7 +996,7 @@
             "title": "Archmage’s Youngest Son: Volume 26",
             "asin": "B0GX33NFXQ",
             "url": "https://www.amazon.com/dp/B0GX33NFXQ",
-            "coverUrl": "https://m.media-amazon.com/images/I/71aXaqL1bHL._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/71aXaqL1bHL.jpg",
             "coverFile": "assets/covers/archmages-youngest-son-26.jpg"
           },
           {
@@ -1004,7 +1004,7 @@
             "title": "Archmage’s Youngest Son: Volume 27",
             "asin": "B0GXBFVK91",
             "url": "https://www.amazon.com/dp/B0GXBFVK91",
-            "coverUrl": "https://m.media-amazon.com/images/I/71RwjDL8gRL._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/71RwjDL8gRL.jpg",
             "coverFile": "assets/covers/archmages-youngest-son-27.jpg"
           },
           {
@@ -1012,7 +1012,7 @@
             "title": "Archmage’s Youngest Son: Volume 28",
             "asin": "B0GX32Y8XM",
             "url": "https://www.amazon.com/dp/B0GX32Y8XM",
-            "coverUrl": "https://m.media-amazon.com/images/I/81Cu+947QUL._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/81Cu+947QUL.jpg",
             "coverFile": "assets/covers/archmages-youngest-son-28.jpg"
           },
           {
@@ -1020,7 +1020,7 @@
             "title": "Archmage’s Youngest Son: Volume 29",
             "asin": "B0GX2Y8W1D",
             "url": "https://www.amazon.com/dp/B0GX2Y8W1D",
-            "coverUrl": "https://m.media-amazon.com/images/I/71DUYpnvL3L._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/71DUYpnvL3L.jpg",
             "coverFile": "assets/covers/archmages-youngest-son-29.jpg"
           },
           {
@@ -1028,7 +1028,7 @@
             "title": "Archmage’s Youngest Son: Volume 30",
             "asin": "B0GX36YN82",
             "url": "https://www.amazon.com/dp/B0GX36YN82",
-            "coverUrl": "https://m.media-amazon.com/images/I/71KZ-mxdeDL._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/71KZ-mxdeDL.jpg",
             "coverFile": "assets/covers/archmages-youngest-son-30.jpg"
           },
           {
@@ -1036,7 +1036,7 @@
             "title": "Archmage’s Youngest Son: Volume 31",
             "asin": "B0GX9LDCMD",
             "url": "https://www.amazon.com/dp/B0GX9LDCMD",
-            "coverUrl": "https://m.media-amazon.com/images/I/71IFV0gg5dL._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/71IFV0gg5dL.jpg",
             "coverFile": "assets/covers/archmages-youngest-son-31.jpg"
           },
           {
@@ -1044,7 +1044,7 @@
             "title": "Archmage’s Youngest Son: Volume 32",
             "asin": "B0GXWBNR1F",
             "url": "https://www.amazon.com/dp/B0GXWBNR1F",
-            "coverUrl": "https://m.media-amazon.com/images/I/710LUsmwuuL._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/710LUsmwuuL.jpg",
             "coverFile": "assets/covers/archmages-youngest-son-32.jpg"
           },
           {
@@ -1052,7 +1052,7 @@
             "title": "Archmage’s Youngest Son: Volume 33",
             "asin": "B0GX2XCYYH",
             "url": "https://www.amazon.com/dp/B0GX2XCYYH",
-            "coverUrl": "https://m.media-amazon.com/images/I/814X7j+v8uL._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/814X7j+v8uL.jpg",
             "coverFile": "assets/covers/archmages-youngest-son-33.jpg"
           },
           {
@@ -1060,7 +1060,7 @@
             "title": "Archmage’s Youngest Son: Volume 34",
             "asin": "B0GY5514NH",
             "url": "https://www.amazon.com/dp/B0GY5514NH",
-            "coverUrl": "https://m.media-amazon.com/images/I/81YsHx4EsQL._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/81YsHx4EsQL.jpg",
             "coverFile": "assets/covers/archmages-youngest-son-34.jpg"
           },
           {
@@ -1068,7 +1068,7 @@
             "title": "Archmage’s Youngest Son: Volume 35",
             "asin": "B0GX32NHTL",
             "url": "https://www.amazon.com/dp/B0GX32NHTL",
-            "coverUrl": "https://m.media-amazon.com/images/I/81BuVt+gOLL._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/81BuVt+gOLL.jpg",
             "coverFile": "assets/covers/archmages-youngest-son-35.jpg"
           },
           {
@@ -1076,7 +1076,7 @@
             "title": "Archmage’s Youngest Son: Volume 36",
             "asin": "B0GYFX8TFF",
             "url": "https://www.amazon.com/dp/B0GYFX8TFF",
-            "coverUrl": "https://m.media-amazon.com/images/I/81uw2U8XR-L._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/81uw2U8XR-L.jpg",
             "coverFile": "assets/covers/archmages-youngest-son-36.jpg"
           },
           {
@@ -1084,7 +1084,7 @@
             "title": "Archmage’s Youngest Son: Volume 37",
             "asin": "B0GYG1QY1M",
             "url": "https://www.amazon.com/dp/B0GYG1QY1M",
-            "coverUrl": "https://m.media-amazon.com/images/I/81PVUBZeEkL._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/81PVUBZeEkL.jpg",
             "coverFile": "assets/covers/archmages-youngest-son-37.jpg"
           },
           {
@@ -1092,7 +1092,7 @@
             "title": "Archmage’s Youngest Son: Volume 38",
             "asin": "B0GYGFFSTP",
             "url": "https://www.amazon.com/dp/B0GYGFFSTP",
-            "coverUrl": "https://m.media-amazon.com/images/I/81KU2k+fbgL._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/81KU2k+fbgL.jpg",
             "coverFile": "assets/covers/archmages-youngest-son-38.jpg"
           }
         ],
@@ -1110,7 +1110,7 @@
             "title": "The Starless Grimoire: A Dark Fantasy Progression Novel of Soul Magic, Lost Memories, and Rebirth",
             "asin": "B0F2N12B9B",
             "url": "https://www.amazon.com/dp/B0F2N12B9B",
-            "coverUrl": "https://m.media-amazon.com/images/I/71JJoVZilPL._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/71JJoVZilPL.jpg",
             "coverFile": "assets/covers/starless-grimoire-1.jpg"
           }
         ],
@@ -1128,7 +1128,7 @@
             "title": "The Boy Who Could Consume Fate: The Hollow Fate Chronicle: Volume One",
             "asin": "B0HDHN93G7",
             "url": "https://www.amazon.com/dp/B0HDHN93G7",
-            "coverUrl": "https://m.media-amazon.com/images/I/81dj91Tr6LL._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/81dj91Tr6LL.jpg",
             "coverFile": "assets/covers/boy-who-could-consume-fate-1.jpg"
           }
         ],
@@ -1146,7 +1146,7 @@
             "title": "Blade Emperor’s Forgotten Heir: The Second Chance",
             "asin": "B0GTTT9YYM",
             "url": "https://www.amazon.com/dp/B0GTTT9YYM",
-            "coverUrl": "https://m.media-amazon.com/images/I/717O2KnS5DL._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/717O2KnS5DL.jpg",
             "coverFile": "assets/covers/blade-emperor-forgotten-heir-1.jpg"
           }
         ],
@@ -1164,7 +1164,7 @@
             "title": "The Science of Clear Thinking: 101 Cognitive Biases and Mental Models for Better Decisions",
             "asin": "B0GR88LCGS",
             "url": "https://www.amazon.com/dp/B0GR88LCGS",
-            "coverUrl": "https://m.media-amazon.com/images/I/61y+zv54s0L._AC_UY218_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/I/61y+zv54s0L.jpg",
             "coverFile": "assets/covers/science-of-clear-thinking-1.jpg"
           }
         ],

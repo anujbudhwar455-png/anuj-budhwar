@@ -23,7 +23,7 @@ export function Footer() {
             <a className="hover:text-cyan-300" href={siteConfig.links.spotify} target="_blank" rel="noopener noreferrer">
               Spotify
             </a>
-            <a className="hover:text-cyan-300" href={siteConfig.links.instagramWriting} target="_blank" rel="noopener noreferrer">
+            <a className="hover:text-cyan-300" href={siteConfig.links.instagram} target="_blank" rel="noopener noreferrer">
               Instagram
             </a>
             <a className="hover:text-cyan-300" href={siteConfig.links.email}>

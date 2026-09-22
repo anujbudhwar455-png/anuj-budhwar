@@ -88,7 +88,7 @@ const personJsonLd = {
     siteConfig.links.linkedin,
     siteConfig.links.github,
     siteConfig.links.spotify,
-    siteConfig.links.instagramWriting,
+    siteConfig.links.instagram,
   ],
 };
 

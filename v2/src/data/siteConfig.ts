@@ -22,7 +22,7 @@ export const siteConfig = {
     linkedin: 'https://www.linkedin.com/in/anuj-budhwar-377601404',
     github: 'https://github.com/anujbudhwar455-png',
     spotify: 'https://open.spotify.com/artist/5glVTiE4VPHrj2q1RlDooQ',
-    instagramWriting: 'https://www.instagram.com/anujbudhwarwrites/',
+    instagram: 'https://www.instagram.com/dranujbudhwar/',
     pdfMergerLegal: 'https://anujbudhwar455-png.github.io/PDFMerger/',
     pdfMergerTesting: 'https://play.google.com/apps/testing/com.aistudio.pdfmerger.ajxbv',
   },

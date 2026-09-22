@@ -24,11 +24,11 @@ export function Writing() {
         <div className="mb-6 flex flex-wrap gap-3">
           <a
             className="btn-secondary !py-2 text-xs"
-            href={siteConfig.links.instagramWriting}
+            href={siteConfig.links.instagram}
             target="_blank"
             rel="noopener noreferrer"
           >
-            Instagram writing
+            Instagram
           </a>
         </div>
 

@@ -8,7 +8,7 @@ export function Contact() {
         <SectionHeading
           eyebrow="Contact"
           title="Let’s connect"
-          description="Public channels only — email, LinkedIn, GitHub, Spotify, and Instagram writing."
+          description="Public channels only — email, LinkedIn, GitHub, Spotify, and Instagram."
         />
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {[
@@ -18,8 +18,8 @@ export function Contact() {
             { label: 'Spotify', value: 'Artist page', href: siteConfig.links.spotify },
             {
               label: 'Instagram',
-              value: '@anujbudhwarwrites',
-              href: siteConfig.links.instagramWriting,
+              value: '@dranujbudhwar',
+              href: siteConfig.links.instagram,
             },
           ].map((c) => (
             <a
