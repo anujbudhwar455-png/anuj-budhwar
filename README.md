@@ -1,11 +1,9 @@
-# Anuj Budhwar — Personal Portfolio
+# Anuj Budhwar — Portfolio
 
-3D personal site for **Anuj Budhwar** (author · musician · Pharm.D intern · Desrein Studios).
+Static GitHub Pages site for Anuj Budhwar (Rohtak, Haryana).
 
-**Live:** https://anujbudhwar455-png.github.io/anuj-budhwar/
+- Live: https://anujbudhwar455-png.github.io/anuj-budhwar/
+- Data: `research/catalog.json`
+- Regenerate pages: `python3 scripts/generate_site.py`
 
-Static HTML/CSS/JS + Three.js (CDN). Hosted on GitHub Pages.
-
-## Local preview
-
-Open `index.html` via any static server, e.g. `python3 -m http.server 8080`.
+No personal photos or AI portraits in the UI. Home uses Three.js (r160) for an immersive 3D scene.
