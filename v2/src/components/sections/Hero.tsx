@@ -42,14 +42,17 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.15 }}
           >
-            <a className="btn-primary" href={withBase('/#work')}>
+            <a className="btn-primary" href={withBase('/work/')}>
               Explore My Work
             </a>
-            <a className="btn-secondary" href={withBase('/#about')}>
+            <a className="btn-secondary" href={withBase('/about/')}>
               About Me
             </a>
-            <a className="btn-secondary" href={withBase('/#lab')}>
+            <a className="btn-secondary" href={withBase('/lab/')}>
               Enter The Lab
+            </a>
+            <a className="btn-secondary" href={withBase('/music/')}>
+              Listen
             </a>
           </motion.div>
 

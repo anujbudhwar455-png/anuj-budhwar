@@ -24,7 +24,7 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
   return (
     <article className="section-pad pt-28">
       <div className="container-max max-w-3xl">
-        <a href={withBase('/#work')} className="text-sm text-cyan-300 hover:underline">
+        <a href={withBase('/work/')} className="text-sm text-cyan-300 hover:underline">
           ← Back to work
         </a>
         <div className="mt-6 flex flex-wrap gap-2">

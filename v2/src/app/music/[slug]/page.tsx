@@ -23,7 +23,7 @@ export default function SongPage({ params }: { params: { slug: string } }) {
   return (
     <article className="section-pad pt-28">
       <div className="container-max max-w-4xl">
-        <a href={withBase('/#music')} className="text-sm text-cyan-300 hover:underline">
+        <a href={withBase('/music/')} className="text-sm text-cyan-300 hover:underline">
           ← Back to music
         </a>
         <div className="mt-8 grid gap-8 md:grid-cols-[280px_1fr]">

@@ -24,7 +24,7 @@ export default function BookSeriesPage({ params }: { params: { seriesId: string 
   return (
     <article className="section-pad pt-28">
       <div className="container-max">
-        <a href={withBase('/#writing')} className="text-sm text-cyan-300 hover:underline">
+        <a href={withBase('/writing/')} className="text-sm text-cyan-300 hover:underline">
           ← Back to writing
         </a>
         <div className="mt-8 grid gap-8 lg:grid-cols-[240px_1fr]">

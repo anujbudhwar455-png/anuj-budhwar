@@ -44,27 +44,27 @@ export const domains = [
     title: 'Pharmacy & Healthcare',
     description:
       'Pharm.D training, B.Pharm foundation, and intern experience — building with clinical empathy and scientific rigor.',
-    href: '/#pharmacy',
+    href: '/about/',
   },
   {
     id: 'ai',
     title: 'AI & Software',
     description:
       'AI writing tools, Android utilities, and experimental product systems that turn ideas into shippable prototypes.',
-    href: '/#ai',
+    href: '/work/',
   },
   {
     id: 'writing',
     title: 'Writing & Books',
     description:
       'Multi-series fiction on Amazon and clear-thinking non-fiction — stories that explore fate, power, and rebirth.',
-    href: '/#writing',
+    href: '/writing/',
   },
   {
     id: 'music',
     title: 'Music',
     description:
       'Original singles on Spotify — emotional, dark, and experimental tracks under Anuj Budhwar.',
-    href: '/#music',
+    href: '/music/',
   },
 ] as const;
