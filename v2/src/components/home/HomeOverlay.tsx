@@ -27,34 +27,40 @@ export function HomeOverlay({
         {!labEntered ? (
           <motion.div
             key="gate"
-            className="pointer-events-auto absolute inset-0 flex items-center justify-center bg-[#05070f]/78 backdrop-blur-[2px]"
+            className="pointer-events-auto absolute inset-0 flex items-center justify-center bg-[#05070f]/72 backdrop-blur-[3px]"
             initial={{ opacity: 0 }}
             animate={{ opacity: introReady ? 1 : 0 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.7 }}
+            exit={{ opacity: 0, filter: 'blur(8px)' }}
+            transition={{ duration: 0.75 }}
           >
             <div className="mx-auto max-w-2xl px-4 text-center">
               <motion.p
-                className="text-[10px] font-semibold uppercase tracking-[0.4em] text-cyan-300/90 sm:text-xs"
+                className="text-[10px] font-semibold uppercase tracking-[0.45em] text-cyan-300/90 sm:text-xs"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.15 }}
+                transition={{ delay: 0.12 }}
               >
-                Digital Lab 2.0
+                Digital Lab 2.1
               </motion.p>
               <motion.h1
-                className="heading-display mt-4 text-4xl drop-shadow-lg sm:text-5xl md:text-6xl"
-                initial={{ opacity: 0, y: 14 }}
+                className="heading-display mt-5 text-5xl drop-shadow-lg sm:text-6xl md:text-7xl"
+                initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.28 }}
+                transition={{ delay: 0.24, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
               >
                 Anuj Budhwar
               </motion.h1>
+              <motion.div
+                className="mx-auto mt-4 h-px w-24 bg-gradient-to-r from-transparent via-cyan-300/80 to-transparent"
+                initial={{ scaleX: 0 }}
+                animate={{ scaleX: 1 }}
+                transition={{ delay: 0.38, duration: 0.6 }}
+              />
               <motion.p
-                className="mt-3 text-sm font-medium tracking-wide text-cyan-100/90 sm:text-base"
+                className="mt-4 text-sm font-medium tracking-[0.18em] text-cyan-100/90 sm:text-base"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ delay: 0.4 }}
+                transition={{ delay: 0.42 }}
               >
                 Healthcare × AI × Creativity
               </motion.p>
@@ -67,12 +73,16 @@ export function HomeOverlay({
                 Building at the intersection of science, technology and imagination.
               </motion.p>
               <motion.div
-                className="mt-8 flex flex-wrap items-center justify-center gap-3"
-                initial={{ opacity: 0, y: 10 }}
+                className="mt-9 flex flex-wrap items-center justify-center gap-3"
+                initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.65 }}
+                transition={{ delay: 0.64 }}
               >
-                <button type="button" className="btn-primary magnetic-cta" onClick={onEnterLab}>
+                <button
+                  type="button"
+                  className="btn-primary magnetic-cta !px-7 !py-3 !text-[13px] !tracking-[0.14em] uppercase"
+                  onClick={onEnterLab}
+                >
                   Enter the Lab
                 </button>
                 <a className="btn-secondary" href={withBase('/work/')}>
@@ -80,7 +90,7 @@ export function HomeOverlay({
                 </a>
               </motion.div>
               <motion.p
-                className="mt-6 text-[11px] tracking-wide text-slate-500"
+                className="mt-7 text-[11px] tracking-wide text-slate-500"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.85 }}
@@ -95,7 +105,7 @@ export function HomeOverlay({
             className="flex h-full w-full flex-col justify-between"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.55 }}
+            transition={{ duration: 0.6 }}
           >
             <div className="mx-auto w-full max-w-3xl text-center">
               <p className="text-[10px] font-semibold uppercase tracking-[0.35em] text-cyan-300/80 sm:text-xs">
@@ -108,7 +118,7 @@ export function HomeOverlay({
 
             <div className="mx-auto flex w-full max-w-4xl flex-col items-center gap-3">
               <p className="rounded-full border border-white/10 bg-ink-950/55 px-4 py-1.5 text-[11px] tracking-wide text-slate-300 backdrop-blur-md sm:text-xs">
-                Drag to orbit · Click a portal to enter
+                Drag to orbit · Hover a portal · Click to enter
               </p>
 
               <nav

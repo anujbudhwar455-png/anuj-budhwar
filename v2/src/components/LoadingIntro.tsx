@@ -45,7 +45,7 @@ export function LoadingIntro() {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.35 }}
             >
-              Healthcare × AI × Creativity
+              Digital Lab 2.1 · Healthcare × AI × Creativity
             </motion.p>
             <motion.div
               className="mx-auto mt-6 h-[2px] w-24 overflow-hidden rounded-full bg-white/10"

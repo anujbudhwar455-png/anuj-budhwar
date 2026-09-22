@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Contact } from '@/components/sections/Contact';
 import { GitHubSection } from '@/components/sections/GitHub';
+import { PageAtmosphere } from '@/components/ui/PageAtmosphere';
 
 export const metadata: Metadata = {
   title: 'Connect',
@@ -10,9 +11,10 @@ export const metadata: Metadata = {
 
 export default function ConnectPage() {
   return (
-    <div className="pt-16">
+    <>
+      <PageAtmosphere variant="connect" />
       <Contact />
       <GitHubSection />
-    </div>
+    </>
   );
 }

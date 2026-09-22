@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Lab } from '@/components/sections/Lab';
+import { PageAtmosphere } from '@/components/ui/PageAtmosphere';
 
 export const metadata: Metadata = {
   title: 'Lab',
@@ -9,8 +10,9 @@ export const metadata: Metadata = {
 
 export default function LabPage() {
   return (
-    <div className="pt-16">
+    <>
+      <PageAtmosphere variant="lab" />
       <Lab />
-    </div>
+    </>
   );
 }

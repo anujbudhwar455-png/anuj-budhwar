@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { FeaturedProjects } from '@/components/sections/FeaturedProjects';
 import { CurrentlyBuilding } from '@/components/sections/CurrentlyBuilding';
 import { AISoftware } from '@/components/sections/AISoftware';
+import { PageAtmosphere } from '@/components/ui/PageAtmosphere';
 
 export const metadata: Metadata = {
   title: 'Work',
@@ -11,10 +12,11 @@ export const metadata: Metadata = {
 
 export default function WorkPage() {
   return (
-    <div className="pt-16">
+    <>
+      <PageAtmosphere variant="work" />
       <FeaturedProjects />
       <CurrentlyBuilding />
       <AISoftware />
-    </div>
+    </>
   );
 }

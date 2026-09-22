@@ -26,7 +26,7 @@ import type { ReactNode } from 'react';
 import * as THREE from 'three';
 import { useRouter } from 'next/navigation';
 import { withBase } from '@/lib/paths';
-import { BOOK_COVERS, PORTALS, VINYL_COVERS, type PortalDef } from './portalDefs';
+import { BOOK_COVERS, PORTALS, PORTRAIT_TEXTURE, VINYL_COVERS, type PortalDef } from './portalDefs';
 import { PortalStation } from './PortalObjects';
 
 export type { PortalDef } from './portalDefs';
@@ -35,7 +35,7 @@ function useAssetTexture(path: string) {
   const map = useLoader(THREE.TextureLoader, withBase(path));
   useEffect(() => {
     map.colorSpace = THREE.SRGBColorSpace;
-    map.anisotropy = 8;
+    map.anisotropy = 4;
     map.minFilter = THREE.LinearMipmapLinearFilter;
     map.magFilter = THREE.LinearFilter;
     map.needsUpdate = true;
@@ -90,11 +90,11 @@ function StudioEnvironment({ lite }: { lite: boolean }) {
     <>
       <color attach="background" args={['#05070f']} />
       <fog attach="fog" args={['#05070f', 7.5, lite ? 20 : 26]} />
-      <ambientLight intensity={0.28} color="#9fb4ff" />
+      <ambientLight intensity={0.32} color="#b8c4e0" />
       <directionalLight
         position={[4.2, 7.5, 3.2]}
-        intensity={1.25}
-        color="#e8f0ff"
+        intensity={1.15}
+        color="#f0f4ff"
         castShadow={!lite}
         shadow-mapSize-width={lite ? 512 : 1024}
         shadow-mapSize-height={lite ? 512 : 1024}
@@ -104,18 +104,18 @@ function StudioEnvironment({ lite }: { lite: boolean }) {
         shadow-camera-top={8}
         shadow-camera-bottom={-8}
       />
-      {/* Fill */}
-      <directionalLight position={[-3.5, 3.5, 2]} intensity={0.35} color="#a5b4fc" />
-      {/* Rim / accent */}
+      {/* Soft fill — cool pewter, not neon */}
+      <directionalLight position={[-3.5, 3.5, 2]} intensity={0.32} color="#c7d2fe" />
+      {/* Rim — restrained cyan */}
       <spotLight
         position={[-5, 6.5, -2]}
-        intensity={1.05}
-        angle={0.5}
-        penumbra={0.75}
-        color="#22d3ee"
+        intensity={0.72}
+        angle={0.48}
+        penumbra={0.82}
+        color="#7dd3fc"
       />
-      <pointLight position={[0, 2.8, -3.8]} intensity={0.7} color="#a78bfa" />
-      <pointLight position={[3.2, 1.4, 3.8]} intensity={0.35} color="#c084fc" />
+      <pointLight position={[0, 2.8, -3.8]} intensity={0.42} color="#a5b4fc" />
+      <pointLight position={[3.2, 1.4, 3.8]} intensity={0.22} color="#c4b5fd" />
 
       {/* Reflective floor */}
       <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.01, 0]} receiveShadow>
@@ -179,14 +179,14 @@ function StudioEnvironment({ lite }: { lite: boolean }) {
         <meshStandardMaterial color="#060a14" emissive="#1a1030" emissiveIntensity={0.22} />
       </mesh>
 
-      {!lite && <Stars radius={40} depth={30} count={900} factor={2.2} saturation={0} fade speed={0.4} />}
-      <AtmosphereParticles count={lite ? 80 : 220} />
+      {!lite && <Stars radius={40} depth={30} count={520} factor={2.0} saturation={0} fade speed={0.35} />}
+      <AtmosphereParticles count={lite ? 48 : 140} />
     </>
   );
 }
 
 function PortraitPanel({ lite }: { lite: boolean }) {
-  const map = useAssetTexture('/images/anuj-profile.jpg');
+  const map = useAssetTexture(PORTRAIT_TEXTURE);
   const frameRef = useRef<THREE.Group>(null);
 
   useFrame((state) => {
@@ -382,10 +382,13 @@ function CameraDirector({
       phase.current = 'idle';
       return;
     }
-    camera.position.set(0, 3.6, 11.5);
-    camera.lookAt(IDLE_TARGET);
+    if (phase.current === 'focus' || phase.current === 'done') return;
+    if (!labEntered && phase.current === 'boot') {
+      camera.position.set(0, 3.6, 11.5);
+      camera.lookAt(IDLE_TARGET);
+    }
     phase.current = 'boot';
-  }, [camera, reduced]);
+  }, [camera, reduced, labEntered]);
 
   useEffect(() => {
     if (!focusPortal) return;
@@ -402,28 +405,35 @@ function CameraDirector({
     if (reduced) return;
 
     if (phase.current === 'boot') {
-      const target = labEntered ? IDLE_CAM : new THREE.Vector3(0, 2.6, 8.8);
-      camera.position.lerp(target, 0.03);
+      // Ease toward idle after enter; gentle hold before enter
+      const target = labEntered ? IDLE_CAM : new THREE.Vector3(0, 2.55, 8.6);
+      const speed = labEntered ? 0.038 : 0.022;
+      camera.position.lerp(target, speed);
       const la = lookAt.current;
       camera.lookAt(la);
-      if (camera.position.distanceTo(target) < 0.12) {
+      if (labEntered && camera.position.distanceTo(IDLE_CAM) < 0.1) {
         phase.current = 'idle';
       }
       return;
     }
 
+    if (phase.current === 'idle' && labEntered) {
+      // Micro drift toward idle after orbit release
+      return;
+    }
+
     if (phase.current === 'focus') {
-      camera.position.lerp(focusPos.current, 0.055);
+      camera.position.lerp(focusPos.current, 0.048);
       lookAt.current.lerp(
         new THREE.Vector3(
           focusPortal?.position[0] ?? 0,
-          (focusPortal?.position[1] ?? 0) + 0.35,
+          (focusPortal?.position[1] ?? 0) + 0.38,
           focusPortal?.position[2] ?? 0
         ),
-        0.08
+        0.07
       );
       camera.lookAt(lookAt.current);
-      if (camera.position.distanceTo(focusPos.current) < 0.18) {
+      if (camera.position.distanceTo(focusPos.current) < 0.16) {
         phase.current = 'done';
         onFocusComplete(hrefRef.current);
       }
@@ -512,14 +522,17 @@ function SceneContent({
             largeHit={lite}
           />
         ))}
-        {!lite &&
-          BOOK_COVERS.map((b) => (
-            <BookMesh key={b.src} src={b.src} position={b.position} rot={b.rot} />
-          ))}
-        {!lite &&
-          VINYL_COVERS.map((v) => (
-            <VinylDisc key={v.src} src={v.src} position={v.position} />
-          ))}
+        {/* Deferred décor textures — only after ENTER (keeps first paint light) */}
+        {!lite && labEntered && (
+          <Suspense fallback={null}>
+            {BOOK_COVERS.map((b) => (
+              <BookMesh key={b.src} src={b.src} position={b.position} rot={b.rot} />
+            ))}
+            {VINYL_COVERS.map((v) => (
+              <VinylDisc key={v.src} src={v.src} position={v.position} />
+            ))}
+          </Suspense>
+        )}
       </WorldParallax>
 
       <CameraDirector
@@ -563,7 +576,7 @@ export function HomeWorld({
     <div className="absolute inset-0" aria-hidden="true">
       <Canvas
         className="!absolute inset-0 h-full w-full touch-none"
-        dpr={[1, lite ? 1.2 : 1.5]}
+        dpr={[1, lite ? 1 : 1.25]}
         camera={{ position: [0, 2.15, 7.35], fov: 42, near: 0.1, far: 70 }}
         gl={{
           antialias: true,
@@ -575,7 +588,7 @@ export function HomeWorld({
         onCreated={({ gl }) => {
           gl.setClearColor('#05070f', 1);
           gl.toneMapping = THREE.ACESFilmicToneMapping;
-          gl.toneMappingExposure = 1.08;
+          gl.toneMappingExposure = 1.02;
           gl.shadowMap.type = THREE.PCFShadowMap;
         }}
       >

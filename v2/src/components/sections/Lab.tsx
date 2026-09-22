@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion';
 import { SectionHeading } from '@/components/SectionHeading';
-import { BackToLab } from '@/components/ui/BackToLab';
 import { labItems } from '@/data/lab';
 
 const STATUS_TONE: Record<string, string> = {
@@ -28,9 +27,8 @@ export function Lab() {
   ];
 
   return (
-    <section id="lab" className="section-pad scroll-mt-20">
+    <section id="lab" className="section-pad scroll-mt-20 !pt-6">
       <div className="container-max">
-        <BackToLab className="mb-8" />
         <SectionHeading
           eyebrow="The Lab"
           title="Experiments & systems"

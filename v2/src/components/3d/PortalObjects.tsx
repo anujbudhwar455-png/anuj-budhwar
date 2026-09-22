@@ -319,23 +319,33 @@ export function PortalStation({
         <sphereGeometry args={[largeHit ? 0.85 : 0.65, 16, 16]} />
       </mesh>
       <Html
-        position={[0, 1.15, 0]}
+        position={[0, 1.18, 0]}
         center
         distanceFactor={8}
         style={{ pointerEvents: 'none', userSelect: 'none' }}
       >
         <div
-          className="flex min-w-[120px] flex-col items-center gap-0.5 rounded-2xl border px-3 py-1.5 shadow-glow backdrop-blur-md"
+          className="flex min-w-[132px] flex-col items-center gap-0.5 rounded-2xl border px-3.5 py-2 shadow-glow backdrop-blur-md transition-transform"
           style={{
-            borderColor: `${portal.color}55`,
-            background: 'rgba(5,7,15,0.78)',
+            borderColor: active ? `${portal.color}99` : `${portal.color}44`,
+            background: active ? 'rgba(5,7,15,0.92)' : 'rgba(5,7,15,0.72)',
             color: portal.color,
+            transform: active ? 'scale(1.06)' : 'scale(1)',
+            boxShadow: active ? `0 0 24px ${portal.color}33` : 'none',
           }}
         >
-          <span className="text-[11px] font-semibold uppercase tracking-[0.2em]">{portal.label}</span>
-          <span className="text-[9px] font-medium tracking-wide text-slate-300/90">
+          <span className="text-[11px] font-semibold uppercase tracking-[0.22em]">{portal.label}</span>
+          <span
+            className="text-[9px] font-medium tracking-wide"
+            style={{ color: active ? '#e2e8f0' : 'rgba(203,213,225,0.85)' }}
+          >
             {portal.subtitle}
           </span>
+          {active && (
+            <span className="mt-0.5 text-[8px] uppercase tracking-[0.28em] text-slate-400">
+              Click to enter
+            </span>
+          )}
         </div>
       </Html>
     </group>

@@ -65,12 +65,29 @@ export const PORTALS: PortalDef[] = [
   },
 ];
 
+/** Compressed WebP textures for WebGL only — never the full 117-book archive. */
 export const BOOK_COVERS = [
-  { src: '/books/eternal-bloodline-1.jpg', position: [2.55, 0.35, 2.85] as [number, number, number], rot: 0.25 },
-  { src: '/books/ashen-mage-ascendant-1.jpg', position: [1.55, 0.32, 3.05] as [number, number, number], rot: -0.35 },
+  {
+    src: '/textures/book-eternal-bloodline-1.webp',
+    position: [2.55, 0.35, 2.85] as [number, number, number],
+    rot: 0.25,
+  },
+  {
+    src: '/textures/book-ashen-mage-ascendant-1.webp',
+    position: [1.55, 0.32, 3.05] as [number, number, number],
+    rot: -0.35,
+  },
 ];
 
 export const VINYL_COVERS = [
-  { src: '/music/cocaine.jpg', position: [3.85, 0.08, 1.55] as [number, number, number] },
-  { src: '/music/eternal.jpg', position: [3.95, 0.08, 0.55] as [number, number, number] },
+  {
+    src: '/textures/vinyl-cocaine.webp',
+    position: [3.85, 0.08, 1.55] as [number, number, number],
+  },
+  {
+    src: '/textures/vinyl-eternal.webp',
+    position: [3.95, 0.08, 0.55] as [number, number, number],
+  },
 ];
+
+export const PORTRAIT_TEXTURE = '/textures/portrait-lab.webp';

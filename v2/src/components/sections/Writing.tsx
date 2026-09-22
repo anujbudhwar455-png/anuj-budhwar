@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion';
 import { SectionHeading } from '@/components/SectionHeading';
-import { BackToLab } from '@/components/ui/BackToLab';
 import { bookSeries } from '@/data/books';
 import { featuredWritingSeriesIds } from '@/data/projects';
 import { withBase } from '@/lib/paths';
@@ -17,11 +16,10 @@ export function Writing() {
   );
 
   return (
-    <section id="writing" className="section-pad scroll-mt-20">
+    <section id="writing" className="section-pad scroll-mt-20 !pt-6">
       <div className="container-max">
-        <BackToLab className="mb-8" />
         <SectionHeading
-          eyebrow="Digital Archive"
+          eyebrow="Catalog"
           title="Amazon-live series & volumes"
           description="Only titles verified live on Amazon from the catalog. Explore series pages for covers, blurbs, and volume links."
         />

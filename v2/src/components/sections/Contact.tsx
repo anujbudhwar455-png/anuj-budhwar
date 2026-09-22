@@ -1,8 +1,7 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import { SectionHeading } from '@/components/SectionHeading';
-import { BackToLab } from '@/components/ui/BackToLab';
 import { siteConfig } from '@/data/siteConfig';
 
 const CHANNELS = [
@@ -29,15 +28,44 @@ const CHANNELS = [
 ];
 
 export function Contact() {
+  const reduced = useReducedMotion();
   return (
-    <section id="contact" className="section-pad scroll-mt-20">
+    <section id="contact" className="section-pad scroll-mt-20 !pt-6">
       <div className="container-max">
-        <BackToLab className="mb-8" />
         <SectionHeading
-          eyebrow="Communications Terminal"
-          title="Let’s connect"
+          eyebrow="Uplink"
+          title="Open channels"
           description="Public channels only — email, LinkedIn, GitHub, Spotify, and Instagram. No invented links."
         />
+
+        <motion.div
+          className="mb-8 overflow-hidden rounded-2xl border border-blue-400/25 bg-ink-950/70 font-mono text-sm shadow-glow"
+          initial={reduced ? false : { opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <div className="flex items-center gap-2 border-b border-white/10 bg-blue-500/10 px-4 py-2">
+            <span className="h-2 w-2 rounded-full bg-emerald-400/90" />
+            <span className="text-[10px] uppercase tracking-[0.25em] text-blue-200/80">
+              terminal · connect
+            </span>
+          </div>
+          <div className="space-y-1.5 p-4 text-xs text-slate-300 sm:text-sm">
+            <p>
+              <span className="text-cyan-300">$</span> whoami
+            </p>
+            <p className="pl-4 text-slate-400">anuj-budhwar · rohtak · healthcare×ai×creativity</p>
+            <p>
+              <span className="text-cyan-300">$</span> status --channels
+            </p>
+            <p className="pl-4 text-emerald-300/90">online · 5 public endpoints</p>
+            <p>
+              <span className="text-cyan-300">$</span> open --select
+              <span className="ml-1 inline-block h-3.5 w-1.5 animate-pulse bg-cyan-300/80 align-middle" />
+            </p>
+          </div>
+        </motion.div>
+
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {CHANNELS.map((c, i) => (
             <motion.a
@@ -46,7 +74,7 @@ export function Contact() {
               target={c.href.startsWith('mailto:') ? undefined : '_blank'}
               rel={c.href.startsWith('mailto:') ? undefined : 'noopener noreferrer'}
               className="glass card-hover group rounded-2xl p-5"
-              initial={{ opacity: 0, y: 10 }}
+              initial={reduced ? false : { opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.05 * i }}

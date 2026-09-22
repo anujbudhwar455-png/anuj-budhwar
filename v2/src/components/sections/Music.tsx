@@ -2,13 +2,12 @@
 
 import { motion } from 'framer-motion';
 import { SectionHeading } from '@/components/SectionHeading';
-import { BackToLab } from '@/components/ui/BackToLab';
 import { songs, spotifyArtistUrl } from '@/data/songs';
 import { withBase } from '@/lib/paths';
 
 export function Music() {
   return (
-    <section id="music" className="section-pad scroll-mt-20 relative overflow-hidden">
+    <section id="music" className="section-pad scroll-mt-20 relative overflow-hidden !pt-6">
       <div
         className="pointer-events-none absolute inset-0 opacity-70"
         aria-hidden
@@ -18,10 +17,9 @@ export function Music() {
         }}
       />
       <div className="container-max relative">
-        <BackToLab className="mb-8" />
         <SectionHeading
-          eyebrow="Listening Room"
-          title="12 singles on Spotify"
+          eyebrow="Singles"
+          title="12 tracks on Spotify"
           description="Only tracks live on the Anuj Budhwar Spotify artist page. Open a song for cover, duration, and listen links — no invented lyrics."
         />
         <div className="mb-8 flex flex-wrap gap-3">

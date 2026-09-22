@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Music } from '@/components/sections/Music';
+import { PageAtmosphere } from '@/components/ui/PageAtmosphere';
 
 export const metadata: Metadata = {
   title: 'Music',
@@ -9,8 +10,9 @@ export const metadata: Metadata = {
 
 export default function MusicIndexPage() {
   return (
-    <div className="pt-16">
+    <>
+      <PageAtmosphere variant="music" />
       <Music />
-    </div>
+    </>
   );
 }
